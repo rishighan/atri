@@ -1,9 +1,11 @@
 Atri::Application.routes.draw do
+  resources :posts
 
+resources :categories
 
   resources :posts do
     resources :attachments
-    resources :categories
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

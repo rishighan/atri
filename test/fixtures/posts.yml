@@ -3,7 +3,9 @@
 one:
   title: MyString
   content: MyText
+  excerpt: MyText
 
 two:
   title: MyString
   content: MyText
+  excerpt: MyText

@@ -11,22 +11,46 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
+   <p>
+        <%= f.label :title %> <br/>
+        <%= f.text_field(:title, :size => "70") %>
+    </p>
 
-  <div>
-    <%= f.fields_for :attachments do |at| %>
-      <%= at.label :picture %>
-      <%= at.file_field :picture %>
-    <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <p class="well">
+   <%= f.label :category %><br/>
+    <%= hidden_field_tag "post[category_ids][]", nil%>
+
+        <% Category.order(:title).each do |cat| %>
+            <label>
+            <%= check_box_tag("post[category_ids][]", cat.id, cat.id.in?(@post.categories.collect(&:id))) %>
+            <%= cat.title %>
+            </label>
+        <% end %>
+    </p>
+
+    <p>
+       <%= f.label :content %> <br/>
+       <%= f.text_area(:content, :size => "90x12") %>
+
+       <p class="well">
+        <%= f.label :attachments %>
+        <%= f.fields_for :attachments  do |at| %>
+            <%= at.file_field :picture %>
+        <% end %>
+
+       </p>
+
+        <%= render "shared/markdownhelp" %>
+
+ </p>
+
+    <p>
+        <%= f.label :excerpt %><br/>
+        <%= f.text_area(:excerpt, :size => "90x8") %>
+    </p>
+
+
+    <p>
+        <%= f.submit %>
+    </p>
 <% end %>

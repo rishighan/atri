@@ -9,6 +9,13 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# use redcarpet for parsing markdown
+gem "redcarpet", "~>3.1.2"
+
+# use rouge for syntax highlighting
+gem 'rouge'
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
