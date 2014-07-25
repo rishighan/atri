@@ -1,6 +1,6 @@
 <h2>Listing categories</h2>
 
-<table>
+<table class="admin">
   <thead>
     <tr>
       <th>Title</th>
@@ -13,7 +13,7 @@
 
   <tbody>
     <% @categories.each do |category| %>
-      <tr>
+      <tr class="<%= cycle('even','odd') %>">
         <td><%= category.title %></td>
         <td><%= category.description %></td>
         <td><%= link_to 'Show', category %></td>
