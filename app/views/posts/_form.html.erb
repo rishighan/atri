@@ -1,4 +1,4 @@
-<%= form_for(@post, multipart:true) do |f| %>
+<%= form_for(@post, html: {class:"dropzone"}) do |f| %>
   <% if @post.errors.any? %>
     <div class="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -32,13 +32,13 @@
        <%= f.label :content %> <br/>
        <%= f.text_area(:content, :size => "90x12") %>
 
-       <p class="well">
+       <div class="fallback">
         <%= f.label :attachments %>
         <%= f.fields_for :attachments  do |at| %>
             <%= at.file_field :picture %>
         <% end %>
 
-       </p>
+       </div>
 
         <%= render "shared/markdownhelp" %>
 

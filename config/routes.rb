@@ -1,4 +1,5 @@
 Atri::Application.routes.draw do
+
   #get "home/index"
 
 resources :categories

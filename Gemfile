@@ -9,6 +9,9 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Use HAML
+gem 'haml'
+
 # use redcarpet for parsing markdown
 gem "redcarpet", "~>3.1.2"
 
@@ -24,6 +27,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 #attachments
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+#jquery file upload for multiple files
+gem 'dropzonejs-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

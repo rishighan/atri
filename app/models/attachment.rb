@@ -1,4 +1,6 @@
 class Attachment < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
+
   belongs_to :imageable
   has_attached_file :picture,
                     :styles =>{ :medium => "660x",
@@ -7,4 +9,5 @@ class Attachment < ActiveRecord::Base
                     :url => "/attachments/pictures/:style/:basename.:extension",
                     :path =>"#{Rails.root}/public/attachments/pictures/:style/:basename.:extension"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
 end
