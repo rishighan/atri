@@ -26,11 +26,10 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.create(post_params)
-
+    @post = Post.new(post_params)
 
     if @post.save
-      render json: { message: "success" }, :status => 200
+      render json: { message: "success"}, :status => 200
     else
       #  you need to send an error header, otherwise Dropzone
           #  will not interpret the response as an error:
