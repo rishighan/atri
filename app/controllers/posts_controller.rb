@@ -29,6 +29,13 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+       if params[:attachments_attributes][:picture]
+          params[:attachments_attributes][:picture].each do |pic|
+            #something
+            @post.attachments.create(pic.picture)
+          end
+        end
+
       render json: { message: "success"}, :status => 200
     else
       #  you need to send an error header, otherwise Dropzone

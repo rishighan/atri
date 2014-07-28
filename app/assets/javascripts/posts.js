@@ -8,7 +8,7 @@ $(document).ready(function(){
     maxFilesize: 1,
     // changed the passed param to one accepted by
     // our rails app
-    paramName: "post[attachments_attributes][][picture]",
+    paramName: "post[attachments_attributes][][picture][]",
     // show remove links on each image upload
     addRemoveLinks: true
   });
