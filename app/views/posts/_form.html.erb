@@ -34,9 +34,9 @@
 
        <div class="fallback">
         <%= f.label :attachments %>
-        <%= f.fields_for :attachments  do |at| %>
-            <%= at.file_field :picture %>
-        <% end %>
+
+            <%= file_field_tag "post[attachment_attributes][][picture]" %>
+
 
        </div>
 
