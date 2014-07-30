@@ -9,7 +9,7 @@ role :web, %w{rishi@rishighan.com}
 role :db,  %w{rishi@rishighan.com}
 
 set :stage, :production
-server '72.14.178.87', user: 'rishi', roles: %w{web app}
+server 'rishighan.com', user: 'rishi', roles: %w{web app}
 
 # Extended Server Syntax
 # ======================
@@ -27,12 +27,12 @@ server '72.14.178.87', user: 'rishi', roles: %w{web app}
 #
 # Global options
 # --------------
-#set :ssh_options, {
-#    keys: %w(/home/roweandesign/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password),
-#    config: false
-#  }
+set :ssh_options, {
+    keys: %w(/Users/roweandesign/.ssh/id_rsa),
+    forward_agent: false,
+    auth_methods: %w(publickey),
+    #verbose: :debug
+  }
 #
 # And/or per server (overrides global)
 # ------------------------------------

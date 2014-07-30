@@ -2,7 +2,7 @@
 lock '3.2.1'
 
 set :application, 'atri'
-set :repo_url, 'git@github.com:rishighan/atri.git'
+set :repo_url, 'http://git@github.com/rishighan/atri.git'
 
 
 # Default branch is :master
