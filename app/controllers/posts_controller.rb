@@ -26,16 +26,17 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+   @post = Post.new(post_params)
 
-  respond_to do |format|
-    if @post.save
-      format.html {redirect_to @post, notice: "Post was successfully created."}
-      format.json {render json: @post, status: 200}
-    else
-      format.html {redirect_to @post, notice: "Could not create post."}
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @post }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
-  end
 end
 
   # PATCH/PUT /posts/1
@@ -70,6 +71,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :excerpt, {:category_ids=>[]}, attachments_attributes:[:picture, :_destroy])
+      params.require(:post).permit(:title, :content, :excerpt, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
     end
 end

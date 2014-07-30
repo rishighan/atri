@@ -1,7 +1,7 @@
 class Attachment < ActiveRecord::Base
   include Rails.application.routes.url_helpers
 
-  belongs_to :imageable
+  belongs_to :imageable, polymorphic: true
   has_attached_file :picture,
                     :styles =>{ :medium => "660x",
                                 :thumb => "150x"

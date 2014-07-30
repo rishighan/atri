@@ -10,8 +10,9 @@
   <%= @post.content %>
 </p>
 
-<p>
-    <%= image_tag @post.attachments.first.picture.url(:medium) %>
+<p> <%= @post.attachments.each do |at| %>
+    <%= image_tag at.picture.url(:medium) %>
+    <% end %>
 </p>
 
 <p>
