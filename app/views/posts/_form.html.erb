@@ -35,9 +35,9 @@
        <div id="attachments">
         <%= f.fields_for :attachments do |at| %>
             <%= render 'attachment_fields', :f => at %>
-            <%= link_to_add_association 'Add another image', f, :attachments %>
-        <% end %>
 
+        <% end %>
+        <%= link_to_add_association 'Add another image', f, :attachments %>
        </div>
 
         <%= render "shared/markdownhelp" %>
