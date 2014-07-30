@@ -28,20 +28,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    if @post.save
-       if params[:attachments_attributes][:picture]
-          params[:attachments_attributes][:picture].each do |pic|
-            #something
-            @post.attachments.create(pic.picture)
-          end
-        end
+    respond_to do |format|
+      format.html {redirect_to @post, notice: "Post was successfully created."}
+      format.json {render json: @post, status: 200}
 
-      render json: { message: "success"}, :status => 200
-    else
-      #  you need to send an error header, otherwise Dropzone
-          #  will not interpret the response as an error:
-      render json: { error: @post.errors.full_messages.join(',')}, :status => 400
-    end
 
   end
 
@@ -77,6 +67,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :excerpt, {:category_ids=>[]}, attachments_attributes:[:picture])
+      params.require(:post).permit(:title, :content, :excerpt, {:category_ids=>[]}, attachments_attributes:[:picture, :_destroy])
     end
 end

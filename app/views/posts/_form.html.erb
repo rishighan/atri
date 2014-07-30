@@ -1,4 +1,4 @@
-<%= form_for(@post, html: {class:"dropzone"}) do |f| %>
+<%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div class="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -32,13 +32,13 @@
        <%= f.label :content %> <br/>
        <%= f.text_area(:content, :size => "90x12") %>
 
-       <div class="fallback">
-        <%= f.label :attachments %>
+       <p class="well" id="attachments">
+        <%= f.fields_for :attachments do |at| %>
+            <%= render 'attachment_fields', :f => at %>
+            <%= link_to_add_association 'Add another image', f, :attachments %>
+        <% end %>
 
-            <%= file_field_tag "post[attachment_attributes][][picture]" %>
-
-
-       </div>
+       </p>
 
         <%= render "shared/markdownhelp" %>
 

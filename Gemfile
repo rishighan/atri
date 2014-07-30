@@ -28,8 +28,8 @@ gem 'coffee-rails', '~> 4.0.0'
 #attachments
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-#jquery file upload for multiple files
-gem 'dropzonejs-rails'
+# for nested models and forms
+gem "cocoon"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
