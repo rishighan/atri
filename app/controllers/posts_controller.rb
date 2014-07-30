@@ -28,12 +28,15 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    respond_to do |format|
+  respond_to do |format|
+    if @post.save
       format.html {redirect_to @post, notice: "Post was successfully created."}
       format.json {render json: @post, status: 200}
-
-
+    else
+      format.html {redirect_to @post, notice: "Could not create post."}
+    end
   end
+end
 
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
