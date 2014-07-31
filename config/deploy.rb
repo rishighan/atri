@@ -30,9 +30,10 @@ set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-# I want to parachute some heroin and fuck with the stars
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+#set :default_env, { path: "~/.rvm/rubies/:$PATH" }
+
+set :rvm_ruby_version, "2.1.2"
+
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 

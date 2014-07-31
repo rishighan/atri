@@ -11,6 +11,9 @@ role :db,  %w{rishi@rishighan.com}
 set :stage, :production
 server 'rishighan.com', user: 'rishi', roles: %w{web app}
 
+#RVM stuff
+set :rvm_type, :user
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
