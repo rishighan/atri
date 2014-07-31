@@ -10,7 +10,7 @@ role :db,  %w{rishi@rishighan.com}
 
 set :stage, :production
 server 'rishighan.com', user: 'rishi', roles: %w{web app}
-set :user, "rishi"
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
