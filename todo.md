@@ -1,5 +1,5 @@
-+ paperclip multiple attachments [link http://amgrade.com/blogs/thoughts/multiple-files-upload-rails]
-+ categories, habtm
++ paperclip multiple attachments -> done
++ categories, habtm -> done
 + user authentication
 + 'feature' post
 + pagination
@@ -7,3 +7,5 @@
 + drafts
 
 + tests
+
++ deployment using capistrano -> done
