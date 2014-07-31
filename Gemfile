@@ -50,7 +50,8 @@ end
 
 group :development do
   gem 'capistrano', '~> 3.2.0'
-  gem 'net-ssh', '~> 2.7.0'
+  gem 'net-ssh'
+  gem 'rvm-capistrano'
 end
 
 # Use ActiveModel has_secure_password

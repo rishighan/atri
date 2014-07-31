@@ -1,15 +1,15 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'atri'
-set :repo_url, 'git@github.com:rishighan/#{application}.git'
+set :application, "atri"
+set :repo_url, "git@github.com:rishighan/atri.git"
 set :use_sudo, false
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/rishi/#{application}'
+set :deploy_to, '/home/rishi/atri'
 
 # Default value for :scm is :git
  set :scm, :git
@@ -31,7 +31,8 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
+# I want to parachute some heroin and fuck with the stars
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 

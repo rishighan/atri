@@ -1,6 +1,6 @@
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
-#require 'capistrano/bundler'
+require 'rvm/capistrano'
 #require 'capistrano/rails'
 
 # Includes default deployment tasks
