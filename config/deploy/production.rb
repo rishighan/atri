@@ -29,9 +29,9 @@ server 'rishighan.com', user: 'rishi', roles: %w{web app}
 # --------------
 set :ssh_options, {
     keys: %w(/Users/roweandesign/.ssh/id_rsa),
-    forward_agent: false,
+    forward_agent: true,
     auth_methods: %w(publickey),
-    #verbose: :debug
+    verbose: :debug,
     user: fetch(:user)
   }
 #
