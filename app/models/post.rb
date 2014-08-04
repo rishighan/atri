@@ -1,4 +1,9 @@
 class Post < ActiveRecord::Base
+
+    validates :title, presence: true
+    validates :content, presence: true
+    validates :excerpt, presence: true
+
     has_many :attachments, as: :imageable, dependent: :destroy
     accepts_nested_attributes_for :attachments, allow_destroy: true
 
