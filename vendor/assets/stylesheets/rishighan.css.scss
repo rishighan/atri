@@ -141,6 +141,12 @@ $normal-padding: 10px;
     h2, h3, h4, h5 {
         font-family: 'Lato-regular';
     }
+    table{
+        padding: 10px;
+        border-collapse: collapse;
+
+        background: #CCC;
+    }
     .well {
         background: $information;
         padding: $normal-padding;
