@@ -31,6 +31,9 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # for nested models and forms
 gem "cocoon"
 
+#authentication
+gem "devise"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

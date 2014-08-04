@@ -147,8 +147,9 @@ $normal-padding: 10px;
         border-bottom: 1px solid $gray;
 
         a{
+            font-family: 'Muli-regular';
             text-decoration: none;
-            font-size: $caption;
+            font-size: $subheading2;
             &:visited {}
             &:hover{color:$gray;}
         }
