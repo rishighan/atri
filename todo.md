@@ -1,10 +1,10 @@
 + paperclip multiple attachments -> done
 + categories, habtm -> done
-+ user authentication
++ user authentication -> in progress
 + 'feature' post
 + pagination
 + search (elasticsearch)
-+ drafts
++ drafts -> in progress
 
 + tests
 
