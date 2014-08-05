@@ -3,14 +3,14 @@
 <div class="cat-list">
 
     <% @categories.each do |category| %>
-      <div class="<%= cycle('even','odd') %>">
+      <article class="<%= cycle('even','odd') %>">
        <h4><%= category.title %></h4>
         <%= category.description %><br/>
 
         <%= link_to 'Show', category %>
         <%= link_to 'Edit', edit_category_path(category) %>
         <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+      </article>
     <% end %>
 
 </div>
