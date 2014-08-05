@@ -1,29 +1,20 @@
 <h2>Listing categories</h2>
 
-<table class="admin" border cellpadding="10">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="cat-list">
 
-  <tbody>
     <% @categories.each do |category| %>
-      <tr class="<%= cycle('even','odd') %>">
-        <td><%= category.title %></td>
-        <td><%= category.description %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="<%= cycle('even','odd') %>">
+       <h4><%= category.title %></h4>
+        <%= category.description %><br/>
 
-<br>
+        <%= link_to 'Show', category %>
+        <%= link_to 'Edit', edit_category_path(category) %>
+        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+</div>
+
+
 
 <%= link_to 'New Category', new_category_path %>

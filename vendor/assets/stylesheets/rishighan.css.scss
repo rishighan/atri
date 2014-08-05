@@ -82,32 +82,6 @@ $normal-padding: 10px;
 
 // Breakpoints for various media
 $iphone-portrait-max: 959px;
-// Media Queries
-/* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: $iphone-portrait-max) {
-   .admin-nav-container {
-        background-color: $rg-admin-navbar;
-        width: 100%;
-        border-bottom: 1px solid $gray;
-        height: 100%;
-        }
-
-        .admin-nav ul li{
-        clear:both; }
-
-}
-
-/* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: $iphone-portrait-max) { }
-
-/* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {}
-
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
 
 
 
@@ -172,11 +146,10 @@ $iphone-portrait-max: 959px;
     h2, h3, h4, h5 {
         font-family: 'Lato-regular';
     }
-    table{
-        padding: 10px;
-        border-collapse: collapse;
 
-        background: #CCC;
+    .cat-list{
+        div {padding:$normal-padding;}
+
     }
     .well {
         background: $information;
@@ -203,7 +176,7 @@ $iphone-portrait-max: 959px;
     }
 
     .field_with_errors {
-        background: none;
+      background: none;
       input,textarea {border:1px solid $rg-red;}
       label {color:$rg-red;}
     }
@@ -254,3 +227,30 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
+
+// Media Queries
+/* Smaller than standard 960 (devices and browsers) */
+@media all and (max-width: $iphone-portrait-max) {
+
+   .admin-nav ul li{ clear:both; }
+   .admin-nav-container {
+        background-color: $rg-admin-navbar;
+        width: 100%;
+        border-bottom: 1px solid $gray;
+        padding: 0 0 $normal-padding 0;
+        height: auto;
+        }
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: $iphone-portrait-max) { }
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}
