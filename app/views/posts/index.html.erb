@@ -9,8 +9,11 @@
     <h2><%= post.title %> </h2>
     <p>
         <%= markdown(post.content) %>
-        <%= post.attachments.each do |at| %>
+        <% post.attachments.each do |at| %>
+         <% if at.picture.present? %>
             <%= image_tag at.picture.url(:thumb) %>
+            <%= at.picture.url(:original) %>
+         <% end %>
         <% end %>
 
     </p>

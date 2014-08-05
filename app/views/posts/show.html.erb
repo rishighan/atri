@@ -11,7 +11,7 @@
 </p>
 
 <p> <%= @post.attachments.each do |at| %>
-    <%= image_tag at.picture.url(:medium) %>
+    <%= image_tag at.picture.url(:medium) if at.picture.present? %>
     <% end %>
 </p>
 
