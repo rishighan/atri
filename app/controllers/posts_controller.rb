@@ -28,6 +28,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
    @post = Post.new(post_params)
+    if params[:draft]
+      @post.update_attribute(:is_draft , 'yes')
+    else
+      @post.update_attribute(:is_draft, 'no')
+    end
 
     respond_to do |format|
       if @post.save
@@ -72,6 +77,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :excerpt, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
+      params.require(:post).permit(:title, :content, :excerpt, :is_draft, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
     end
 end
