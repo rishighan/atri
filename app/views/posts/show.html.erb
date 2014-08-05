@@ -10,7 +10,7 @@
   <%= @post.content %>
 </p>
 
-<p> <%= @post.attachments.each do |at| %>
+<p> <% @post.attachments.each do |at| %>
     <%= image_tag at.picture.url(:medium) if at.picture.present? %>
     <% end %>
 </p>

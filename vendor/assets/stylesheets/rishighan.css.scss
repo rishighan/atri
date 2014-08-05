@@ -45,9 +45,18 @@ $caption: 0.61803em;
 $kern: 0.06em;
 
 $normal-padding: 10px;
+$small-padding: 5px;
+$tiny-padding: 3px;
 
 // layout
 .clearboth {clear:both;}
+
+// decorations
+.infotags{
+    background: $information;
+    padding: $small-padding;
+    border-bottom: $gray;
+}
 
 // fonts
 @font-face {

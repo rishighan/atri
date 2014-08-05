@@ -18,6 +18,8 @@ gem "redcarpet", "~>3.1.2"
 # use rouge for syntax highlighting
 gem 'rouge'
 
+#use kaminari for pagination
+gem 'kaminari'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

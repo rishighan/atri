@@ -7,6 +7,9 @@
     <article class="clearfix <%= cycle('even', 'odd') %>">
     <h5><%= post.id%></h5>
     <h2><%= post.title %> </h2>
+    <% post.categories.each do |cat| %>
+    <span class="infotags"><%= (cat.title) unless cat.title.empty? %></span>&nbsp;
+    <% end %>
     <p>
         <%= markdown(post.content) %>
         <% post.attachments.each do |at| %>
