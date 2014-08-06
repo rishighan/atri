@@ -124,23 +124,31 @@ $iphone-portrait-max: 959px;
     font-family: Montserrat-Regular;
     font-size: $subheading3;
     color: $thatblack;
-    letter-spacing: $kern;
+    margin: 140px auto;
 
     .left{
         float:left;
         text-align: right;
         text-transform: capitalize;
+        position: relative;
+        left:19px;
     }
 
     .right{
         float:right;
         text-transform: uppercase;
         position: relative;
-        left:0;
+        height:350px;
+        border-left:1px solid $rg-yellow;
     }
 
     ul{
-        li{margin:0 0 15px 0;}
+        li{
+            margin: 3px 0 12px 0;
+            span{
+                 line-height: 1.7em;
+            }
+        }
     }
 
     .infotags {
