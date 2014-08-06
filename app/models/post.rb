@@ -10,13 +10,22 @@ class Post < ActiveRecord::Base
     has_and_belongs_to_many :categories, join_table: :categories_posts
     accepts_nested_attributes_for :categories
 
+    #filter posts by category
+    def self.group_by_category(action,category)
+        case action
+        when "include"
+         post = Post.includes(:categories).where('categories.title IN (?)', category).order(created_at: :desc)
 
-    def group_by_category(category)
-        post = Post.where(categories.title = category)
+        when "exclude"
+         post = Post.includes(:categories).where('categories.title NOT IN (?)', category)
+
+         else
+         post = Post.all
+        end
     end
 
-    def filter_drafts
-        post = Post.where(:is_draft)
+    def self.is_draft(what)
+        post = Post.where('is_draft = (?)', what )
     end
 
 end
