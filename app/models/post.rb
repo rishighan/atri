@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
     end
 
     def filter_drafts
-
+        post = Post.where(:is_draft)
     end
 
 end
