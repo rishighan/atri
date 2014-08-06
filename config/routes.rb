@@ -13,7 +13,7 @@ end
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get 'index' => 'home#index'
+  get  'dev' => 'home#index'
   root 'home#haiku'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
