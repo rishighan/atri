@@ -11,6 +11,7 @@
 $rg-red: #ff4d45;
 $rg-blue: #6cc5ff;
 $rg-admin-navbar: #ffffec;
+$rg-yellow: #ffba00;
 
 // generic colors
 $black: black;
@@ -19,6 +20,7 @@ $gray: #cccccc;
 $subtlegray: #ffffcc;
 $beige: #fffef1;
 $loconbeige: #ffffeb;
+$thatblack: #544c4c;
 
 // status colors
 $disabled: #cccccc;
@@ -41,6 +43,9 @@ $subheading2: 0.8em;
 //h3
 $caption: 0.61803em;
 
+//navigation size
+$subheading3: 0.9em;
+
 // tracking, leading and kerning
 $kern: 0.06em;
 
@@ -59,7 +64,7 @@ $tiny-padding: 3px;
 
 }
 
-// fonts
+// Custom Typefaces
 @font-face {
     font-family: Bitter-regular;
     src: asset-url("Bitter-Regular.ttf");
@@ -90,12 +95,61 @@ $tiny-padding: 3px;
     src: asset-url("Muli-Regular.ttf");
 }
 
+@font-face{
+    font-family: Montserrat-regular;
+    src: asset-url("Montserrat-Regular.ttf");
+}
+
 // Breakpoints for various media
 $iphone-portrait-max: 959px;
 
 
 
 /* Section-specific styles start here */
+// Home section
+.site-nav
+{
+    font-family: Montserrat-Regular;
+    text-transform: uppercase;
+
+    ul {
+        margin: 10px 0 0 0;
+        li{
+            margin :0 0 5px 0;
+        }
+    }
+}
+
+.hero-nav{
+    font-family: Montserrat-Regular;
+    font-size: $subheading3;
+    color: $thatblack;
+    letter-spacing: $kern;
+
+    .left{
+        float:left;
+        text-align: right;
+        text-transform: capitalize;
+    }
+
+    .right{
+        float:right;
+        text-transform: uppercase;
+        position: relative;
+        left:0;
+    }
+
+    ul{
+        li{margin:0 0 15px 0;}
+    }
+
+    .infotags {
+        background:$rg-yellow;
+        padding:$small-padding;
+        border-bottom: 1px solid $lightblack;
+    }
+}
+
 /* Poetry page */
 .haiku {
     font-family: Bitter-bold;

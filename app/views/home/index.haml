@@ -1,2 +1,11 @@
-- @projects.each do |project|
-  = project.title
+%nav.hero-nav.eight.columns
+
+  %ul.left.five.columns
+    -@posts.each do |post|
+      %li
+        %span.infotags= post.title
+
+  %ul.right.three.columns
+    -@projects.each do |project|
+      %li
+        %span.infotags= project.title

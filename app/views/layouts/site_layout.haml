@@ -19,5 +19,14 @@
       =notice
     %p.alert
       =alert
-    / render the home page content
-    =yield
+    / Hero section container
+    %section.hero.fourteen.columns
+      / Logo
+      %nav.site-nav.four.columns
+        %img{:src => "assets/rishighan-logo.png"}
+        %ul
+          %li work
+          %li photo log
+          %li colophon
+      / render the home page content
+      =yield
