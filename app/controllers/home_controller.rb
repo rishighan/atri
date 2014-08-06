@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    redirect_to "haiku"
+
+  end
+
+  def haiku
+    render :template => "home/haiku"
   end
 end

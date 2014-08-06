@@ -1,21 +1,20 @@
 Atri::Application.routes.draw do
 
-  devise_for :users
-  #get "home/index"
+devise_for :users
+#get "home/index"
 
 resources :categories
 
-  resources :posts do
-    resources :attachments
-
-  end
+resources :posts do
+   resources :attachments
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#haiku'
-
+  root 'home#index'
+  get 'haiku' => 'home#haiku'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
