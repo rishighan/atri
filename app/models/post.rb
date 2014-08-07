@@ -10,16 +10,19 @@ class Post < ActiveRecord::Base
     has_and_belongs_to_many :categories, join_table: :categories_posts
     accepts_nested_attributes_for :categories
 
+    #scope that isolates "heroes"
+    scope :hero, -> {Post.includes(:categories).where('categories.title = (?)', "Hero")}
+
     #filter posts by category
     def self.group_by_category(action,category)
         case action
         when "include"
-         post = Post.includes(:categories).where('categories.title IN (?)', category).order(created_at: :desc)
+         post = Post.includes(:categories).where('categories.title IN (?)', category).order(created_at: :desc).references(:categories)
 
         when "exclude"
-         post = Post.includes(:categories).where('categories.title NOT IN (?)', category)
+         post = Post.includes(:categories).where('categories.title NOT IN (?)', category).references(:categories)
 
-         else
+        else
          post = Post.all
         end
     end
