@@ -22,12 +22,7 @@
       =alert
     / Hero section container
     %section.hero.fourteen.columns
-      / Logo
-      %nav.site-nav.four.columns
-        %img{:src => "assets/rishighan-logo.png"}
-        %ul
-          %li work
-          %li photo log
-          %li colophon
+      / nav
+      =render "shared/site_nav"
       / render the home page content
       =yield

@@ -328,16 +328,76 @@ $iphone-portrait-max: 959px;
         padding: 0 0 $normal-padding 0;
         height: auto;
         }
+
+
 }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: $iphone-portrait-max) {}
+@media only screen and (min-width: 768px) and (max-width: $iphone-portrait-max) {
+
+      // hero nav on the home page
+    .hero-nav{
+            .left{
+                float: left;
+                text-transform: capitalize;
+                position: relative;
+                text-align:left;
+                left:0;
+            }
+
+            .right{
+                float:left;
+                text-transform: uppercase;
+                position: relative;
+                height:100%;
+                border:0;
+            }
+     }
+}
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {}
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+      // hero nav on the home page
+    .hero-nav{
+            .left{
+                float: left;
+                text-transform: capitalize;
+                position: relative;
+                text-align:left;
+                left:0;
+            }
+
+            .right{
+                float:left;
+                text-transform: uppercase;
+                position: relative;
+                height:100%;
+                border:0;
+            }
+     }
+}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 479px) {
+          // hero nav on the home page
+    .hero-nav{
+            .left{
+                float: left;
+                text-transform: capitalize;
+                position: relative;
+                text-align:left;
+                left:0;
+            }
+
+            .right{
+                float:left;
+                text-transform: uppercase;
+                position: relative;
+                height:100%;
+                border:0;
+            }
+     }
+}
