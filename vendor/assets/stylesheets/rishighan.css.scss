@@ -120,6 +120,21 @@ $iphone-portrait-max: 959px;
     }
 }
 
+
+// hero background
+.hero-bg{
+    background: url("hero-bg-smudges.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position:fixed;
+    width:1920px;
+    height:510px;
+    top:0;
+}
+
+// hero nav shenanigans
 .hero-nav{
     font-family: Montserrat-Regular;
     font-size: $subheading3;
