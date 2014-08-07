@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
 
     #scope that isolates "heroes"
     scope :hero, -> {Post.includes(:categories).where('categories.title = (?)', "Hero")}
+    scope :projects, -> {Post.includes(:categories).where('categories.title = (?)', "Projects")}
+
 
     #filter posts by category
     def self.group_by_category(action,category)
