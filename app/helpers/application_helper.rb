@@ -6,7 +6,7 @@ module ApplicationHelper
 
 class HTML < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet # yep, that's it.
-  line_numbers: true
+
 end
 
   def markdown(text)

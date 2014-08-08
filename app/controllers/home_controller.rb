@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout 'site_layout', only: [:index]
 
   def index
-    #jerry-rigged mechanism to filter our only "Hero" posts that may fall into whatever
+    #mechanism to filter our only "Hero" posts that may fall into whatever
     #categories I specify
     @projects = Post.is_draft("no").projects & Post.hero
     @posts = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
