@@ -7,7 +7,8 @@ class HomeController < ApplicationController
     @projects = Post.is_draft("no").projects & Post.hero
     @posts = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
     # All posts tagged with everything other than projects will be in the main body
-    @log = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature"])
+    @log = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature"]).page(params[:page]).per(10)
+
   end
 
   def haiku
