@@ -139,7 +139,7 @@ $iphone-portrait-max: 959px;
     font-family: Montserrat-Regular;
     font-size: $subheading3;
     color: $thatblack;
-    margin: 140px auto;
+    margin: 140px auto 0 0;
 
     .left{
         float:left;
@@ -170,6 +170,18 @@ $iphone-portrait-max: 959px;
         background:$rg-yellow;
         padding:$small-padding;
         border-bottom: 1px solid $lightblack;
+    }
+}
+
+// Posts
+.posts-container{
+
+    .post
+    {
+        article{
+
+            h3{font-family: Montserrat-regular;}
+        }
     }
 }
 

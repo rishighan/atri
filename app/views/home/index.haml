@@ -9,3 +9,9 @@
     -@projects.each do |project|
       %li
         %span.infotags= project.title
+
+%section.posts-container.fourteen.columns
+  -@log.each do |log|
+    %article.post
+      %h3=log.title
+      %p=log.content
