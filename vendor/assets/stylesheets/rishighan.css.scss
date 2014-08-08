@@ -64,6 +64,17 @@ $tiny-padding: 3px;
 
 }
 
+// links
+a {
+    text-decoration:none;
+    &:visited {}
+    &:hover{
+        text-decoration:none;
+        background:0 none;
+    }
+}
+
+
 // Custom Typefaces
 @font-face {
     font-family: Bitter-regular;
@@ -116,6 +127,10 @@ $iphone-portrait-max: 959px;
         margin: 10px 0 0 0;
         li{
             margin :0 0 5px 0;
+
+            a {
+
+            }
         }
     }
 }
@@ -331,6 +346,19 @@ $iphone-portrait-max: 959px;
     }
 }
 
+
+// Footer
+footer{
+    clear:both;
+    font-family: Montserrat-Regular;
+    ul{
+        li {
+            font-size:$subheading3;
+            float:left;
+            margin: 0 20px 0 0;
+        }
+    }
+}
 
 // Media Queries
 /* Smaller than standard 960 (devices and browsers) */

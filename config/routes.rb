@@ -9,12 +9,19 @@ resources :posts do
    resources :attachments
 end
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+# The priority is based upon order of creation: first created -> highest priority.
+# See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  get  'dev' => 'home#index'
-  root 'home#haiku'
+# You can have the root of your site routed with "root"
+get  'dev' => 'home#index'
+root 'home#haiku'
+
+#all other static routes
+#projects
+get 'projects' => 'home#projects'
+get 'colophon' => 'home#colophon'
+get 'archive'  => 'home#archive'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -14,4 +14,14 @@ class HomeController < ApplicationController
   def haiku
     render :template => "home/haiku"
   end
+
+  def projects
+  end
+
+  def colophon
+  end
+
+  def archive
+
+  end
 end
