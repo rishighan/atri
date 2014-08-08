@@ -5,6 +5,8 @@
 + pagination
 + search (elasticsearch)
 + drafts -> in progress
++ archival feature
++ filtering the posts in the CMS by tags
 
 + tests
 
