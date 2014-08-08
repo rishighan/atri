@@ -10,8 +10,9 @@
       %li
         %span.infotags= project.title
 
-%section.posts-container.fourteen.columns
+%section.posts-container.twelve.columns.offset-by-two
   -@log.each do |log|
     %article.post
       %h3=log.title
-      %p=log.content
+      %h5=log.created_at.strftime("%d %B, %Y")
+      %p=markdown(log.content)
