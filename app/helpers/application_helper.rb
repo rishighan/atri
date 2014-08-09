@@ -32,7 +32,7 @@ end
 
     # find_and_preserve is a HAML helper that will fix
     # unnecessary indentation in codeblocks.
-    find_and_preserve(markdown.render(text)).html_safe
+    markdown.render(text).html_safe
   end
 
 
