@@ -15,7 +15,8 @@ end
       hard_wrap:       true,
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
-      no_intra_emphasis:   true
+      no_intra_emphasis:   true,
+      line_numbers:   true
      }
 
     extensions = {
