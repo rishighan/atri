@@ -6,14 +6,13 @@ module ApplicationHelper
 
 class HTML < Redcarpet::Render::HTML
   include Rouge::Plugins::Redcarpet # yep, that's it.
-  def block_code(code, language)
-   #$lexer = Lexer.find_fancy(language, code) || Lexers::PlainText
-     Rouge.highlight(code, language || 'text', 'html')
-     def rouge_formatter(opts={})
-        opts ={line_numbers: true}
-        Formatters::HTML.new(opts)
-      end
-   end
+  def rouge_formatter(opts={})
+    opts ={
+      line_numbers: true,
+      wrap: true
+    }
+    Rouge::Formatters::HTML.new(opts)
+  end
 
 end
 
