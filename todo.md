@@ -2,7 +2,7 @@
 + categories, habtm -> done
 + user authentication -> in progress
 + 'feature' post
-+ pagination
++ pagination -> in progress
 + search (elasticsearch)
 + drafts -> in progress
 + archival feature

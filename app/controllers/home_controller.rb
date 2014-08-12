@@ -16,6 +16,8 @@ class HomeController < ApplicationController
   end
 
   def projects
+    #render the project template
+    render template: "projects/index"
   end
 
   def colophon

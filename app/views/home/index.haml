@@ -16,5 +16,5 @@
     %article.post
       %h3=log.title
       %h5=log.created_at.strftime("%d %B, %Y")
-      %p=markdown(log.content)
+      %p=find_and_preserve(markdown(log.content))
   =paginate @log
