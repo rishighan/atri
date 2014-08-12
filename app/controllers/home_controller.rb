@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout 'site_layout', only: [:index]
+  layout 'site_layout', only: [:index, :projects]
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @posts = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
     # All posts tagged with everything other than projects will be in the main body
     @log = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature"]).page(params[:page]).per(10)
-
+    @highlights = Post.includes(categories:[{title: "Highlight"}]).limit(20)
   end
 
   def haiku

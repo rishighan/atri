@@ -7,7 +7,7 @@
 + drafts -> in progress
 + archival feature
 + filtering the posts in the CMS by tags
-
++ pretty URLS for all resources
 + tests
 
 + deployment using capistrano -> done

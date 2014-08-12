@@ -12,6 +12,7 @@ $rg-red: #ff4d45;
 $rg-blue: #6cc5ff;
 $rg-admin-navbar: #ffffec;
 $rg-yellow: #ffba00;
+$rg-generic-gray: #fafafa;
 
 // generic colors
 $black: black;
@@ -46,12 +47,18 @@ $caption: 0.61803em;
 //navigation size
 $subheading3: 0.9em;
 
+// callout
+$callout :2.7em;
+
 // tracking, leading and kerning
 $kern: 0.06em;
 
 $normal-padding: 10px;
 $small-padding: 5px;
 $tiny-padding: 3px;
+
+// margins
+$margin-ten:10px;
 
 // layout
 .clearboth {clear:both;}
@@ -199,6 +206,12 @@ $iphone-portrait-max: 959px;
                 color: $thatblack;
             }
         }
+
+    .highlight{
+        background:$rg-generic-gray;
+        font-size:$callout;
+    }
+
     }
 }
 
