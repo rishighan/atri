@@ -2,12 +2,12 @@
 %nav.hero-nav.ten.columns
 
   %ul.left.six.columns
-    -@posts.each do |post|
+    -@postheroes.each do |post|
       %li
         %span.infotags= post.title
 
   %ul.right.four.columns
-    -@projects.each do |project|
+    -@projectheroes.each do |project|
       %li
         %span.infotags= project.title
 

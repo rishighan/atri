@@ -4,10 +4,12 @@ class HomeController < ApplicationController
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
     #categories I specify
-    @projects = Post.is_draft("no").projects & Post.hero
-    @posts = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
+    @projectheroes = Post.is_draft("no").projects & Post.hero
+    @postheroes = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
+
     # All posts tagged with everything other than the hero category will be in the main body
     @log = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature"]).page(params[:page]).per(10)
+
     # thanks to centrx, this here takes the id, and categories.title and converts it to a hash
     # I then use this in the view to check for "Highlights" and style it differently
     @ha =@log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
@@ -19,7 +21,9 @@ class HomeController < ApplicationController
 
   def projects
     #render the project template
-    render template: "projects/index"
+    #render template: "home/projects"
+    @projects = Post.is_draft("no").projects
+    @kram = "ASdasdas"
   end
 
   def colophon
@@ -28,4 +32,6 @@ class HomeController < ApplicationController
   def archive
 
   end
+
+
 end

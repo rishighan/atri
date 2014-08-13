@@ -15,7 +15,7 @@ $rg-yellow: #ffba00;
 $rg-generic-gray: #fafafa;
 
 // generic colors
-$black: black;
+$black: #000000;
 $lightblack: #999999;
 $gray: #cccccc;
 $subtlegray: #ffffcc;
@@ -210,6 +210,14 @@ $iphone-portrait-max: 959px;
                 font-family: Montserrat-Regular;
                 color: $thatblack;
             }
+        }
+
+        code{
+            margin: 0;
+            // border: 1px solid $gray;
+            background-color: $rg-generic-gray;
+            border-radius: 3px;
+            padding: 0 2px 0 2px;
         }
 
     }
