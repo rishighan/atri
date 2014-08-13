@@ -13,7 +13,11 @@
 
 %section.posts-container.twelve.columns.offset-by-two
   -@log.each do |log|
+    -log.categories.each do |cat|
+      %span=cat.id
+      %span=cat.title
     %article.post
+      %span=log.id
       %h3=log.title
       %h5=log.created_at.strftime("%d %B, %Y")
       %p=find_and_preserve(markdown(log.content))

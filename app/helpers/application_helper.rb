@@ -41,7 +41,7 @@ def markdown(text)
 end
 
 
-  def getfilename(url)
+def getfilename(url)
     output = File.basename(url)
-  end
+end
 end

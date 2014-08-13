@@ -11,9 +11,9 @@ class Post < ActiveRecord::Base
     accepts_nested_attributes_for :categories
 
     #scope that isolates "heroes" and "projects"
-    scope :hero, -> {Post.includes(:categories).where('categories.title = (?)', "Hero")}
-    scope :projects, -> {Post.includes(:categories).where('categories.title = (?)', "Projects")}
-
+    scope :hero, -> {Post.group_by_category("exactly", ["Hero"])}
+    scope :projects, -> {Post.group_by_category("exactly", ["Projects"])}
+    #scope :highlights, -> {Post.group_by_category("exactly", ["Highlight"])}
 
     #filter posts by category
     def self.group_by_category(action,category)
@@ -23,6 +23,9 @@ class Post < ActiveRecord::Base
 
         when "exclude"
          post = Post.includes(:categories).where('categories.title NOT IN (?)', category).references(:categories)
+
+        when "exactly"
+         post = Post.includes(:categories).where('categories.title = (?)', category)
 
         else
          post = Post.all
