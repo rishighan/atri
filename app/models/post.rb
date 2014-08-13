@@ -36,4 +36,5 @@ class Post < ActiveRecord::Base
         post = Post.where('is_draft = (?)', what )
     end
 
+
 end
