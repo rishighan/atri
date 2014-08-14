@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
     # thanks to centrx, this here takes the id, and categories.title and converts it to a hash
     # I then use this in the view to check for "Highlights" and style it differently
-    @ha =@log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
+    @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
 
     #width and height
 
@@ -26,6 +26,11 @@ class HomeController < ApplicationController
     #render the project template
     #render template: "home/projects"
     @projects = Post.is_draft("no").projects
+  end
+
+  def project
+    @project = Post.find(params[:id])
+    render :projects
   end
 
   def colophon

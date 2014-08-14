@@ -21,6 +21,9 @@ gem 'rouge'
 #use kaminari for pagination
 gem 'kaminari'
 
+#slugs and permalinks
+gem 'friendly_id', '~> 5.0.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

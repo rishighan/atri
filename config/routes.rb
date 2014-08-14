@@ -19,6 +19,7 @@ root 'home#haiku'
 #all other static routes
 #projects
 get 'projects' => 'home#projects'
+get 'projects/:id' => 'home#project', as: :project
 get 'colophon' => 'home#colophon'
 get 'archive'  => 'home#archive'
 
