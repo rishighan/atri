@@ -13,6 +13,9 @@ class HomeController < ApplicationController
     # thanks to centrx, this here takes the id, and categories.title and converts it to a hash
     # I then use this in the view to check for "Highlights" and style it differently
     @ha =@log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
+
+    #width and height
+
   end
 
   def haiku
@@ -23,7 +26,6 @@ class HomeController < ApplicationController
     #render the project template
     #render template: "home/projects"
     @projects = Post.is_draft("no").projects
-    @kram = "ASdasdas"
   end
 
   def colophon
