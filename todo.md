@@ -10,4 +10,6 @@
 + pretty URLS for all resources
 + tests
 
++ on the index page, group posts by date posted.
+
 + deployment using capistrano -> done

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  layout 'site_layout', only: [:index, :projects]
+  layout 'site_layout', only: [:index]
+  layout 'project_page_layout', only: [:project]
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
@@ -29,7 +30,9 @@ class HomeController < ApplicationController
   end
 
   def project
-    @project = Post.find(params[:id])
+    # finds just projects with the supplied Id
+    # built in exception handling for "id not found"
+    @project = Post.projects.find(params[:id])
     render :projects
   end
 
