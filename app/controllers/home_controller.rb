@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  layout 'site_layout', only: [:index]
-  layout 'project_page_layout', only: [:project]
+  layout 'site_layout', only: [:index, :projects]
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
@@ -25,15 +24,15 @@ class HomeController < ApplicationController
 
   def projects
     #render the project template
-    #render template: "home/projects"
     @projects = Post.is_draft("no").projects
+
   end
 
   def project
     # finds just projects with the supplied Id
     # built in exception handling for "id not found"
     @project = Post.projects.find(params[:id])
-    render :projects
+    render layout: "project_page_layout"
   end
 
   def colophon

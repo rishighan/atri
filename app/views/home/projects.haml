@@ -1,5 +1,6 @@
 %section.projects-container.twelve.columns.offset-by-two
   %article.projects
     %ul
-      %li
-        %h2=@project.title
+      -@projects.each do |p|
+        %li=p.title
+

@@ -32,8 +32,17 @@
        <%= f.label :content %> <br/>
        <%= f.text_area(:content, :size => "90x12") %>
 
+     <div class="well">
+       <% if @post.attachments.any? %>
+       <% @post.attachments.all.each do |at| %>
+       <%= image_tag at.picture.url(:thumb) %>
+       <small><%= at.picture.url(:thumb) %></small>
+       <% end %>
+       <% end %>
+     </div>
+
        <div id="attachments">
-        <%= f.fields_for :attachments do |at| %>
+            <%= f.fields_for :attachments do |at| %>
             <%= render 'attachment_fields', :f => at %>
 
         <% end %>

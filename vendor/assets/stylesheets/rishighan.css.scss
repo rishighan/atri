@@ -205,6 +205,11 @@ $iphone-portrait-max: 959px;
     article{
         margin:0 0 30px 0;
 
+        .date{
+            color:$lightblack;
+            font-size:13px;
+            text-transform: uppercase;
+        }
 
         h3{
             font-family: Montserrat-Regular;
