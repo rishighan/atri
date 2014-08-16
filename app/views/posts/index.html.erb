@@ -16,10 +16,13 @@
     <% end %>
     <p>
         <%= markdown(post.content) %>
+        <ul>
         <% post.attachments.each do |at| %>
          <% if at.picture.present? %>
+            <li>
             <%= image_tag at.picture.url(:thumb) %>
             <%= at.picture.url(:original) %>
+            </li>
          <% end %>
         <% end %>
 

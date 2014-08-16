@@ -33,12 +33,16 @@
        <%= f.text_area(:content, :size => "90x12") %>
 
      <div class="well">
+      <ul>
        <% if @post.attachments.any? %>
        <% @post.attachments.all.each do |at| %>
-       <%= image_tag at.picture.url(:thumb) %>
+       <li><%= image_tag at.picture.url(:thumb) %><br/>
+
        <small><%= at.picture.url(:thumb) %></small>
+     </li>
        <% end %>
        <% end %>
+     </ul>
      </div>
 
        <div id="attachments">

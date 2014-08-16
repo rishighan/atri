@@ -1,14 +1,15 @@
 // admin section.
 console.log("Rishi Ghan")
 console.log("----------")
-$(document).ready(setProjectHeroImage)
-$(document).on('page:load', setProjectHeroImage)
+
+
+
 function setProjectHeroImage() {
 
   var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
   var heroBgContainer = document.getElementById('hero-bg'); //container
 
-  console.log(projectHeroBg)
+  //console.log(projectHeroBg)
 
   //set dimensions
   var heroHeight = 510;
@@ -29,3 +30,6 @@ function setProjectHeroImage() {
   heroBgContainer.style.width = heroWidth+"%";
   heroBgContainer.style.overflow = overflow;
 }
+
+$(document).ready(setProjectHeroImage)
+$(document).on('page:load', setProjectHeroImage)
