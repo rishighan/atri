@@ -1,0 +1,62 @@
+=form_for(@post) do |f|
+  -if @post.errors.any?
+    %div.error_explanation
+      %h2=pluralize(@post.errors.count, "error")
+      "prohibited this post from being saved."
+
+      %ul
+        -@post.errors.full_messages.each do |msg|
+          %li=msg
+
+  /title
+  %p
+    =f.label :title
+    %p=f.text_field(:title)
+
+  /categories
+  %p.well
+    =f.label :category
+    %br/
+    =hidden_field_tag "post[category_ids][]", nil
+    -Category.order(:title).each do |cat|
+      %label
+        =check_box_tag("post[category_ids][]", cat.id, cat.id.in?(@post.categories.collect(&:id)))
+        =cat.title
+
+  /content
+  %p
+    =f.label :content
+    %p=f.text_area(:content, size: "90x12")
+
+  /attached images
+  %p=f.label :attachments
+  %div#attachments
+    =f.fields_for :attachments do |at|
+      -if at.object.new_record?
+        =render 'attachment_fields', :f => at
+
+      -unless at.object.new_record?
+        -if at.object.picture?
+          %div.well
+            =link_to image_tag(at.object.picture.url(:thumb))
+            =link_to_remove_association 'Remove', f, {wrapper_class: "well"}
+        -else
+          %div.well
+            =link_to at.picture_file_name, at.object.picture.url
+            =link_to_remove_association 'Remove', f, {wrapper_class: "well"}
+
+    %p=link_to_add_association 'Add another file', f, :attachments
+
+    /markdown reference
+    %p=render "shared/markdownhelp"
+
+    /excerpt
+    %p=f.label :excerpt
+    %p
+      =f.text_area(:excerpt, size: "90x8")
+
+    /submit
+    %p
+      =f.submit
+      =f.submit "Save Draft", name: "draft"
+
