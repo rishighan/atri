@@ -39,11 +39,11 @@
         -if at.object.picture?
           %div.well
             =link_to image_tag(at.object.picture.url(:thumb))
-            =link_to_remove_association 'Remove', f, {wrapper_class: "well"}
+            =link_to_remove_association 'Remove', at, {wrapper_class: "well"}
         -else
           %div.well
             =link_to at.picture_file_name, at.object.picture.url
-            =link_to_remove_association 'Remove', f, {wrapper_class: "well"}
+            =link_to_remove_association 'Remove', at, {wrapper_class: "well"}
 
     %p=link_to_add_association 'Add another file', f, :attachments
 
