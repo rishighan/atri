@@ -4,12 +4,12 @@
   %ul.left.six.columns
     -@postheroes.each do |post|
       %li
-        %span.infotags= post.title
+        %span.tags= post.title
 
   %ul.right.four.columns
     -@projectheroes.each do |project|
       %li
-        %span.infotags= link_to(project.title, project_path(project.id))
+        %span.tags= link_to(project.title, project_path(project.id))
 
 %section.posts-container.twelve.columns.offset-by-two
   -@log.each do |log|

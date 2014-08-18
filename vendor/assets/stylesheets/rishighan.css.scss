@@ -68,6 +68,9 @@ $margin-ten:10px;
     background: $information;
     padding: $small-padding;
     border-bottom: $gray;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 
 }
 
@@ -192,7 +195,7 @@ $iphone-portrait-max: 959px;
         }
     }
 
-    .infotags {
+    .tags {
         background:$rg-yellow;
         padding:$small-padding;
         border-bottom: 1px solid $thatblack;
@@ -310,7 +313,7 @@ $iphone-portrait-max: 959px;
 /* admin */
 .admin {
     h2, h3, h4, h5 {
-        font-family: 'Lato-regular';
+        font-family: 'Muli-regular';
     }
 
     .cat-list{
