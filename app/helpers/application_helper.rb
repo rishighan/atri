@@ -31,7 +31,8 @@ def markdown(text)
     disable_indented_code_blocks: true,
     footnotes:          true,
     fenced_code_blocks: true,
-    highlight:          true
+    highlight:          true,
+    tables:             true
   }
 
   renderer = HTML.new(options)
