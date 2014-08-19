@@ -19,6 +19,7 @@ $black: #000000;
 $lightblack: #999999;
 $gray: #cccccc;
 $subtlegray: #ffffcc;
+$locongray: #ececec;
 $beige: #fffef1;
 $loconbeige: #ffffeb;
 $thatblack: #544c4c;
@@ -214,6 +215,20 @@ $iphone-portrait-max: 959px;
             text-transform: uppercase;
         }
 
+        table{
+            tr{
+                background:$beige;
+                border-bottom:1px solid $locongray;
+
+                th{
+                    padding:10px 0 10px 0;
+                }
+            }
+
+            td{
+                padding:$normal-padding;
+            }
+        }
         h3{
             font-family: Montserrat-Regular;
             color: $thatblack;
@@ -239,6 +254,16 @@ $iphone-portrait-max: 959px;
         p{
             margin: 20px;
             line-height: 35px;
+        }
+
+        table{
+            tr{
+                background:none;
+                border:0 none;
+            }
+            td{
+                padding:0;
+            }
         }
 
     }

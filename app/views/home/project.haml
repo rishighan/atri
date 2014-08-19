@@ -1,4 +1,7 @@
 %section.project-container.twelve.columns.offset-by-two
-  %article
-    %h2=@project.title
-    %p=markdown(@project.content).html_safe
+  %article{:itemscope => "", :itemtype =>"http://schema.org/Article", :class => "twelve columns"}
+    -@project.categories.each do |cat|
+      %ul
+        %li{:itemprop => "genre"}=cat.title
+    %h2{:itemprop => "headline"}=@project.title
+    %p{:itemprop=> "articleBody"}=find_and_preserve(markdown(@project.content)).html_safe
