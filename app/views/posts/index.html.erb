@@ -1,0 +1,35 @@
+<p>
+ <h2>Showing all posts</h2>
+ <h4><%= pluralize(@posts.count, 'post') %> in all</h4>
+</p>
+
+ <% @posts.each do |post| %>
+    <article class="clearfix <%= cycle('even', 'odd') %>">
+    <h2><%= post.title %> </h2>
+
+    <% if post.is_draft == 'yes'%>
+    <span class="infotags">draft</span>
+    <% end %>
+
+    <% post.categories.each do |cat| %>
+    <span class="infotags"><%= (cat.title) unless cat.title.empty? %></span>&nbsp;
+    <% end %>
+    <p>
+        <%= markdown(post.content) %>
+        <ul>
+        <% post.attachments.each do |at| %>
+         <% if at.picture.present? %>
+            <li>
+            <%= image_tag at.picture.url(:thumb) %>
+            <%= at.picture.url(:original) %>
+            </li>
+         <% end %>
+        <% end %>
+
+    </p>
+
+    <%= link_to "Edit Post", edit_post_path(post) %> |
+    <%= link_to "Destroy", post_path(post), method: :delete, data: {confirm: "Delete Post?"} %>
+    </article>
+
+ <% end %>
