@@ -3,7 +3,7 @@ console.log("Rishi Ghan")
 console.log("----------")
 
 
-function setProjectHeroImage() {
+function setProjectHeroImage(callback) {
 
   var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
   var heroBgContainer = document.getElementById('hero-bg'); //container
@@ -35,9 +35,29 @@ function setProjectHeroImage() {
   heroBgContainer.style.backgroundAttachment = bgattachment;
   heroBgContainer.style.backgroundRepeat = repeat;
 
- return imgsrc;
-
 }
 
-$(document).ready(setProjectHeroImage);
+function setDominantColor(targetid){
+
+ // Get the id of the image that you
+ // want the dominant color calculated on.
+ var target = $(targetid),
+ targetWidth = target.width(),
+ targetHeight = target.height(),
+ finalSrc = target.attr('src');
+
+// init colorThief
+ var colorThief = new ColorThief(),
+ finalImg = new Image(targetWidth, targetHeight); // not sure about dimensions
+
+ finalImg.src = window.location.origin+finalSrc;
+ console.log(finalImg.src)
+ console.log(colorThief.getColor(finalImg));
+}
+
+$(document).ready(function(){
+  setProjectHeroImage();
+  setDominantColor('#color-target');
+});
+
 $(document).on('page:load', setProjectHeroImage);

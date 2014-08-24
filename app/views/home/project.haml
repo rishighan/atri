@@ -1,5 +1,5 @@
 %section.project-container.twelve.columns.offset-by-two
-  %article{:itemscope => "", :itemtype =>"http://schema.org/Article", :class => "twelve columns"}
+  %article{:itemscope => "", :itemtype =>"http://schema.org/Article", :class => "twelve columns", :id => "post"}
     -@project.categories.each do |cat|
       %ul
         %li{:itemprop => "genre"}=cat.title
