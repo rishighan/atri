@@ -37,6 +37,7 @@ function setProjectHeroImage(callback) {
 
 }
 
+// get the dominant color or palette
 function setDominantColor(targetid){
 
  // Get the id of the image that you
@@ -46,18 +47,24 @@ function setDominantColor(targetid){
  targetHeight = target.height(),
  finalSrc = target.attr('src');
 
-// init colorThief
+ // init colorThief
  var colorThief = new ColorThief(),
- finalImg = new Image(targetWidth, targetHeight); // not sure about dimensions
+ // have to create an Image object for Color Thief
+ finalImg = new Image(targetWidth, targetHeight);
 
  finalImg.src = window.location.origin+finalSrc;
  console.log(finalImg.src)
  console.log(colorThief.getColor(finalImg));
 }
 
+// one for old times sake.
 $(document).ready(function(){
   setProjectHeroImage();
   setDominantColor('#color-target');
 });
 
-$(document).on('page:load', setProjectHeroImage);
+// and one for the turbo/
+$(document).on('page:load', function(){
+  setProjectHeroImage();
+  setDominantColor('#color-target');
+});
