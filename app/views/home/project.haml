@@ -4,4 +4,5 @@
       %ul
         %li{:itemprop => "genre"}=cat.title
     %h2{:itemprop => "headline"}=@project.title
-    %p{:itemprop=> "articleBody"}=find_and_preserve(markdown(@project.content)).html_safe
+    %p{:itemprop=> "articleBody"}
+      =find_and_preserve(markdown(@project.content)).html_safe

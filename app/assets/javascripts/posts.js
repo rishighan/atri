@@ -3,7 +3,6 @@ console.log("Rishi Ghan")
 console.log("----------")
 
 
-
 function setProjectHeroImage() {
 
   var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
@@ -35,7 +34,10 @@ function setProjectHeroImage() {
   heroBgContainer.style.backgroundPosition = position;
   heroBgContainer.style.backgroundAttachment = bgattachment;
   heroBgContainer.style.backgroundRepeat = repeat;
+
+ return imgsrc;
+
 }
 
-$(document).ready(setProjectHeroImage)
-$(document).on('page:load', setProjectHeroImage)
+$(document).ready(setProjectHeroImage);
+$(document).on('page:load', setProjectHeroImage);

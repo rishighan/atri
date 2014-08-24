@@ -11452,23 +11452,33 @@ var nav = 'site-nav';
 var foo = document.getElementById(foo);
 console.log(foo)
 
-document.onload = function setProjectHeroImage() {
+;
+// admin section.
+console.log("Rishi Ghan")
+console.log("----------")
+
+
+
+function setProjectHeroImage() {
 
   var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
   var heroBgContainer = document.getElementById('hero-bg'); //container
 
-  console.log(projectHeroBg)
+  //console.log(projectHeroBg)
 
   //set dimensions
-  var heroHeight = 510;
-  var heroWidth = 100;
+  var heroHeight = 510,
+  heroWidth = 100,
   //set margin
-  var margin = "0 0 -510px 0";
-  var bgSize = "cover";
+  margin = "0 0 -510px 0",
+  bgSize = "cover",
+  position ="center center",
+  repeat = "no-repeat",
+  bgattachment = "fixed"
   //overflow
-  var overflow = "hidden";
+  overflow = "hidden",
   // get url
-  var imgsrc = projectHeroBg.getAttribute('data-src');
+  imgsrc = projectHeroBg.getAttribute('data-src');
 
   // change style
   heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
@@ -11477,13 +11487,13 @@ document.onload = function setProjectHeroImage() {
   heroBgContainer.style.height = heroHeight+"px";
   heroBgContainer.style.width = heroWidth+"%";
   heroBgContainer.style.overflow = overflow;
+  heroBgContainer.style.backgroundPosition = position;
+  heroBgContainer.style.backgroundAttachment = bgattachment;
+  heroBgContainer.style.backgroundRepeat = repeat;
 }
-;
-// admin section.
-console.log("Rishi Ghan")
-console.log("----------")
 
-
+$(document).ready(setProjectHeroImage)
+$(document).on('page:load', setProjectHeroImage)
 ;
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.

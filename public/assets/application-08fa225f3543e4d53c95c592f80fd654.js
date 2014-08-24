@@ -11334,14 +11334,230 @@ return jQuery;
   };
 
 }).call(this);
+(function($) {
+
+  var cocoon_element_counter = 0;
+
+  var create_new_id = function() {
+    return (new Date().getTime() + cocoon_element_counter++);
+  }
+
+  var newcontent_braced = function(id) {
+    return '[' + id + ']$1';
+  }
+
+  var newcontent_underscord = function(id) {
+    return '_' + id + '_$1';
+  }
+
+  $(document).on('click', '.add_fields', function(e) {
+    e.preventDefault();
+    var $this                 = $(this),
+        assoc                 = $this.data('association'),
+        assocs                = $this.data('associations'),
+        content               = $this.data('association-insertion-template'),
+        insertionMethod       = $this.data('association-insertion-method') || $this.data('association-insertion-position') || 'before',
+        insertionNode         = $this.data('association-insertion-node'),
+        insertionTraversal    = $this.data('association-insertion-traversal'),
+        count                 = parseInt($this.data('count'), 10),
+        regexp_braced         = new RegExp('\\[new_' + assoc + '\\](.*?\\s)', 'g'),
+        regexp_underscord     = new RegExp('_new_' + assoc + '_(\\w*)', 'g'),
+        new_id                = create_new_id(),
+        new_content           = content.replace(regexp_braced, newcontent_braced(new_id)),
+        new_contents          = [];
+
+
+    if (new_content == content) {
+      regexp_braced     = new RegExp('\\[new_' + assocs + '\\](.*?\\s)', 'g');
+      regexp_underscord = new RegExp('_new_' + assocs + '_(\\w*)', 'g');
+      new_content       = content.replace(regexp_braced, newcontent_braced(new_id));
+    }
+
+    new_content = new_content.replace(regexp_underscord, newcontent_underscord(new_id));
+    new_contents = [new_content];
+
+    count = (isNaN(count) ? 1 : Math.max(count, 1));
+    count -= 1;
+
+    while (count) {
+      new_id      = create_new_id();
+      new_content = content.replace(regexp_braced, newcontent_braced(new_id));
+      new_content = new_content.replace(regexp_underscord, newcontent_underscord(new_id));
+      new_contents.push(new_content);
+
+      count -= 1;
+    }
+
+    if (insertionNode){
+      if (insertionTraversal){
+        insertionNode = $this[insertionTraversal](insertionNode);
+      } else {
+        insertionNode = insertionNode == "this" ? $this : $(insertionNode);
+      }
+    } else {
+      insertionNode = $this.parent();
+    }
+
+    $.each(new_contents, function(i, node) {
+      var contentNode = $(node);
+
+      insertionNode.trigger('cocoon:before-insert', [contentNode]);
+
+      // allow any of the jquery dom manipulation methods (after, before, append, prepend, etc)
+      // to be called on the node.  allows the insertion node to be the parent of the inserted
+      // code and doesn't force it to be a sibling like after/before does. default: 'before'
+      var addedContent = insertionNode[insertionMethod](contentNode);
+
+      insertionNode.trigger('cocoon:after-insert', [contentNode]);
+    });
+  });
+
+  $(document).on('click', '.remove_fields.dynamic, .remove_fields.existing', function(e) {
+    var $this = $(this),
+        wrapper_class = $this.data('wrapper-class') || 'nested-fields',
+        node_to_delete = $this.closest('.' + wrapper_class),
+        trigger_node = node_to_delete.parent();
+
+    e.preventDefault();
+
+    trigger_node.trigger('cocoon:before-remove', [node_to_delete]);
+
+    var timeout = trigger_node.data('remove-timeout') || 0;
+
+    setTimeout(function() {
+      if ($this.hasClass('dynamic')) {
+          node_to_delete.remove();
+      } else {
+          $this.prev("input[type=hidden]").val("1");
+          node_to_delete.hide();
+      }
+      trigger_node.trigger('cocoon:after-remove', [node_to_delete]);
+    }, timeout);
+  });
+
+  $('.remove_fields.existing.destroyed').each(function(i, obj) {
+    var $this = $(this),
+        wrapper_class = $this.data('wrapper-class') || 'nested-fields';
+
+    $this.closest('.' + wrapper_class).hide();
+  });
+
+})(jQuery);
+/*global window, document*/
+
+/*
+ * Get the average color of an image by painting it to a canvas element
+ * and sampling (some of) the pixel color values.
+ *
+ * A jQuery-wrapped, easier to re-use version of this StackOverflow answer:
+ * http://stackoverflow.com/questions/2541481/get-average-color-of-image-via-javascript
+ */
+
+(function ($) {
+
+    $.fn.averageColor = function () {
+        var blockSize = 5, // only sample every 5 pixels
+            defaultRGB = {r: 0, g: 0, b: 0}, // for non-supporting environments
+            canvas = document.createElement('canvas'),
+            context = canvas.getContext && canvas.getContext('2d'),
+            data, width, height,
+            i = -4,
+            length,
+            rgb = {r: 0, g: 0, b: 0},
+            count = 0;
+
+        if (!context) {
+            return defaultRGB;
+        }
+
+        height = canvas.height = this.naturalHeight || this.offsetHeight || this.height;
+        width = canvas.width = this.naturalWidth || this.offsetWidth || this.width;
+
+        context.drawImage(this[0], 0, 0);
+
+        try {
+            data = context.getImageData(0, 0, width, height);
+        } catch (e) {
+            // security error, the image was served from a different domain
+            return defaultRGB;
+        }
+
+        length = data.data.length;
+
+        while ((i += blockSize * 4) < length) {
+            count += 1;
+            rgb.r += data.data[i];
+            rgb.g += data.data[i + 1];
+            rgb.b += data.data[i + 2];
+        }
+
+        // ~~ used to floor values
+        rgb.r = ~~(rgb.r / count);
+        rgb.g = ~~(rgb.g / count);
+        rgb.b = ~~(rgb.b / count);
+
+        return rgb;
+    };
+
+    $.fn.averageColorAsString = function () {
+        var rgb = this.averageColor();
+        return 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')';
+    };
+
+}(window.jQuery || window.Zepto));
 (function() {
 
 
 }).call(this);
-(function() {
+var nav = 'site-nav';
+
+var foo = document.getElementById(foo);
+console.log(foo)
+
+;
+// admin section.
+console.log("Rishi Ghan")
+console.log("----------")
 
 
-}).call(this);
+
+function setProjectHeroImage() {
+
+  var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
+  var heroBgContainer = document.getElementById('hero-bg'); //container
+
+  //console.log(projectHeroBg)
+
+  //set dimensions
+  var heroHeight = 510,
+  heroWidth = 100,
+  //set margin
+  margin = "0 0 -510px 0",
+  bgSize = "cover",
+  position ="center center",
+  repeat = "no-repeat",
+  bgattachment = "fixed"
+  //overflow
+  overflow = "hidden",
+  // get url
+  imgsrc = projectHeroBg.getAttribute('data-src');
+
+  // change style
+  heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
+  heroBgContainer.style.backgroundSize =  bgSize;
+  heroBgContainer.style.margin = margin;
+  heroBgContainer.style.height = heroHeight+"px";
+  heroBgContainer.style.width = heroWidth+"%";
+  heroBgContainer.style.overflow = overflow;
+  heroBgContainer.style.backgroundPosition = position;
+  heroBgContainer.style.backgroundAttachment = bgattachment;
+  heroBgContainer.style.backgroundRepeat = repeat;
+
+  return imgsrc;
+}
+
+$(document).ready(setProjectHeroImage);
+$(document).on('page:load', setProjectHeroImage);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -11354,6 +11570,8 @@ return jQuery;
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
 
 
 

@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require quantize
 //= require turbolinks
 //= require cocoon
+
+//= require color-thief
 //= require_tree .
