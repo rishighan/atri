@@ -18,11 +18,6 @@ function toggleFixed(targetid){
 
 function setProjectHeroImage(callback) {
 
-  var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
-  var heroBgContainer = document.getElementById('hero-bg'); //container
-
-  //console.log(projectHeroBg)
-
   //set dimensions
   var heroHeight = 510,
   heroWidth = 100,
@@ -33,21 +28,33 @@ function setProjectHeroImage(callback) {
   repeat = "no-repeat",
   bgattachment = "fixed"
   //overflow
-  overflow = "hidden",
-  // get url
-  imgsrc = projectHeroBg.getAttribute('data-src');
+  overflow = "hidden";
 
-  // change style
-  heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
-  heroBgContainer.style.backgroundSize =  bgSize;
-  heroBgContainer.style.margin = margin;
-  heroBgContainer.style.height = heroHeight+"px";
-  heroBgContainer.style.width = heroWidth+"%";
-  heroBgContainer.style.overflow = overflow;
-  heroBgContainer.style.backgroundPosition = position;
-  heroBgContainer.style.backgroundAttachment = bgattachment;
-  heroBgContainer.style.backgroundRepeat = repeat;
+  if(!typeof(document.getElementById('project-hero-bg')==undefined)){
+    // hero image
+    var projectHeroBg = document.getElementById('project-hero-bg'),
 
+    // get url
+    imgsrc = projectHeroBg.getAttribute('data-src');
+    heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
+  }
+
+  if(!typeof(document.getElementById('hero-bg')==undefined)){
+    var heroBgContainer = document.getElementById('hero-bg'); //container
+
+    // change style
+    heroBgContainer.style.backgroundSize =  bgSize;
+    heroBgContainer.style.margin = margin;
+    heroBgContainer.style.height = heroHeight+"px";
+    heroBgContainer.style.width = heroWidth+"%";
+    heroBgContainer.style.overflow = overflow;
+    heroBgContainer.style.backgroundPosition = position;
+    heroBgContainer.style.backgroundAttachment = bgattachment;
+    heroBgContainer.style.backgroundRepeat = repeat;
+  }
+
+  //console.log(projectHeroBg)
+   return imgsrc;
 }
 
 // get the dominant color or palette
@@ -73,19 +80,25 @@ function setDominantColor(targetid){
 
 // one for old times sake.
 $(document).ready(function(){
-  setProjectHeroImage();
-  setDominantColor('#color-target');
+  if(!typeof(setProjectHeroImage()==undefined))
+  {
+    setProjectHeroImage();
+    setDominantColor('#color-target');
+  }
 
 });
 
  $(window).bind('scroll', function(){
      toggleFixed('#site-nav');
-     console.log("asdas")
+
   })
 
 // and one for the turbo/
 $(document).on('page:load', function(){
-  setProjectHeroImage();
-  setDominantColor('#color-target');
+  if(!typeof(setProjectHeroImage()==undefined))
+  {
+    setProjectHeroImage();
+    setDominantColor('#color-target');
+  }
 
 });
