@@ -76,14 +76,16 @@ $(document).ready(function(){
   setProjectHeroImage();
   setDominantColor('#color-target');
 
-
-  $(window).bind('scroll', function(){
-     toggleFixed('#site-nav');
-  })
 });
+
+ $(window).bind('scroll', function(){
+     toggleFixed('#site-nav');
+     console.log("asdas")
+  })
 
 // and one for the turbo/
 $(document).on('page:load', function(){
   setProjectHeroImage();
   setDominantColor('#color-target');
+
 });
