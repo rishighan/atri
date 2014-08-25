@@ -8,13 +8,11 @@ console.log("----------")
 function toggleFixed(targetid){
    var scrollamount = 510;
    if($(window).scrollTop() > scrollamount){
-     $(targetid).class('.fixed')
+     $(targetid).addClass('fixed')
    }
    else{
-      $(targetid).removeClass('.fixed')
+      $(targetid).removeClass('fixed')
    }
-   }
-
 }
 
 
@@ -77,7 +75,11 @@ function setDominantColor(targetid){
 $(document).ready(function(){
   setProjectHeroImage();
   setDominantColor('#color-target');
-  toggleFixed('#site-nav');
+
+
+  $(window).bind('scroll', function(){
+     toggleFixed('#site-nav');
+  })
 });
 
 // and one for the turbo/
