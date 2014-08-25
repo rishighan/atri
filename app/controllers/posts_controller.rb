@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
    @post = Post.new(post_params)
-    if params[:draft]
+    if params.has_key?(:draft)
       @post.update_attribute(:is_draft , 'yes')
     else
       @post.update_attribute(:is_draft, 'no')
@@ -49,20 +49,20 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      if params[:commit]
-        if @post.update(post_params)
+      case params[:commit]
+       when "Save Draft"
+          @post.update_attribute(:is_draft, "yes")
+          format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+          format.json { head :no_content }
+       when "Update Post"
           @post.update_attribute(:is_draft, "no")
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
           format.json { head :no_content }
-        else
-          format.html { render action: 'edit' }
-          format.json { render json: @post.errors, status: :unprocessable_entity }
-        end
-      else
-        @post.update_attribute(:is_draft, "yes")
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { head :no_content }
+       else
+        format.html { render :action => "edit" }
+        format.json { render :json => @post.errors, :status => :unprocessable_entity }
       end
+
     end
   end
 
