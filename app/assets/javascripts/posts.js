@@ -6,12 +6,16 @@ console.log("----------")
 // remove fixed positioning and
 // float the nav according to scroll amount.
 function toggleFixed(targetid){
-   var scrollamount = 510;
+   var scrollamount = 490;
    if($(window).scrollTop() > scrollamount){
-     $(targetid).addClass('fixed')
+     $(targetid).css({"color":"#CCC", "position": "fixed"}).animate({
+      fontSize:"0.9em"
+     },30)
    }
    else{
-      $(targetid).removeClass('fixed')
+      $(targetid).css({"color":"#444", "position": "relative"}).animate({
+      fontSize:"14px"
+     },0)
    }
 }
 
