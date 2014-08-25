@@ -3,6 +3,21 @@ console.log("Rishi Ghan")
 console.log("----------")
 
 
+// remove fixed positioning and
+// float the nav according to scroll amount.
+function toggleFixed(targetid){
+   var scrollamount = 510;
+   if($(window).scrollTop() > scrollamount){
+     $(targetid).class('.fixed')
+   }
+   else{
+      $(targetid).removeClass('.fixed')
+   }
+   }
+
+}
+
+
 function setProjectHeroImage(callback) {
 
   var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
@@ -53,14 +68,16 @@ function setDominantColor(targetid){
  finalImg = new Image(targetWidth, targetHeight);
 
  finalImg.src = window.location.origin+finalSrc;
- console.log(finalImg.src)
- console.log(colorThief.getColor(finalImg));
+ //console.log(finalImg.src)
+ return colorThief.getColor(finalImg);
+ //console.log(colorThief.getPalette(finalImg,8));
 }
 
 // one for old times sake.
 $(document).ready(function(){
   setProjectHeroImage();
   setDominantColor('#color-target');
+  toggleFixed('#site-nav');
 });
 
 // and one for the turbo/
