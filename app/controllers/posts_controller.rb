@@ -49,15 +49,14 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      Post.update(@post.id, post_params)
       case params[:commit]
        when "Save Draft"
           @post.update_attribute(:is_draft, "yes")
-          Post.update(@post.id, post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
           format.json { head :no_content }
        when "Update Post"
           @post.update_attribute(:is_draft, "no")
-           Post.update(@post.id, post_params)
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
           format.json { head :no_content }
        else
