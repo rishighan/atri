@@ -62,7 +62,7 @@ end
         format.html { render :action => "edit" }
         format.json { render :json => @post.errors, :status => :unprocessable_entity }
       end
-
+      @post.update(post_params)
     end
   end
 

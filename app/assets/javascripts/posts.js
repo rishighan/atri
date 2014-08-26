@@ -34,20 +34,17 @@ function setProjectHeroImage(callback) {
   //overflow
   overflow = "hidden";
 
-  if(!typeof(document.getElementById('project-hero-bg')==undefined)){
+
     // hero image
     var projectHeroBg = document.getElementById('project-hero-bg'),
 
     // get url
-    imgsrc = projectHeroBg.getAttribute('data-src');
-    heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
-  }
-
-  if(!typeof(document.getElementById('hero-bg')==undefined)){
-    var heroBgContainer = document.getElementById('hero-bg'); //container
+    imgsrc = projectHeroBg.getAttribute('data-src'),
+    heroBgContainer = document.getElementById('hero-bg'); //container
 
     // change style
     heroBgContainer.style.backgroundSize =  bgSize;
+    heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
     heroBgContainer.style.margin = margin;
     heroBgContainer.style.height = heroHeight+"px";
     heroBgContainer.style.width = heroWidth+"%";
@@ -55,7 +52,7 @@ function setProjectHeroImage(callback) {
     heroBgContainer.style.backgroundPosition = position;
     heroBgContainer.style.backgroundAttachment = bgattachment;
     heroBgContainer.style.backgroundRepeat = repeat;
-  }
+
 
   //console.log(projectHeroBg)
    return imgsrc;
@@ -84,11 +81,10 @@ function setDominantColor(targetid){
 
 // one for old times sake.
 $(document).ready(function(){
-  if(!typeof(setProjectHeroImage()==undefined))
-  {
+
     setProjectHeroImage();
     setDominantColor('#color-target');
-  }
+
 
 });
 
@@ -99,10 +95,9 @@ $(document).ready(function(){
 
 // and one for the turbo/
 $(document).on('page:load', function(){
-  if(!typeof(setProjectHeroImage()==undefined))
-  {
+
     setProjectHeroImage();
     setDominantColor('#color-target');
-  }
+
 
 });
