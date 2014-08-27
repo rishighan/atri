@@ -8,14 +8,10 @@ console.log("----------")
 function toggleFixed(targetid){
    var scrollamount = 490;
    if($(window).scrollTop() > scrollamount){
-     $(targetid).css({"color":"#CCC", "position": "fixed"}).animate({
-      fontSize:"0.9em"
-     },30)
+     $(targetid).css({"color":"#CCC", "position": "fixed", "font-size": "0.9em"})
    }
    else{
-      $(targetid).css({"color":"#444", "position": "relative"}).animate({
-      fontSize:"14px"
-     },0)
+      $(targetid).css({"color":"#444", "position": "relative", "font-size": "14px"})
    }
 }
 
