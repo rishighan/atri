@@ -14,7 +14,6 @@ class HomeController < ApplicationController
     # I then use this in the view to check for "Highlights" and style it differently
     @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
 
-    #width and height
 
   end
 
