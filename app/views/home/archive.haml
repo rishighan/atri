@@ -1,0 +1,5 @@
+%section.archive-container.twelve.columns.offset-by-two
+  -@archive.each do |month, posts|
+    %h3=month.strftime("%B %Y")
+    -posts.each do |post|
+      %p=post.title
