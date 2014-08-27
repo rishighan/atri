@@ -21,6 +21,9 @@ gem 'rouge'
 #use kaminari for pagination
 gem 'kaminari'
 
+#elasticsearch for search
+gem 'elasticsearch-rails'
+
 #slugs and permalinks
 gem 'friendly_id', '~> 5.0.0'
 
