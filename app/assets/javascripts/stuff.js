@@ -3,6 +3,7 @@ var arr = [1,2,3,1,3,4,5,7,8,5,2]
 
 function listops(list){
 
+ this.list = list;
 
 }
 
