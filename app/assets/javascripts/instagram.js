@@ -4,13 +4,16 @@
 
 var jiff = function(){
  var clientid = "9f748070d00748cf8c845f874800ab00",
-     clientsecret = "436bcc784d874a9bb3a450eb138b3193";
+     clientsecret = "436bcc784d874a9bb3a450eb138b3193",
+     token = "4477253.9f74807.ad99d75537254ebea3bef853b31954d1"
 
 }
 
 jiff.prototype = {
 
   start: function(url, callback){
+    // sample URL:
+    // https://instagram.com/oauth/authorize/?client_id=9f748070d00748cf8c845f874800ab00&redirect_uri=REDIRECT-URI&response_type=token
     var request = new XMLHttpRequest();
     request.open("GET", url);
     // handle the event

@@ -22,6 +22,7 @@ get 'projects' => 'home#projects'
 get 'project/:id' => 'home#project', as: :project
 get 'colophon' => 'home#colophon'
 get 'archive'  => 'home#archive'
+get 'photolog' => "home#photolog"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
