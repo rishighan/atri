@@ -37,4 +37,4 @@ jiff.prototype = {
 }
 
 var foo = new jiff();
-foo.start('https://api.instagram.com/v1/media/popular?access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1', foo.spill)
+foo.start('https://instagram.com/oauth/authorize/?client_id=9f748070d00748cf8c845f874800ab00&redirect_uri=http://rishighan/com/photolog&response_type=token', foo.spill)
