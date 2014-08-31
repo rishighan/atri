@@ -12,6 +12,10 @@ var jiff = function(){
 
 jiff.prototype = {
 
+  init: function(clientid, redirect_uri){
+      var url = "https://instagram.com/oauth/authorize/?client_id="+clientid+"&redirect_uri="+redirect_uri+"&response_type=token";
+      window.location.href = url;
+  }
   start: function(url, callback){
     // sample URL:
     // http://rishighan.com/photolog/#access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1
@@ -37,4 +41,4 @@ jiff.prototype = {
 }
 
 var foo = new jiff();
-foo.start('https://instagram.com/oauth/authorize/?client_id=9f748070d00748cf8c845f874800ab00&redirect_uri=http://rishighan/com/photolog&response_type=token', foo.spill)
+foo.init("9f748070d00748cf8c845f874800ab00", "http://rishighan.com/photolog");
