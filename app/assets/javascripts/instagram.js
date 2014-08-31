@@ -5,7 +5,8 @@
 var jiff = function(){
  var clientid = "9f748070d00748cf8c845f874800ab00",
      clientsecret = "436bcc784d874a9bb3a450eb138b3193",
-     token = "4477253.9f74807.ad99d75537254ebea3bef853b31954d1"
+     token = "4477253.9f74807.ad99d75537254ebea3bef853b31954d1",
+     code ="a075c0a1db434d3fa03a61b3117c777c"
 
 }
 
@@ -14,6 +15,7 @@ jiff.prototype = {
   start: function(url, callback){
     // sample URL:
     // http://rishighan.com/photolog/#access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1
+    // popular pictures: https://api.instagram.com/v1/media/popular?access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1
     var request = new XMLHttpRequest();
     request.open("GET", url);
     // handle the event
@@ -33,3 +35,6 @@ jiff.prototype = {
   }
 
 }
+
+var foo = new jiff();
+foo.start('https://api.instagram.com/v1/media/popular?access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1', foo.spill)
