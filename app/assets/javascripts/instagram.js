@@ -41,4 +41,3 @@ jiff.prototype = {
 }
 
 var foo = new jiff();
-foo.init("9f748070d00748cf8c845f874800ab00", "http://rishighan.com/photolog");
