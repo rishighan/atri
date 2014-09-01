@@ -15,6 +15,6 @@
 //= require quantize
 //= require turbolinks
 //= require cocoon
-//= require instagram
+
 //= require color-thief
 //= require_tree .

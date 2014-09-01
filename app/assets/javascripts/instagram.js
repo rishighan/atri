@@ -2,42 +2,42 @@
 // rishi ghan
 // ninth muse and the usuals
 
-var jiff = function(){
- var clientid = "9f748070d00748cf8c845f874800ab00",
-     clientsecret = "436bcc784d874a9bb3a450eb138b3193",
-     token = "4477253.9f74807.ad99d75537254ebea3bef853b31954d1",
-     code ="a075c0a1db434d3fa03a61b3117c777c"
+//Details:
+//clientid: 9f748070d00748cf8c845f874800ab00
+//redirect_uri: http://rishighan.com/photolog
 
-}
 
-jiff.prototype = {
+//self calling function
+var Instashizzle = function(){}
 
-  init: function(clientid, redirect_uri){
-      var url = "https://instagram.com/oauth/authorize/?client_id="+clientid+"&redirect_uri="+redirect_uri+"&response_type=token";
-      window.location.href = url;
+Instashizzle.prototype = {
+
+  init: function(options){
+    if(options){
+      this.url = "https://instagram.com/oauth/authorize/?client_id="+options.clientid+"&redirect_uri="+options.redirect_uri+"&response_type=token";
+    }
+    this.authenticate(this.url);
   },
-  start: function(url, callback){
-    // sample URL:
-    // http://rishighan.com/photolog/#access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1
-    // popular pictures: https://api.instagram.com/v1/media/popular?access_token=4477253.9f74807.ad99d75537254ebea3bef853b31954d1
-    var request = new XMLHttpRequest();
-    request.open("GET", url);
-    // handle the event
-    request.onreadystatechange = function(){
-      if(request.readyState == 4 && request.status == 200){
-        callback(request.responseText)
 
+  authenticate: function(url){
+    window.location.replace(url);
+    this.connect(this.getToken());
+  },
+
+  getToken: function(){
+    var hash = window.location.hash,
+        regex = "[^\#access_token\=](.*)",
+        token = [];
+    if(hash){
+      token = hash.match(regex);
+
+      if(token){
+        return token[1];
+      }
+      else{
+        return false;
       }
     }
-    request.send(null);
-  },
-
-  spill: function(response){
-
-    console.log(response);
 
   }
-
 }
-
-var foo = new jiff();
