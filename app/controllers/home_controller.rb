@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout 'site_layout', only: [:index, :projects]
+  layout 'site_layout', only: [:index, :projects, :photolog]
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
@@ -32,6 +32,11 @@ class HomeController < ApplicationController
     # built in exception handling for "id not found"
     @project = Post.projects.find(params[:id])
     render layout: "project_page_layout"
+  end
+
+  def photolog
+    # frishi/4477253
+    @pictures = Instagram.user_recent_media(4477253)
   end
 
   def colophon

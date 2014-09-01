@@ -301,6 +301,15 @@ $iphone-portrait-max: 959px;
     }
 }
 
+// Instagram page / photolog
+#instagram-container{
+    ul{
+        li{
+            img{margin: 0 0 $margin-ten 0;}
+          }
+    }
+}
+
 /* Poetry page */
 .haiku {
     font-family: Bitter-bold;

@@ -1,0 +1,6 @@
+%section{id: "instagram-container", class: "twelve columns offset-by-two"}
+  %ul
+    -@pictures.each do  |picture|
+      %li
+        =link_to image_tag(picture.images.standard_resolution.url, {class: "twelve columns"}), picture.link
+
