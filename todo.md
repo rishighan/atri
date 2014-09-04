@@ -7,7 +7,7 @@
 + drafts -> in progress
 + archival feature -> *
 + filtering the posts in the CMS by tags
-+ pretty URLS for all resources
++ pretty URLS for all resources -> done
 + tests
 
 + on the index page, group posts by date posted.
