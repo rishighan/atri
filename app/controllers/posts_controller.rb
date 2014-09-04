@@ -49,7 +49,7 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      Post.update(@post.id, post_params)
+      Post.friendly.update(@post.id, post_params)
       case params[:commit]
        when "Save Draft"
           @post.update_attribute(:is_draft, "yes")
