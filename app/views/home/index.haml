@@ -9,7 +9,7 @@
   %ul.right.four.columns
     -@projectheroes.each do |project|
       %li
-        %span.tags= link_to(project.title, project_path(project.id))
+        %span.tags= link_to(project.title, project_path(project.friendly_id))
 
 %section.posts-container.twelve.columns.offset-by-two
   -@log.each do |log|

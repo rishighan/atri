@@ -30,7 +30,7 @@ class HomeController < ApplicationController
   def project
     # finds just projects with the supplied Id
     # built in exception handling for "id not found"
-    @project = Post.projects.find(params[:id])
+    @project = Post.friendly.projects.find(params[:id])
     render layout: "project_page_layout"
   end
 

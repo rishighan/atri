@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-
+    include FriendlyId
+    friendly_id :title, use:[:slugged, :I18n]
     validates :title, presence: true
     validates :content, presence: true
     validates :excerpt, presence: true
