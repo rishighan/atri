@@ -6,8 +6,9 @@ console.log("----------")
 // remove fixed positioning and
 // float the nav according to scroll amount.
 function toggleFixed(targetid){
-   var scrollamount = 490;
-   if($(window).scrollTop() > scrollamount){
+   var scrollamount = 490,
+       windowWidth = 700;
+   if($(window).scrollTop() > scrollamount && $(window).innerWidth() > windowWidth){
      $(targetid).css({"color":"#CCC", "position": "fixed", "font-size": "0.9em", "z-index": "99"})
    }
    else{
