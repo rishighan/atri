@@ -1,5 +1,8 @@
 class Post < ActiveRecord::Base
     include FriendlyId
+    include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
+
     friendly_id :title, use:[:slugged, :I18n]
     validates :title, presence: true
     validates :content, presence: true

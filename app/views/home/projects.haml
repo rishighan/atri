@@ -2,5 +2,7 @@
   %article.projects
     %ul
       -@projects.each do |p|
-        %li=p.title
+        %li
+          %h3=p.title
+          %span=p.excerpt
 

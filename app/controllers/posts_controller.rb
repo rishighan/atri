@@ -14,6 +14,11 @@ class PostsController < ApplicationController
   def show
   end
 
+  def search
+    @search_results = Post.search(query:{match:{title: params[:search_term]}}).records
+  end
+
+
   # GET /posts/new
   def new
     @post = Post.new

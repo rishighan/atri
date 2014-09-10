@@ -26,6 +26,7 @@ gem 'kaminari'
 
 #elasticsearch for search
 gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
 #slugs and permalinks
 gem 'friendly_id', '~> 5.0.0'
