@@ -8,7 +8,7 @@ console.log("----------")
 function toggleFixed(targetid){
    var scrollamount = 490;
    if($(window).scrollTop() > scrollamount){
-     $(targetid).css({"color":"#CCC", "position": "fixed", "font-size": "0.9em"})
+     $(targetid).css({"color":"#CCC", "position": "fixed", "font-size": "0.9em", "z-index": "99"})
    }
    else{
       $(targetid).css({"color":"#444", "position": "relative", "font-size": "14px"})
