@@ -136,7 +136,6 @@ $iphone-portrait-max: 959px;
 {
     font-family: Montserrat-Regular;
     text-transform: uppercase;
-    z-index:9;
 
     ul {
         margin: 10px 0 0 0;
@@ -547,8 +546,7 @@ footer{
 @media only screen and (max-width: 479px) {
     // project container
      .project-container{
-        position:relative;
-        left:-20px;
+        article{position:relative; left:-20px;}
      }
 
      // hero nav on the home page
