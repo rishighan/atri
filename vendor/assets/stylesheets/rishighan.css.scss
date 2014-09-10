@@ -470,6 +470,10 @@ footer{
 /* Smaller than standard 960 (devices and browsers) */
 @media all and (max-width: $iphone-portrait-max) {
 
+    .hero-nav{
+        margin:240px 0auto;
+    }
+
    .admin-nav ul li{ clear:both; }
    .admin-nav-container {
         background-color: $rg-admin-navbar;
@@ -485,7 +489,8 @@ footer{
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: $iphone-portrait-max) {
 
-      // hero nav on the home page
+
+     // hero nav on the home page
     .hero-nav{
         margin:40px auto;
             .left{
