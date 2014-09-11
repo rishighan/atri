@@ -14,8 +14,6 @@ class HomeController < ApplicationController
     # I then use this in the view to check for "Highlights" and style it differently
     @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
 
-
-
   end
 
   def haiku
@@ -25,7 +23,6 @@ class HomeController < ApplicationController
   def projects
     #render the project template
     @projects = Post.is_draft("no").projects
-
   end
 
   def project
@@ -38,6 +35,11 @@ class HomeController < ApplicationController
   def photolog
     # frishi/4477253
     @pictures = Instagram.user_recent_media(4477253)
+  end
+
+  def sitemap
+    @posts = Post.is_draft("no").all
+    @categories = Category.all
   end
 
   def colophon
