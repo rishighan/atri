@@ -404,6 +404,11 @@ $iphone-portrait-max: 959px;
       input,textarea {border:1px solid $rg-red;}
       label {color:$rg-red;}
     }
+
+    form{
+        input[type="text"]{display:inline;}
+    }
+
     article {
         margin: 0 0 20px 0px;
         padding: $normal-padding;

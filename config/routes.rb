@@ -13,8 +13,8 @@ end
 # See how all your routes lay out with "rake routes".
 
 # You can have the root of your site routed with "root"
-get  'dev' => 'home#index'
-root 'home#haiku'
+get  'haiku' => 'home#haiku'
+root 'home#index'
 
 #all other static routes
 #projects
