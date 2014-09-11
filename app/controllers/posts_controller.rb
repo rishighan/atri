@@ -6,18 +6,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.friendly.all
+    if params[:search_term].present?
+      @posts = Post.search(query:{match:{title: params[:search_term]}}).records
+    else
+      @posts = Post.friendly.all
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
   end
-
-  def search
-    @search_results = Post.search(query:{match:{title: params[:search_term]}}).records
-  end
-
 
   # GET /posts/new
   def new
