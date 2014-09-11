@@ -7,10 +7,7 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
     end
 
     @posts.each do |post|
-        xml.publish_date post.created_at
-        xml.title post.title
-        xml.excerpt post.excerpt
-        xml.content post.content
+        xml.lastmod post.created_at
         xml.url do
             xml.loc post_url(post)
             xml.priority 1.0
