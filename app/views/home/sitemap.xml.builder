@@ -1,9 +1,6 @@
 xml.instruct!
 xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
-    xml.author "Rishi Ghan"
-    xml.company "The Ninth Muse"
-    xml.vocation "Web Developer"
-    xml.status "Consolidating"
+
     xml.url do
       xml.loc "http://rishighan.com"
       xml.priority 1.0
