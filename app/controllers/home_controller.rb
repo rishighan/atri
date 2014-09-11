@@ -8,8 +8,8 @@ class HomeController < ApplicationController
     @postheroes = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
 
     # All posts tagged with everything other than the hero category will be in the main body
-    @log = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature"]).page(params[:page]).per(10)
-    @log.desc
+    @log = Post.desc.order("posts.created_at DESC").is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature"]).page(params[:page]).per(10)
+
     # thanks to centrx, this here takes the id, and categories.title and converts it to a hash
     # I then use this in the view to check for "Highlights" and style it differently
     @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }.to_h

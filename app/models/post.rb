@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
     #scope that isolates "heroes" and "projects"
     scope :hero, -> {Post.group_by_category("exactly", ["Hero"])}
     scope :projects, -> {Post.group_by_category("exactly", ["Projects"])}
-    scope :desc, -> {Post.order(created_at: :desc)}
+    scope :desc, -> {Post.order("posts.created_at DESC")}
     #scope :highlights, -> {Post.group_by_category("exactly", ["Highlight"])}
 
     #filter posts by category
