@@ -6,8 +6,10 @@ class Attachment < ActiveRecord::Base
                     :styles =>{ :medium => "660x",
                                 :thumb => "150x"
                     },
-                    :url => "/attachments/pictures/:style/:basename.:extension",
-                    :path =>"#{Rails.root}/public/attachments/pictures/:style/:basename.:extension"
+                    # per paperclip documentation, this path survives during capistrano deployment
+                    # and hence I am keeping it.
+                    :url => "/system/attachments/:attachment/:id_partition/:style/:filename",
+                    :path =>"#{Rails.root}/public/system/:class/:attachment/:id_partition/:style/:filename"
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
 end

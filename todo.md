@@ -1,11 +1,11 @@
 + paperclip multiple attachments -> done
 + categories, habtm -> done
-+ user authentication -> in progress
++ user authentication -> done
 + 'feature' post
 + pagination -> in progress
-+ search (elasticsearch)
++ search (elasticsearch) -> in progress
 + drafts -> in progress
-+ archival feature -> *
++ archival feature -> in progress
 + filtering the posts in the CMS by tags
 + pretty URLS for all resources -> done
 + tests

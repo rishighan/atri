@@ -39,12 +39,6 @@ set :rvm_ruby_version, "2.1.2"
 
 namespace :deploy do
 
-  task :symlink do
-    on "rishi@rishighan.com" do
-      execute "ln -nfs #{shared_path}/attachments #{release_path}/public/attachments"
-    end
-  end
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
