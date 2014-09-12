@@ -17,7 +17,8 @@
   %meta(property="og:type" content="article")
   %meta(property="og:url" content="#{request.original_url}")
   %meta(property="og:title" content="#{@project.title}")
-  %meta(property="og:image" content="assets/rishighan-logo.png")
+  %meta(property="og:description" content="#{@project.excerpt}")
+  %meta(property="og:image" content="#{request.protocol}#{request.domain}:#{request.port}/assets/rishighan-logo.png")
 
 %body
   %section#hero-bg
