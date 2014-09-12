@@ -277,9 +277,10 @@ $iphone-portrait-max: 959px;
 // Project single page
 .project-container{
     article{
-        background: $rg-generic-gray;
+        background: $beige;
         padding:$normal-padding + 10;
 
+        h2, h3, a {color:$thatblack;}
         ul{
             text-indent:0.3em;
         }

@@ -1,8 +1,8 @@
-%section.projects-container.twelve.columns.offset-by-two
-  %article.projects
+%section.project-container.twelve.columns.offset-by-two
+  %article.twelve.columns
     %ul
       -@projects.each do |p|
         %li
-          %h3=p.title
+          %h3=link_to "#{p.title}", project_path(p)
           %span=p.excerpt
 
