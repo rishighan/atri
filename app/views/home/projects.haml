@@ -3,6 +3,7 @@
     %ul
       -@projects.each do |p|
         %li
-          %h3=link_to "#{p.title}", project_path(p)
-          %span=p.excerpt
+          %div
+            %h3=link_to "#{p.title}", project_path(p)
+            %p=p.excerpt
 
