@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:search_term].present?
-      @posts = Post.search(query:{match:{title: params[:search_term]}}).records
+      @posts = Post.search(query: {multi_match:{query: params[:search_term], fields: ['title','content']}}).records
     else
       @posts = Post.friendly.all
     end
