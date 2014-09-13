@@ -20,8 +20,12 @@
       -post.attachments.each do |at|
         -if at.picture.present?
           %li
-            =image_tag at.picture.url(:thumb)
-            =at.picture.url(:original)
+            -if at.picture.content_type =~ /^image/
+              =image_tag at.picture.url(:thumb)
+              =at.picture.url(:original)
+            -elsif at.picture.content_type =~ /^application/
+              =link_to image_tag("#{root_url}assets/file-pdf.png"), at.picture.url
+              =at.picture.url
 
     %div.clear-both
     =link_to "Edit Post", edit_post_path(post)

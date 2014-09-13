@@ -16,9 +16,10 @@
 -if @post.attachments.any?
   %p.well
     -@post.attachments.each do |at|
-      =image_tag at.picture.url(:thumb) if at.picture.content_type =~/^image/
+      =image_tag at.picture.url(:thumb) if at.picture.content_type =~ /^image/
       -if at.picture.content_type == 'application/pdf'
         =link_to image_tag("#{root_url}assets/file-pdf.png"), at.picture.url
+
 
 
 %p

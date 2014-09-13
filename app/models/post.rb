@@ -3,7 +3,6 @@ class Post < ActiveRecord::Base
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
 
-    Post.import # this will import the model into the ES index
     # this is to map search keywords
     settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
@@ -49,6 +48,17 @@ class Post < ActiveRecord::Base
     def self.is_draft(what)
         post = Post.where('is_draft = (?)', what )
     end
+
+        # Delete the previous articles index in Elasticsearch
+    Post.__elasticsearch__.client.indices.delete index: Post.index_name rescue nil
+
+    # Create the new index with the new mapping
+    Post.__elasticsearch__.client.indices.create \
+      index: Post.index_name,
+      body: { settings: Post.settings.to_hash, mappings: Post.mappings.to_hash }
+
+    # Index all article records from the DB to Elasticsearch
+    Post.import
 
 
 end

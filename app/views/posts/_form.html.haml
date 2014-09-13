@@ -38,8 +38,12 @@
       -unless at.object.new_record?
         -if at.object.picture?
           %div.well
-            =link_to image_tag(at.object.picture.url(:thumb))
-            %small=at.object.picture.url(:original)
+            -if at.object.picture.content_type =~ /^image/
+              =link_to image_tag(at.object.picture.url(:thumb))
+              %small=at.object.picture.url(:original)
+            -elsif at.object.picture.content_type =~ /^application/
+              =link_to image_tag("#{root_url}assets/file-pdf.png"), at.object.picture.url
+
             =link_to_remove_association 'Remove', at, {wrapper_class: "well"}
         -else
           %div.well
