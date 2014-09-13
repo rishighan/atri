@@ -3,6 +3,15 @@ class Post < ActiveRecord::Base
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
 
+    Post.import # this will import the model into the ES index
+    # this is to map search keywords
+    settings index: { number_of_shards: 1 } do
+    mappings dynamic: 'false' do
+        indexes :title, analyzer: 'english'
+        indexes :content, analyzer: 'english'
+    end
+    end
+
     friendly_id :title, use:[:slugged, :I18n]
     validates :title, presence: true
     validates :content, presence: true

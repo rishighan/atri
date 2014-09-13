@@ -12535,6 +12535,50 @@ var foo = document.getElementById(foo);
 console.log(foo)
 
 ;
+// instagram.js
+// rishi ghan
+// ninth muse and the usuals
+
+//Details:
+//clientid: 9f748070d00748cf8c845f874800ab00
+//redirect_uri: http://rishighan.com/photolog
+
+
+//self calling function
+var Instashizzle = function(){}
+
+Instashizzle.prototype = {
+
+  init: function(options){
+    if(options){
+      this.url = "https://instagram.com/oauth/authorize/?client_id="+options.clientid+"&redirect_uri="+options.redirect_uri+"&response_type=token";
+    }
+    this.authenticate(this.url);
+  },
+
+  authenticate: function(url){
+    window.location.replace(url);
+    this.connect(this.getToken());
+  },
+
+  getToken: function(){
+    var hash = window.location.hash,
+        regex = "[^\#access_token\=](.*)",
+        token = [];
+    if(hash){
+      token = hash.match(regex);
+
+      if(token){
+        return token[1];
+      }
+      else{
+        return false;
+      }
+    }
+
+  }
+}
+;
 /*global window, document*/
 
 /*
@@ -12605,22 +12649,18 @@ console.log("----------")
 // remove fixed positioning and
 // float the nav according to scroll amount.
 function toggleFixed(targetid){
-   var scrollamount = 510;
-   if($(window).scrollTop() > scrollamount){
-     $(targetid).addClass('fixed')
+   var scrollamount = 490,
+       windowWidth = 700;
+   if($(window).scrollTop() > scrollamount && $(window).innerWidth() > windowWidth){
+     $(targetid).css({"color":"#CCC", "position": "fixed", "font-size": "0.9em", "z-index": "99"})
    }
    else{
-      $(targetid).removeClass('fixed')
+      $(targetid).css({"color":"#444", "position": "relative", "font-size": "14px"})
    }
 }
 
 
 function setProjectHeroImage(callback) {
-
-  var projectHeroBg = document.getElementById('project-hero-bg'); // hero image
-  var heroBgContainer = document.getElementById('hero-bg'); //container
-
-  //console.log(projectHeroBg)
 
   //set dimensions
   var heroHeight = 510,
@@ -12632,21 +12672,30 @@ function setProjectHeroImage(callback) {
   repeat = "no-repeat",
   bgattachment = "fixed"
   //overflow
-  overflow = "hidden",
-  // get url
-  imgsrc = projectHeroBg.getAttribute('data-src');
+  overflow = "hidden";
 
-  // change style
-  heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
-  heroBgContainer.style.backgroundSize =  bgSize;
-  heroBgContainer.style.margin = margin;
-  heroBgContainer.style.height = heroHeight+"px";
-  heroBgContainer.style.width = heroWidth+"%";
-  heroBgContainer.style.overflow = overflow;
-  heroBgContainer.style.backgroundPosition = position;
-  heroBgContainer.style.backgroundAttachment = bgattachment;
-  heroBgContainer.style.backgroundRepeat = repeat;
 
+    // hero image
+    var projectHeroBg = document.getElementById('project-hero-bg'),
+
+    // get url
+    imgsrc = projectHeroBg.getAttribute('data-src'),
+    heroBgContainer = document.getElementById('hero-bg'); //container
+
+    // change style
+    heroBgContainer.style.backgroundSize =  bgSize;
+    heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
+    heroBgContainer.style.margin = margin;
+    heroBgContainer.style.height = heroHeight+"px";
+    heroBgContainer.style.width = heroWidth+"%";
+    heroBgContainer.style.overflow = overflow;
+    heroBgContainer.style.backgroundPosition = position;
+    heroBgContainer.style.backgroundAttachment = bgattachment;
+    heroBgContainer.style.backgroundRepeat = repeat;
+
+
+  //console.log(projectHeroBg)
+   return imgsrc;
 }
 
 // get the dominant color or palette
@@ -12672,20 +12721,68 @@ function setDominantColor(targetid){
 
 // one for old times sake.
 $(document).ready(function(){
-  setProjectHeroImage();
-  setDominantColor('#color-target');
+
+    setProjectHeroImage();
+    setDominantColor('#color-target');
 
 
-  $(window).bind('scroll', function(){
-     toggleFixed('#site-nav');
-  })
 });
+
+ $(window).bind('scroll', function(){
+     toggleFixed('#site-nav');
+
+  })
 
 // and one for the turbo/
 $(document).on('page:load', function(){
-  setProjectHeroImage();
-  setDominantColor('#color-target');
+
+    setProjectHeroImage();
+    setDominantColor('#color-target');
+
+
 });
+var arr = [1,2,3,1,3,4,5,7,8,5,2]
+
+
+function listops(list){
+
+ this.list = list;
+
+}
+
+listops.prototype ={
+
+    contains: function(el){
+        for(var i=0; i<this.length; i++){
+            if(list[i]===el){
+             return true;
+            }
+        }
+        return false;
+    },
+
+    unique: function(){
+        var output =[];
+        for(var j=0; j<this.length; j++){
+            if(!output.contains(list[j])){
+             output.push(list[j]);
+               }
+
+        }
+        return output;
+},
+
+    occurance: function(kel){
+     var count =0;
+        for(var l=0; l<this.length; l++){
+            if(this.contains(kel)){
+                count++;
+            }
+        }
+     return count;
+    }
+
+};
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //

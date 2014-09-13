@@ -1018,14 +1018,42 @@ a:hover {
   padding: 0;
 }
 
-/* line 281, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 279, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .project-container article {
-  background: #fafafa;
+  background: #fffef1;
   padding: 20px;
+}
+/* line 283, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+.project-container article h2, .project-container article h3, .project-container article a {
+  color: #544c4c;
+}
+/* line 284, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+.project-container article ul {
+  text-indent: 0.3em;
+}
+/* line 289, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+.project-container article ol li {
+  margin: 0;
+  font-size: 0.8em;
+}
+/* line 292, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+.project-container article ol li p {
+  margin: 0;
+}
+/* line 296, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+.project-container article .caption {
+  font-style: italic;
+  font-size: 0.8em;
+  color: #544c4c;
+}
+
+/* line 309, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+#instagram-container ul li img {
+  margin: 0 0 10px 0;
 }
 
 /* Poetry page */
-/* line 289, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 315, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .haiku {
   font-family: Bitter-bold;
   font-size: 1em;
@@ -1034,7 +1062,7 @@ a:hover {
 }
 
 /*  Admin styles */
-/* line 297, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 323, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin-nav-container {
   background-color: #ffffec;
   width: 100%;
@@ -1042,35 +1070,35 @@ a:hover {
   border-bottom: 1px solid #cccccc;
 }
 
-/* line 305, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 331, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin-nav ul {
   list-style: none;
   margin: 0 auto;
   position: relative;
 }
-/* line 309, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 335, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin-nav ul li {
   float: left;
   margin: 15px 20px 0 0;
 }
-/* line 312, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 338, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin-nav ul li a {
   color: black;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 316, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 342, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin-nav ul li a:visited {
   color: #6cc5ff;
 }
-/* line 319, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 345, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin-nav ul li a:hover {
   color: #ff4d45;
   background: none;
   text-decoration: underline;
 }
 
-/* line 330, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 356, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .error_explanation {
   background-color: #ff7f7f;
   display: block;
@@ -1080,94 +1108,98 @@ a:hover {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 338, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 364, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .error_explanation h3 {
   font-family: Lato-regular;
 }
 
 /* admin */
-/* line 345, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 371, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin h2, .admin h3, .admin h4, .admin h5 {
   font-family: 'Muli-regular';
 }
-/* line 350, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 376, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .cat-list div {
   padding: 10px;
 }
-/* line 353, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 379, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .well {
   background: #fff0d3;
   padding: 10px;
   border-bottom: 1px solid #cccccc;
 }
-/* line 358, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 384, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .well a {
   font-family: 'Muli-regular';
   text-decoration: none;
   font-size: 0.8em;
 }
-/* line 363, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 389, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .well a:hover {
   color: #cccccc;
 }
-/* line 366, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 392, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .well label {
   display: inline;
 }
-/* line 370, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 396, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .even {
   background: #fffef1;
 }
-/* line 373, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 399, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .odd {
   background: #ffffeb;
 }
-/* line 377, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 403, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .field_with_errors {
   background: none;
 }
-/* line 379, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 405, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .field_with_errors input, .admin .field_with_errors textarea {
   border: 1px solid #ff4d45;
 }
-/* line 380, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 406, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .field_with_errors label {
   color: #ff4d45;
 }
-/* line 382, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 410, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+.admin form input[type="text"] {
+  display: inline;
+}
+/* line 413, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin article {
   margin: 0 0 20px 0px;
   padding: 10px;
   border-left: 1px solid #ffffcc;
 }
-/* line 386, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 417, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin article:hover {
   border-left: 1px solid #cccccc;
 }
-/* line 390, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 421, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin article ol li {
   margin: 0;
 }
-/* line 392, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 423, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin article ol li p {
   margin: 0;
   font-family: 'Muli-regular';
 }
-/* line 397, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 428, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin article div {
   margin: 0 0 0 0;
 }
-/* line 400, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 431, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin article img {
   margin: 0 20px 0 0;
 }
-/* line 404, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 435, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .md-syntax {
   padding: 10px;
   background: #fff0d3;
   font-size: 0.8em;
 }
-/* line 408, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 439, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin .md-syntax code {
   background: #ffffcc;
   padding: 1px;
@@ -1175,28 +1207,29 @@ a:hover {
   font-weight: lighter;
   border-bottom: 1px solid #999999;
 }
-/* line 416, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 447, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin a {
   color: black;
   text-decoration: none;
   background: none;
 }
-/* line 420, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 451, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin a:visited {
   color: black;
 }
-/* line 423, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 454, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 .admin a:hover {
   text-decoration: underline;
   color: black;
 }
 
-/* line 432, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 463, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 footer {
+  margin: 20px 0 0 0;
   clear: both;
   font-family: Montserrat-Regular;
 }
-/* line 436, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+/* line 468, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
 footer ul li {
   font-size: 0.9em;
   float: left;
@@ -1205,12 +1238,17 @@ footer ul li {
 
 /* Smaller than standard 960 (devices and browsers) */
 @media all and (max-width: 959px) {
-  /* line 448, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 481, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  .hero-nav {
+    margin: 240px auto;
+  }
+
+  /* line 485, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .admin-nav ul li {
     clear: both;
   }
 
-  /* line 449, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 486, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .admin-nav-container {
     background-color: #ffffec;
     width: 100%;
@@ -1221,11 +1259,11 @@ footer ul li {
 }
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-  /* line 464, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 502, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav {
     margin: 40px auto;
   }
-  /* line 466, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 504, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav .left {
     float: left;
     text-transform: capitalize;
@@ -1233,7 +1271,7 @@ footer ul li {
     text-align: left;
     left: 0;
   }
-  /* line 474, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 512, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav .right {
     float: left;
     text-transform: uppercase;
@@ -1245,7 +1283,7 @@ footer ul li {
 /* All Mobile Sizes (devices and browser) */
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  /* line 491, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 534, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav .left {
     float: left;
     text-transform: capitalize;
@@ -1253,7 +1291,7 @@ footer ul li {
     text-align: left;
     left: 0;
   }
-  /* line 499, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 542, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav .right {
     float: left;
     text-transform: uppercase;
@@ -1264,7 +1302,13 @@ footer ul li {
 }
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
-  /* line 513, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 557, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  .project-container article {
+    position: relative;
+    left: -20px;
+  }
+
+  /* line 564, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav .left {
     float: left;
     text-transform: capitalize;
@@ -1272,7 +1316,7 @@ footer ul li {
     text-align: left;
     left: 0;
   }
-  /* line 521, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
+  /* line 572, /Users/rishighan/sites/atri/vendor/assets/stylesheets/rishighan.css.scss */
   .hero-nav .right {
     float: left;
     text-transform: uppercase;
