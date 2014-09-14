@@ -3,7 +3,7 @@ class Attachment < ActiveRecord::Base
 
   belongs_to :imageable, polymorphic: true
   has_attached_file :picture,
-                     styles: lambda { |a| a.instance.is_image? ? {:small => "150x", :medium => "550x"} : {}},
+                     styles: lambda { |a| a.instance.is_image? ? {:thumb => "150x", :medium => "550x"} : {}},
 
                     # per paperclip documentation, this path survives during capistrano deployment
                     # and hence I am keeping it.
