@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout 'site_layout', only: [:index, :projects, :photolog, :archive]
+  layout 'site_layout', only: [:index, :projects, :photolog, :archive, :colophon]
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
