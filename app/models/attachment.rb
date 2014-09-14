@@ -12,7 +12,8 @@ class Attachment < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => [/\Aimage\/.*\Z/, /\Avideo\/.*\Z/, /\Aaudio\/.*\Z/, /\Aapplication\/.*\Z/]
 
 
-
+  # checks if the instance of attachment is an image
+  # if it is, proceeds with generating different styles
     def is_image?
         picture.instance.picture_content_type =~ %r(image)
     end

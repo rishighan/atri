@@ -43,6 +43,7 @@ class HomeController < ApplicationController
   end
 
   def colophon
+    @post = Post.is_draft("no").group_by_category("exactly", ["Colophon"])
   end
 
   def archive
