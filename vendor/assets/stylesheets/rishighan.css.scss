@@ -149,10 +149,35 @@ $iphone-portrait-max: 959px;
     }
 
 }
-
-.fixed {
-   position:fixed;
+// firefox specific hack
+@-moz-document url-prefix(){
+    .fixed{
+       left:125px;
+    }
 }
+
+ .fixed{
+        color:#CCC;
+        position: fixed;
+        font-size: 0.9em;
+        z-index: 99;
+
+
+        font-family: Montserrat-Regular;
+        text-transform: uppercase;
+
+    ul {
+        margin: 10px 0 0 0;
+        li{
+            margin :0 0 5px 0;
+
+            a {
+
+            }
+        }
+    }
+    }
+
 
 
 // hero background
@@ -194,7 +219,7 @@ $iphone-portrait-max: 959px;
 
     ul{
         li{
-            margin: 2px 0 12px 0;
+            margin: 3px 0 12px 0;
             span{
                  line-height: 1.7em;
             }

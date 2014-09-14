@@ -9,10 +9,10 @@ function toggleFixed(targetid){
    var scrollamount = 490,
        windowWidth = 700;
    if($(window).scrollTop() > scrollamount && $(window).innerWidth() > windowWidth){
-     $(targetid).css({"color":"#CCC", "position": "fixed", "font-size": "0.9em", "z-index": "99"})
-   }
+     $(targetid).removeClass("site-nav").addClass("fixed")
+      }
    else{
-      $(targetid).css({"color":"#444", "position": "relative", "font-size": "14px"})
+      $(targetid).removeClass("fixed").addClass("site-nav")
    }
 }
 
