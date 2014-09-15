@@ -327,6 +327,18 @@ $iphone-portrait-max: 959px;
     }
 }
 
+.archive{
+        min-height:400px;
+
+        ul{
+            font-family: Montserrat-Regular;
+            li{
+                h4 {color:$thatblack;}
+            }
+        }
+    }
+
+
 // Instagram page / photolog
 #instagram-container{
     ul{

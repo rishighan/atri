@@ -2,6 +2,9 @@
   %article.archive
     %h3="#{params[:action]}".capitalize
     -@archive.each do |month, posts|
-      %h4=month.strftime("%B %Y")
-      -posts.each do |post|
-        %p=post.title
+
+      %ul.four.columns
+        %li
+          %h4=month.strftime("%B %Y")
+        -posts.each do |post|
+          %li=post.title
