@@ -38,7 +38,7 @@ class Post < ActiveRecord::Base
          post = Post.includes(:categories).where('categories.title NOT IN (?)', category).references(:categories)
 
         when "exactly"
-         post = Post.includes(:categories).where('categories.title = (?)', category)
+         post = Post.includes(:categories).where('categories.title = (?)', category).references(:categories)
 
         else
          post = Post.all
