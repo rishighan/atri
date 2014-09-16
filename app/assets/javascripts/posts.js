@@ -65,15 +65,18 @@ function setDominantColor(targetid){
  targetHeight = target.height(),
  finalSrc = target.attr('src');
 
- // init colorThief
- var colorThief = new ColorThief(),
  // have to create an Image object for Color Thief
- finalImg = new Image(targetWidth, targetHeight);
-
+ var finalImg = new Image(targetWidth, targetHeight);
  finalImg.src = window.location.origin+finalSrc;
- //console.log(finalImg.src)
- return colorThief.getColor(finalImg);
- //console.log(colorThief.getPalette(finalImg,8));
+ console.log(finalImg.src)
+
+ finalImg.onload= function(){
+  // init colorThief
+  var colorThief = new ColorThief();
+  console.log("hoosh");
+  colorThief.getColor(finalImg);
+  console.log(colorThief.getColor(finalImg));
+}
 }
 
 // one for old times sake.
