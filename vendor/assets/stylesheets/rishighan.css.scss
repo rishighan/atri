@@ -23,6 +23,7 @@ $locongray: #ececec;
 $beige: #fffef1;
 $loconbeige: #ffffeb;
 $thatblack: #544c4c;
+$lightblue: #F2F8FF;
 
 // status colors
 $disabled: #cccccc;
@@ -302,7 +303,7 @@ $iphone-portrait-max: 959px;
 // Project single page
 .project-container{
     article{
-        background: $beige;
+        background: $lightblue;
         padding:$normal-padding + 10;
 
         h2, h3, a {color:$thatblack;}
