@@ -288,6 +288,7 @@ $iphone-portrait-max: 959px;
         }
 
         table{
+
             tr{
                 background:none;
                 border:0 none;
@@ -468,6 +469,10 @@ $iphone-portrait-max: 959px;
         }
         img {
             margin: 0 20px 0 0;
+        }
+
+        table{
+            width:auto;
         }
     }
     .md-syntax {
