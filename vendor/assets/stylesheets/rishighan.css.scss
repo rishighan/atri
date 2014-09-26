@@ -537,7 +537,24 @@ footer{
 @media only screen and (min-width: 768px) and (max-width: $iphone-portrait-max) {
 
 
-    
+    .hero-nav{
+      margin: 140px auto 0 0;
+
+    .left{
+        float:left;
+        text-align: right;
+        text-transform: capitalize;
+        position: relative;
+        left:19px;
+    }
+
+    .right{
+        float:right;
+        text-transform: uppercase;
+        position: relative;
+        height:350px;
+        border-left:1px solid $rg-yellow;
+    }
 
 
 }
