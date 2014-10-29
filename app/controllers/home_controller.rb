@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   layout 'site_layout', only: [:index, :projects, :photolog, :archive, :colophon]
+  before_action :authenticate_user!, only:[:trampoline]
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
@@ -38,7 +39,6 @@ class HomeController < ApplicationController
   end
 
   def trampoline
-    before_action :authenticate_user!
     @trampoline = Post.is_draft("no").group_by_category("exactly", ["Trampoline"])
   end
 
