@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-  layout 'site_layout', only: [:index, :projects, :photolog, :archive, :colophon]
   before_action :authenticate_user!, only: :trampoline
+  layout 'site_layout', only: [:index, :projects, :photolog, :archive, :colophon]
+
 
   def index
     #mechanism to filter our only "Hero" posts that may fall into whatever
