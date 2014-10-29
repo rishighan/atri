@@ -37,6 +37,11 @@ class HomeController < ApplicationController
     @pictures = Instagram.user_recent_media(4477253)
   end
 
+  def trampoline
+    before_action :authenticate_user!
+    @trampoline = Post.is_draft("no").group_by_category("exactly", ["Trampoline"])
+  end
+
   def sitemap
     @posts = Post.is_draft("no").all
     @categories = Category.all
