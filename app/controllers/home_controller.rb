@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     @postheroes = Post.is_draft("no").group_by_category("include", ["General", "Technical"]) & Post.hero
 
     # All posts tagged with everything other than the hero category will be in the main body
-    @log = Post.desc.order("posts.created_at DESC").is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature", "Colophon"]).page(params[:page]).per(10)
+    @log = Post.desc.order("posts.created_at DESC").is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Feature", "Colophon", "Trampoline"]).page(params[:page]).per(10)
 
     # thanks to centrx, this here takes the id, and categories.title and converts it to a hash
     # I then use this in the view to check for "Highlights" and style it differently
@@ -41,6 +41,7 @@ class HomeController < ApplicationController
 
   def trampoline
     @trampoline = Post.is_draft("no").group_by_category("exactly", ["Trampoline"])
+    render layout: "trampoline"
   end
 
   def sitemap

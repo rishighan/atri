@@ -1,1 +1,6 @@
-trampoline.haml
+%section.posts-container.twelve.columns.offset-by-two
+  -@trampoline.each do |post|
+    %article
+      %h3!= post.title
+      %p!= post.content
+

@@ -1,26 +1,21 @@
-!!! 5
+!!!5
 / Rishi Ghan
 / The Ninth Muse
 / 2014 All Rights Reserved
 
-%head{:prefix => "og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"}
-  %title Rishi Ghan
+%head
+  %title
+    =controller.action_name.capitalize
   /[if IE9]
     %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
 
   =stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
   =javascript_include_tag "application", "data-turbolinks-track" => true
 
-  / Facebook meta
   %meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
-  %meta(property="og:description" content="Rishi Ghan is a developer and a writer of things.")
-  %meta(property="fb:app_id" content="1466806433575846")
-  %meta(property="og:type" content="website")
-  %meta(property="og:url" content="http://rishighan.com")
-  %meta(property="og:title" content="Rishi Ghan")
-  %meta(property="og:image" content="#{request.protocol}#{request.domain}:#{request.port}/assets/rishighan-logo.png")
-%body
-  %section.hero-bg
+
+  %body
+  %section
   %div.container
     %p.notice
       =notice
