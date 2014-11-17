@@ -30,10 +30,10 @@ function Heroize(opts){
     this.bgAttachment    = opts.bgAttachment || "fixed",
     this.overflow        = opts.overflow || "hidden",
 
-    // target div
+    // target div, image element and hero bg container
     this.heroBgContainer = opts.container || 'project-hero-bg',
-    this.imageSrc        = opts.imgSrc || 'data-src',
-    this.heroBgContainer = opts.heroBgContainer || 'hero-bg'
+    this.imageSrc        = opts.imageSrc || 'data-src',
+    this.heroBgContainer = opts.heroBgContainer || 'hero-bg';
 
 
 }
@@ -44,26 +44,49 @@ Heroize.prototype= {
   setProjectHeroImage: function(){
 
     // hero image
-    var projectHeroBg = document.getElementById('project-hero-bg'),
+    var projectHeroBg = this.heroBgContainer,
 
     // get url
-    imgsrc = projectHeroBg.getAttribute('data-src'),
-    heroBgContainer = document.getElementById('hero-bg'); //container
+    imgsrc = projectHeroBg.getAttribute(this.imgSrc),
+    heroBgContainer = document.getElementById(this.heroBgContainer); //container
 
     // change style
-    heroBgContainer.style.backgroundSize =  bgSize;
-    heroBgContainer.style.backgroundImage = "url("+imgsrc+")";
-    heroBgContainer.style.margin = margin;
-    heroBgContainer.style.height = heroHeight+"px";
-    heroBgContainer.style.width = heroWidth+"%";
-    heroBgContainer.style.overflow = overflow;
-    heroBgContainer.style.backgroundPosition = position;
-    heroBgContainer.style.backgroundAttachment = bgattachment;
-    heroBgContainer.style.backgroundRepeat = repeat;
+    heroBgContainer.style.backgroundSize =  this.bgSize;
+    heroBgContainer.style.backgroundImage = "url("+this.imageSrc+")";
+    heroBgContainer.style.margin = this.margin;
+    heroBgContainer.style.height = this.heroHeight+"px";
+    heroBgContainer.style.width = this.heroWidth+"%";
+    heroBgContainer.style.overflow = this.overflow;
+    heroBgContainer.style.backgroundPosition = this.position;
+    heroBgContainer.style.backgroundAttachment = this.bgAttachment;
+    heroBgContainer.style.backgroundRepeat = this.repeat;
 
 
   //console.log(projectHeroBg)
    return imgsrc;
+
+  },
+
+  setDominantColor: function(targetId){
+     // Get the id of the image that you
+    // want the dominant color calculated on.
+    var target = $(targetid),
+    targetWidth = target.width(),
+    targetHeight = target.height(),
+    finalSrc = target.attr('src');
+
+    // have to create an Image object for Color Thief
+    var finalImg = new Image(targetWidth, targetHeight);
+    finalImg.src = window.location.origin+finalSrc;
+    console.log(finalImg.src)
+
+    finalImg.onload= function(){
+     // init colorThief
+     var colorThief = new ColorThief();
+     console.log("hoosh");
+     colorThief.getColor(finalImg);
+     console.log(colorThief.getColor(finalImg));
+}
 
   }
 }
@@ -73,29 +96,6 @@ Heroize.prototype= {
 
 }
 
-// get the dominant color or palette
-function setDominantColor(targetid){
-
- // Get the id of the image that you
- // want the dominant color calculated on.
- var target = $(targetid),
- targetWidth = target.width(),
- targetHeight = target.height(),
- finalSrc = target.attr('src');
-
- // have to create an Image object for Color Thief
- var finalImg = new Image(targetWidth, targetHeight);
- finalImg.src = window.location.origin+finalSrc;
- console.log(finalImg.src)
-
- finalImg.onload= function(){
-  // init colorThief
-  var colorThief = new ColorThief();
-  console.log("hoosh");
-  colorThief.getColor(finalImg);
-  console.log(colorThief.getColor(finalImg));
-}
-}
 
 // one for old times sake.
 $(document).ready(function(){
