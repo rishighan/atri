@@ -17,20 +17,31 @@ function toggleFixed(targetid){
 }
 
 
-function setProjectHeroImage(callback) {
+// refactored js
+function Heroize(opts){
 
-  //set dimensions
-  var heroHeight = 510,
-  heroWidth = 100,
-  //set margin
-  margin = "0 0 -510px 0",
-  bgSize = "cover",
-  position ="center center",
-  repeat = "no-repeat",
-  bgattachment = "fixed"
-  //overflow
-  overflow = "hidden";
+    //set the options
+    this.heroHeight      = opts.heroHeight || 510,
+    this.heroWidth       = opts.heroWidth || 100,
+    this.margin          = opts.margin || "0 0 -510px, 0",
+    this.bgSize          = opts.bgSize || "cover",
+    this.position        = opts.position || "center center",
+    this.repeat          = opts.repeat || "no-repeat",
+    this.bgAttachment    = opts.bgAttachment || "fixed",
+    this.overflow        = opts.overflow || "hidden",
 
+    // target div
+    this.heroBgContainer = opts.container || 'project-hero-bg',
+    this.imageSrc        = opts.imgSrc || 'data-src',
+    this.heroBgContainer = opts.heroBgContainer || 'hero-bg'
+
+
+}
+
+
+Heroize.prototype= {
+
+  setProjectHeroImage: function(){
 
     // hero image
     var projectHeroBg = document.getElementById('project-hero-bg'),
@@ -53,6 +64,13 @@ function setProjectHeroImage(callback) {
 
   //console.log(projectHeroBg)
    return imgsrc;
+
+  }
+}
+
+
+
+
 }
 
 // get the dominant color or palette
