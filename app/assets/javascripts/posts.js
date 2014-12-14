@@ -5,104 +5,103 @@ console.log("----------")
 
 // remove fixed positioning and
 // float the nav according to scroll amount.
-function toggleFixed(targetid){
-   var scrollamount = 490,
-       windowWidth = 700;
-   if($(window).scrollTop() > scrollamount && $(window).innerWidth() > windowWidth){
-     $(targetid).removeClass("site-nav").addClass("fixed")
-      }
-   else{
-      $(targetid).removeClass("fixed").addClass("site-nav")
-   }
+function toggleFixed(targetid) {
+    var scrollamount = 490,
+        windowWidth = 700;
+    if ($(window).scrollTop() > scrollamount && $(window).innerWidth() > windowWidth) {
+        $(targetid).removeClass("site-nav").addClass("fixed")
+    } else {
+        $(targetid).removeClass("fixed").addClass("site-nav")
+    }
 }
 
 
 // refactored js
-function Heroize(opts){
+function Heroize(opts) {
 
     //set the options
-    this.heroHeight      = opts.heroHeight || 510,
-    this.heroWidth       = opts.heroWidth || 100,
-    this.margin          = opts.margin || "0 0 -510px, 0",
-    this.bgSize          = opts.bgSize || "cover",
-    this.position        = opts.position || "center center",
-    this.repeat          = opts.repeat || "no-repeat",
-    this.bgAttachment    = opts.bgAttachment || "fixed",
-    this.overflow        = opts.overflow || "hidden",
+    this.heroHeight = opts.heroHeight || 510,
+        this.heroWidth = opts.heroWidth || 100,
+        this.margin = opts.margin || "0 0 -510px, 0",
+        this.bgSize = opts.bgSize || "cover",
+        this.position = opts.position || "center center",
+        this.repeat = opts.repeat || "no-repeat",
+        this.bgAttachment = opts.bgAttachment || "fixed",
+        this.overflow = opts.overflow || "hidden",
 
-    // target div, image element and hero bg container
-    this.heroBgContainer = opts.container || 'project-hero-bg',
-    this.imageSrc        = opts.imageSrc || 'data-src',
-    this.heroBgContainer = opts.heroBgContainer || 'hero-bg',
+        // target div, image element and hero bg container
+        this.heroBgContainer = opts.container || 'project-hero-bg',
+        this.imageSrc = opts.imageSrc || 'data-src',
+        this.heroBgContainer = opts.heroBgContainer || 'hero-bg',
 
-    // target for color-thief
-    this.colorTarget     = opts.colorTarget || 'color-target';
+        // target for color-thief
+        this.colorTarget = opts.colorTarget || 'color-target';
 
 
 }
 
 
-Heroize.prototype= {
+Heroize.prototype = {
 
-  setProjectHeroImage: function(){
+    setProjectHeroImage: function() {
 
-    // hero image
-    var projectHeroBg = this.heroBgContainer,
+        // hero image
+        var projectHeroBg = this.heroBgContainer,
 
-    // get url
-    imgsrc = projectHeroBg.getAttribute(this.imgSrc),
-    heroBgContainer = document.getElementById(this.heroBgContainer); //container
+            // get url
+            imgsrc = projectHeroBg.getAttribute(this.imgSrc),
+            heroBgContainer = document.getElementById(this.heroBgContainer); //container
 
-    // change style
-    heroBgContainer.style.backgroundSize =  this.bgSize;
-    heroBgContainer.style.backgroundImage = "url("+this.imageSrc+")";
-    heroBgContainer.style.margin = this.margin;
-    heroBgContainer.style.height = this.heroHeight+"px";
-    heroBgContainer.style.width = this.heroWidth+"%";
-    heroBgContainer.style.overflow = this.overflow;
-    heroBgContainer.style.backgroundPosition = this.position;
-    heroBgContainer.style.backgroundAttachment = this.bgAttachment;
-    heroBgContainer.style.backgroundRepeat = this.repeat;
+        // change style
+        heroBgContainer.style.backgroundSize = this.bgSize;
+        heroBgContainer.style.backgroundImage = "url(" + this.imageSrc + ")";
+        heroBgContainer.style.margin = this.margin;
+        heroBgContainer.style.height = this.heroHeight + "px";
+        heroBgContainer.style.width = this.heroWidth + "%";
+        heroBgContainer.style.overflow = this.overflow;
+        heroBgContainer.style.backgroundPosition = this.position;
+        heroBgContainer.style.backgroundAttachment = this.bgAttachment;
+        heroBgContainer.style.backgroundRepeat = this.repeat;
 
 
-  //console.log(projectHeroBg)
-   return imgsrc;
+        //console.log(projectHeroBg)
+        return imgsrc;
 
-  },
+    },
 
-  setDominantColor: function(targetId){
-     // Get the id of the image that you
-    // want the dominant color calculated on.
-    var target        = document.getElementById(this.colorTarget),
-        targetWidth   = target.width(),
-        targetHeight  = target.height(),
-        finalSrc      = target.attr('src');
+    setDominantColor: function(targetId) {
+        // Get the id of the image that you
+        // want the dominant color calculated on.
+        var target = document.getElementById(this.colorTarget),
+            targetWidth = target.width(),
+            targetHeight = target.height(),
+            finalSrc = target.attr('src');
 
-    // have to create an Image object for Color Thief
-    var finalImg = new Image(targetWidth, targetHeight);
-    finalImg.src = window.location.origin+finalSrc;
-    console.log(finalImg.src)
+        // have to create an Image object for Color Thief
+        var finalImg = new Image(targetWidth, targetHeight);
+        finalImg.src = window.location.origin + finalSrc;
+        console.log(finalImg.src)
 
-  finalImg.onload= function(){
-     // init colorThief
-     var colorThief = new ColorThief();
-     console.log("hoosh");
-     colorThief.getColor(finalImg);
-     console.log(colorThief.getColor(finalImg));
-  }
+        finalImg.onload = function() {
+            // init colorThief
+            var colorThief = new ColorThief();
+            console.log("hoosh");
+            colorThief.getColor(finalImg);
+            console.log(colorThief.getColor(finalImg));
+        }
 
-  }
+    }
 }
 
 
 
 // one for old times sake.
-$(document).ready(function(){
+$(document).ready(function() {
 
-  // set the options object
-  var opts= {
+    // set the options object
+    var opts = {
 
-  }
+    }
 
     setProjectHeroImage();
     setDominantColor('#color-target');
@@ -110,13 +109,13 @@ $(document).ready(function(){
 
 });
 
- $(window).bind('scroll', function(){
-     toggleFixed('#site-nav');
+$(window).bind('scroll', function() {
+    toggleFixed('#site-nav');
 
-  })
+})
 
 // and one for the turbo/
-$(document).on('page:load', function(){
+$(document).on('page:load', function() {
 
     setProjectHeroImage();
     setDominantColor('#color-target');
