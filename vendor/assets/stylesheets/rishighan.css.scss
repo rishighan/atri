@@ -455,14 +455,17 @@ $iphone-portrait-max: 959px;
             border-left: 1px solid $gray;
         }
         // footnotes
-        ol li {
-            margin: 0;
-            line-height: 0;
-            p {
+
+        .footnotes{
+            ol li {
                 margin: 0;
-                font-family: 'Muli-regular';
+                p {
+                    margin: 0;
+                    font-family: 'Muli-regular';
+                }
             }
         }
+
         div {
             margin: 0 0 0 0;
         }
