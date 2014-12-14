@@ -3,6 +3,9 @@ class Post < ActiveRecord::Base
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
 
+    # pagination
+    paginates_per 10
+
     # this is to map search keywords
     settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do

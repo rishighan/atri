@@ -5,6 +5,7 @@
     =text_field_tag(:search_term, params[:search_term], placeholder: "Search Posts")
     %input{:type=>"submit", :value=> "Search"}
 
+=paginate @posts
 -@posts.each do |post|
   %article{class:"clearfix " + cycle('even','odd')}
     %h3=post.title
