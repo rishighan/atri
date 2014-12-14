@@ -15,18 +15,6 @@
     -post.categories.each do |cat|
       %span.infotags=cat.title unless cat.title.empty?
 
-    %p
-      =find_and_preserve(markdown(post.content))
-    %ul
-      -post.attachments.each do |at|
-        -if at.picture.present?
-          %li
-            -if at.picture.content_type =~ /^image/
-              =image_tag at.picture.url(:thumb)
-              =at.picture.url(:original)
-            -elsif at.picture.content_type =~ /^application/
-              =link_to image_tag("#{root_url}assets/file-pdf.png"), at.picture.url
-              =at.picture.url
 
     %div.clear-both
     =link_to "Edit Post", edit_post_path(post)
