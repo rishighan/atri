@@ -33,7 +33,10 @@ function Heroize(opts){
     // target div, image element and hero bg container
     this.heroBgContainer = opts.container || 'project-hero-bg',
     this.imageSrc        = opts.imageSrc || 'data-src',
-    this.heroBgContainer = opts.heroBgContainer || 'hero-bg';
+    this.heroBgContainer = opts.heroBgContainer || 'hero-bg',
+
+    // target for color-thief
+    this.colorTarget     = opts.colorTarget || 'color-target';
 
 
 }
@@ -70,35 +73,36 @@ Heroize.prototype= {
   setDominantColor: function(targetId){
      // Get the id of the image that you
     // want the dominant color calculated on.
-    var target = $(targetid),
-    targetWidth = target.width(),
-    targetHeight = target.height(),
-    finalSrc = target.attr('src');
+    var target        = document.getElementById(this.colorTarget),
+        targetWidth   = target.width(),
+        targetHeight  = target.height(),
+        finalSrc      = target.attr('src');
 
     // have to create an Image object for Color Thief
     var finalImg = new Image(targetWidth, targetHeight);
     finalImg.src = window.location.origin+finalSrc;
     console.log(finalImg.src)
 
-    finalImg.onload= function(){
+  finalImg.onload= function(){
      // init colorThief
      var colorThief = new ColorThief();
      console.log("hoosh");
      colorThief.getColor(finalImg);
      console.log(colorThief.getColor(finalImg));
-}
+  }
 
   }
 }
 
 
 
-
-}
-
-
 // one for old times sake.
 $(document).ready(function(){
+
+  // set the options object
+  var opts= {
+
+  }
 
     setProjectHeroImage();
     setDominantColor('#color-target');
