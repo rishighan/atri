@@ -61,8 +61,8 @@ Heroize.prototype = {
     heroBgContainer.style.backgroundRepeat = this.repeat;
 
 
-        //console.log(projectHeroBg)
-        return imgsrc;
+    console.log(projectHeroBg)
+    return imgsrc;
 
     },
 
