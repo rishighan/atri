@@ -6,28 +6,22 @@
     %input{:type=>"submit", :value=> "Search"}
 
 =paginate @posts
--@posts.each do |post|
-  %article{class:"clearfix " + cycle('even','odd')}
-    %h3=post.title
-    -if post.is_draft == 'yes'
-      %span.infotags="draft"
+%table
+  %thead
+    %tr
+      %th="Title"
+      %th="Categories"
+      %th="Actions"
 
-    -post.categories.each do |cat|
-      %span.infotags=cat.title unless cat.title.empty?
-
-    %p
-      =find_and_preserve(markdown(post.content))
-    %ul
-      -post.attachments.each do |at|
-        -if at.picture.present?
-          %li
-            -if at.picture.content_type =~ /^image/
-              =image_tag at.picture.url(:thumb)
-              =at.picture.url(:original)
-            -elsif at.picture.content_type =~ /^application/
-              =link_to image_tag("#{root_url}assets/file-pdf.png"), at.picture.url
-              =at.picture.url
-
-    %div.clear-both
-    =link_to "Edit Post", edit_post_path(post)
-    =link_to "Destroy", post_path(post), method: :delete, data:{confirm: "Delete Post?"}
+    -@posts.each do |post|
+      %tr
+        %td
+          %h3=post.title
+        %td
+          -if post.is_draft == 'yes'
+            %span.infotags="draft"
+          -post.categories.each do |cat|
+            %span.infotags=cat.title unless cat.title.empty?
+        %td
+          =link_to "Edit Post", edit_post_path(post)
+          =link_to "Destroy", post_path(post), method: :delete, data:{confirm: "Delete Post?"}
