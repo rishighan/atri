@@ -30,9 +30,9 @@ function Heroize(opts) {
     this.overflow = opts.overflow || "hidden",
 
     // target div, image element and hero bg container
-    this.srcContainer = opts.srcContainer || document.getElementById('#project-hero-bg'),
+    this.srcContainer = opts.srcContainer || document.getElementById('project-hero-bg'),
     this.imageSrc = opts.imageSrc || 'data-src',
-    this.heroBgContainer = opts.heroBgContainer || document.getElementById('#hero-bg'),
+    this.heroBgContainer = opts.heroBgContainer || document.getElementById('hero-bg'),
 
     // target for color-thief
     this.colorTarget = opts.colorTarget || '#color-target';
