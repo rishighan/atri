@@ -30,7 +30,7 @@ function Heroize(opts) {
     this.overflow = opts.overflow || "hidden",
 
     // target div, image element and hero bg container
-    this.heroBgContainer = opts.container || '#project-hero-bg',
+    this.srcContainer = opts.srcContainer || '#project-hero-bg',
     this.imageSrc = opts.imageSrc || 'data-src',
     this.heroBgContainer = opts.heroBgContainer || '#hero-bg',
 
@@ -43,7 +43,7 @@ Heroize.prototype = {
     setProjectHeroImage: function() {
 
         // get url
-        var imgsrc = this.heroBgContainer.getAttribute(this.imageSrc),
+        var imgsrc = this.srcContainer.getAttribute(this.imageSrc),
         heroBgContainer = document.getElementById(this.heroBgContainer); //container
 
         // change style
