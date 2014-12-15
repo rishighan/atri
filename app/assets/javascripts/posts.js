@@ -43,12 +43,12 @@ Heroize.prototype = {
     setProjectHeroImage: function() {
 
         // get url
-        var imgsrc = this.srcContainer.getAttribute(this.imageSrc),
+        var imgsrc = this.srcContainer.getAttribute('data-src'),
         heroBgContainer = document.getElementById(this.heroBgContainer); //container
 
         // change style
         heroBgContainer.style.backgroundSize = this.bgSize;
-        heroBgContainer.style.backgroundImage = "url(" + this.imageSrc + ")";
+        heroBgContainer.style.backgroundImage = "url(" + imgsrc + ")";
         heroBgContainer.style.margin = this.margin;
         heroBgContainer.style.height = this.heroHeight + "px";
         heroBgContainer.style.width = this.heroWidth + "%";
