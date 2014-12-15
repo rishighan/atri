@@ -46,7 +46,7 @@ Heroize.prototype = {
     var projectHeroBg = this.heroBgContainer,
 
     // get url
-    imgsrc = projectHeroBg.getAttribute(this.imgSrc),
+    imgsrc = projectHeroBg.getAttribute(this.imageSrc),
     heroBgContainer = document.getElementById(this.heroBgContainer); //container
 
     // change style
