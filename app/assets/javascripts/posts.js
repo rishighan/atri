@@ -115,8 +115,14 @@ $(window).bind('scroll', function() {
 // and one for the turbo/
 $(document).on('page:load', function() {
 
-    setProjectHeroImage();
-    setDominantColor('#color-target');
+     // set the options object
+    var opts = {
+      colorTarget: '#color-target'
+    },
+    foo = new Heroize(opts);
+    foo.setProjectHeroImage();
+    foo.setDominantColor(opts.colorTarget)
+    console.log(opts.colorTarget);
 
 
 });
