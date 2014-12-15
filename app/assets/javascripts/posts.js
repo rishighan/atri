@@ -42,27 +42,24 @@ function Heroize(opts) {
 Heroize.prototype = {
     setProjectHeroImage: function() {
 
-    // hero image
-    var projectHeroBg = this.heroBgContainer,
+        // get url
+        var imgsrc = this.heroBgContainer.getAttribute(this.imageSrc),
+        heroBgContainer = document.getElementById(this.heroBgContainer); //container
 
-    // get url
-    imgsrc = projectHeroBg.getAttribute(this.imageSrc),
-    heroBgContainer = document.getElementById(this.heroBgContainer); //container
-
-    // change style
-    heroBgContainer.style.backgroundSize = this.bgSize;
-    heroBgContainer.style.backgroundImage = "url(" + this.imageSrc + ")";
-    heroBgContainer.style.margin = this.margin;
-    heroBgContainer.style.height = this.heroHeight + "px";
-    heroBgContainer.style.width = this.heroWidth + "%";
-    heroBgContainer.style.overflow = this.overflow;
-    heroBgContainer.style.backgroundPosition = this.position;
-    heroBgContainer.style.backgroundAttachment = this.bgAttachment;
-    heroBgContainer.style.backgroundRepeat = this.repeat;
+        // change style
+        heroBgContainer.style.backgroundSize = this.bgSize;
+        heroBgContainer.style.backgroundImage = "url(" + this.imageSrc + ")";
+        heroBgContainer.style.margin = this.margin;
+        heroBgContainer.style.height = this.heroHeight + "px";
+        heroBgContainer.style.width = this.heroWidth + "%";
+        heroBgContainer.style.overflow = this.overflow;
+        heroBgContainer.style.backgroundPosition = this.position;
+        heroBgContainer.style.backgroundAttachment = this.bgAttachment;
+        heroBgContainer.style.backgroundRepeat = this.repeat;
 
 
-    console.log(projectHeroBg)
-    return imgsrc;
+        console.log(projectHeroBg)
+        return imgsrc;
 
     },
 
@@ -94,17 +91,14 @@ Heroize.prototype = {
 
 // one for old times sake.
 $(document).ready(function() {
-
     // set the options object
     var opts = {
-      colorTarget: '#color-target'
-    },
-    foo = new Heroize(opts);
+            colorTarget: '#color-target'
+        },
+        foo = new Heroize(opts);
     foo.setProjectHeroImage();
     foo.setDominantColor(opts.colorTarget)
     console.log(opts.colorTarget);
-
-
 });
 
 $(window).bind('scroll', function() {
@@ -115,11 +109,11 @@ $(window).bind('scroll', function() {
 // and one for the turbo/
 $(document).on('page:load', function() {
 
-     // set the options object
+    // set the options object
     var opts = {
-      colorTarget: '#color-target'
-    },
-    foo = new Heroize(opts);
+            colorTarget: '#color-target'
+        },
+        foo = new Heroize(opts);
     foo.setProjectHeroImage();
     foo.setDominantColor(opts.colorTarget)
     console.log(opts.colorTarget);
