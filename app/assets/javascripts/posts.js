@@ -102,9 +102,7 @@ $(document).ready(function() {
     foo = new Heroize(opts);
     foo.setProjectHeroImage();
     foo.setDominantColor(opts.colorTarget)
-    console.log(opts.colorTarget)
-    setProjectHeroImage();
-    setDominantColor('#color-target');
+    console.log(opts.colorTarget);
 
 
 });

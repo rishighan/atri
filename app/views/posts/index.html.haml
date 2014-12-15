@@ -16,7 +16,7 @@
     -@posts.each do |post|
       %tr
         %td
-          %h3=post.title
+          %h4=post.title
         %td
           -if post.is_draft == 'yes'
             %span.infotags="draft"
