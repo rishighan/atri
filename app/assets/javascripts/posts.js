@@ -44,17 +44,16 @@ Heroize.prototype = {
 
         // get url
         var imgsrc = this.srcContainer.getAttribute('data-src'),
-            heroContainer = this.heroBgContainer,
-
+            heroContainer = this.heroBgContainer;
         // change style
-        heroContainer.style.backgroundSize = this.bgSize,
-        heroContainer.style.backgroundImage = "url(" + imgsrc + ")",
-        heroContainer.style.margin = this.margin,
-        heroContainer.style.height = this.heroHeight + "px",
-        heroContainer.style.width = this.heroWidth + "%",
-        heroContainer.style.overflow = this.overflow,
-        heroContainer.style.backgroundPosition = this.position,
-        heroContainer.style.backgroundAttachment = this.bgAttachment,
+        heroContainer.style.backgroundSize = this.bgSize;
+        heroContainer.style.backgroundImage = "url(" + imgsrc + ")";
+        heroContainer.style.margin = this.margin;
+        heroContainer.style.height = this.heroHeight + "px";
+        heroContainer.style.width = this.heroWidth + "%";
+        heroContainer.style.overflow = this.overflow;
+        heroContainer.style.backgroundPosition = this.position;
+        heroContainer.style.backgroundAttachment = this.bgAttachment;
         heroContainer.style.backgroundRepeat = this.repeat;
 
 
