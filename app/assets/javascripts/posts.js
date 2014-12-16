@@ -90,7 +90,7 @@ Heroize.prototype = {
 $(document).ready(function() {
     // set the options object
     var opts = {
-            colorTarget: '#color-target'
+            colorTarget: 'color-target'
         },
         foo = new Heroize(opts);
     foo.setProjectHeroImage();
@@ -108,7 +108,7 @@ $(document).on('page:load', function() {
 
     // set the options object
     var opts = {
-            colorTarget: '#color-target'
+            colorTarget: 'color-target'
         },
         foo = new Heroize(opts);
     foo.setProjectHeroImage();
