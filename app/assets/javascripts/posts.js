@@ -35,7 +35,7 @@ function Heroize(opts) {
     this.heroBgContainer = opts.heroBgContainer || document.getElementById('hero-bg'),
 
     // target for color-thief
-    this.colorTarget = opts.colorTarget || '#color-target';
+    this.colorTarget = opts.colorTarget || 'color-target';
 }
 
 
