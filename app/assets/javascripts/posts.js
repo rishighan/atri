@@ -22,7 +22,7 @@ function Heroize(opts) {
     //set the options
     this.heroHeight = opts.heroHeight || 510,
     this.heroWidth = opts.heroWidth || 100,
-    this.margin = opts.margin || "0 0 -510px, 0",
+    this.margin = opts.margin || "0 0 -510px 0",
     this.bgSize = opts.bgSize || "cover",
     this.position = opts.position || "center center",
     this.repeat = opts.repeat || "no-repeat",
@@ -56,8 +56,6 @@ Heroize.prototype = {
         heroContainer.style.backgroundAttachment = this.bgAttachment;
         heroContainer.style.backgroundRepeat = this.repeat;
 
-
-        console.log(projectHeroBg)
         return imgsrc;
 
     },
