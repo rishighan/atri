@@ -52,6 +52,11 @@ $tiny-padding: 3px;
 // margins
 $margin-ten:10px;
 
+//centering
+.center-text{
+    text-align:center;
+}
+
 // layout
 .clearboth {
     clear: both;
@@ -299,7 +304,6 @@ $iphone-portrait-max: 959px;
     }
 }
 /* Poetry page */
-
 .haiku {
     font-family: Bitter-bold;
     font-size: 1em;
@@ -375,6 +379,17 @@ $iphone-portrait-max: 959px;
         }
         label {
             display: inline;
+        }
+    }
+
+    table{
+        td{
+            padding:8px;
+            vertical-align: middle;
+        }
+
+        tr{
+            border-bottom:1px solid $locongray;
         }
     }
     // zebra-stripes
