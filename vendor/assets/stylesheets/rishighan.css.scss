@@ -62,6 +62,7 @@ $margin-ten:10px;
 .clearboth {
     clear: both;
 }
+
 // decorations
 .infotags {
     background: $information;
@@ -388,6 +389,10 @@ $iphone-portrait-max: 959px;
             padding: 8px;
             vertical-align: middle;
             line-height: 30px;
+
+            .button-group{
+                width:130px;
+            }
         }
         tr {
             border-bottom: 1px solid $locongray;
