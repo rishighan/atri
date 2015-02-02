@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
     end
     end
 
-    friendly_id :title, use:[:slugged, :I18n]
+    friendly_id :title, use:[:slugged, :I18n, :finders]
     validates :title, presence: true
     validates :content, presence: true
     validates :excerpt, presence: true

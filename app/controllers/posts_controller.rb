@@ -55,7 +55,7 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      Post.friendly.update(@post.id, post_params)
+      Post.update(@post.id, post_params)
       case params[:commit]
        when "Save Draft"
           @post.update_attribute(:is_draft, "yes")
@@ -85,7 +85,7 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.friendly.find(params[:id])
+      @post = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
