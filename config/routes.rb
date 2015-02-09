@@ -21,6 +21,7 @@ root 'home#index'
 
 #all other static routes
 #projects
+get 'post/:id' => 'home#article', as: :article
 get 'projects' => 'home#projects'
 get 'project/:id' => 'home#project', as: :project
 get 'colophon' => 'home#colophon'

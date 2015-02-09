@@ -17,6 +17,7 @@
       %tr{class: cycle('even','odd')}
         %td.five.columns
           %h4=post.title
+          %small=post.excerpt
         %td.four.columns
           -if post.is_draft == 'yes'
             %span.infotags="draft"

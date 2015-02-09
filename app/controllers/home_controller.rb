@@ -34,6 +34,12 @@ class HomeController < ApplicationController
     render layout: "project_page_layout"
   end
 
+  def article
+    @post = Post.is_draft("no").find(params[:id])
+    render layout: "single_post_layout"
+  end
+
+
   def photolog
     # frishi/4477253
     @pictures = Instagram.user_recent_media(4477253)
