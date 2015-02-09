@@ -6,24 +6,25 @@
     %input{:type=>"submit", :value=> "Search"}
 
 =paginate @posts
-%table
-  %thead
-    %tr
-      %th.five.columns="Title"
-      %th.four.columns="Categories"
-      %th.three.columns="Actions"
+%div
+  %div.table
+    %div.trow
+      %div.cell.five.columns="Title"
+      %div.cell.four.columns="Categories"
+      %div.cell.three.columns="Actions"
 
     -@posts.each do |post|
-      %tr{class: cycle('even','odd')}
-        %td.five.columns
-          %h4=post.title
-          %small=post.excerpt
-        %td.four.columns
+      %div.trow{class: cycle('even','odd')}
+        %div.five.columns
+          %h4=post.title.titleize
+          %span.caption
+            =post.excerpt
+        %div.cell.four.columns
           -if post.is_draft == 'yes'
             %span.infotags="draft"
           -post.categories.each do |cat|
             %span.infotags=cat.title unless cat.title.empty?
-        %td.three.columns
+        %div.cell.three.columns
           %div.button-group
             =link_to edit_post_path(post) do
               %button{class: "pull-left"}

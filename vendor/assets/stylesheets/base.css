@@ -48,6 +48,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+
 }
 /* #Basic Styles
 ================================================== */
@@ -123,6 +124,7 @@ strong {
 }
 small {
     font-size: 80%;
+
 }
 /*	Blockquotes  */
 
