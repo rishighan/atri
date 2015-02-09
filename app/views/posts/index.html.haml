@@ -7,7 +7,7 @@
 
 =paginate @posts
 %div
-  %div.table
+  %div.table.twelve.columns
     %div.trow
       %div.cell.five.columns="Title"
       %div.cell.four.columns="Categories"
@@ -19,11 +19,13 @@
           %h4=post.title.titleize
           %span.caption
             =post.excerpt
-        %div.cell.four.columns
+        /infotags
+        %div.cell.four.columns.category-tags
           -if post.is_draft == 'yes'
             %span.infotags="draft"
           -post.categories.each do |cat|
             %span.infotags=cat.title unless cat.title.empty?
+        /actions
         %div.cell.three.columns
           %div.button-group
             =link_to edit_post_path(post) do

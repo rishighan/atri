@@ -396,14 +396,19 @@ $iphone-portrait-max: 959px;
         div.cell {
             vertical-align: center;
             display: table-cell;
+
             .button-group {
                 width: 130px;
+            }
+
+            .category-tags{
+                line-height: 30px;
             }
         }
         div.trow {
             display: flex;
             border-bottom: 1px solid $locongray;
-            padding: 10px 0 10px 5px;
+            padding: 10px 0 10px 15px;
         }
     }
 
