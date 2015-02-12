@@ -404,7 +404,7 @@ $iphone-portrait-max: 959px;
             line-height: 30px;
         }
         div.trow {
-            display: flex;
+            display: table;
             border-bottom: 1px solid $locongray;
             padding: 10px 0 10px 15px;
         }
