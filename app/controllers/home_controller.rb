@@ -14,7 +14,8 @@ class HomeController < ApplicationController
 
     # thanks to centrx, this here takes the id, and categories.title and converts it to a hash
     # I then use this in the view to check for "Highlights" and style it differently
-    @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }.to_h
+    @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }
+    @ha = Hash[@ha]
 
   end
 
