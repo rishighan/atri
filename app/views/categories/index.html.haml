@@ -1,0 +1,30 @@
+%p
+  %h2="Listing Categories"
+
+%div
+  %div.table.twelve.columns
+    %div.trow
+      %div.cell.six.columns="Category Title"
+      %div.cell.four.columns="Actions"
+
+    -@categories.each do |category|
+      %div.trow{class: cycle('even','odd')}
+        %div.cell.six.columns
+          %h4
+            =category.title
+          %span.caption
+            =category.description
+
+
+
+        <%= link_to 'Show', category %>
+        <%= link_to 'Edit', edit_category_path(category) %>
+        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </article>
+    <% end %>
+
+</div>
+
+
+
+<%= link_to 'New Category', new_category_path %>
