@@ -397,7 +397,10 @@ $iphone-portrait-max: 959px;
             vertical-align: middle;
             display: table-cell;
             .button-group {
-                form {float:left;}
+                li {
+                    float:left;
+                    margin: 0 5px 0 0;
+                }
             }
         }
         .category-tags {

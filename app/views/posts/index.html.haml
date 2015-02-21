@@ -27,8 +27,10 @@
             %span.infotags=cat.title unless cat.title.empty?
         /actions
         %div.cell.three.columns
-          %div.button-group
-            =link_to edit_post_path(post) do
-              %button{class: "pull-left"}
-                Edit Post
-            =button_to "Destroy", post_path(post), method: :delete, data:{confirm: "Delete Post?"}, class: "pull-right"
+          %ul.button-group
+            %li
+              =link_to edit_post_path(post) do
+                %button{class: "pull-left"}
+                  Edit Post
+            %li
+              =button_to "Destroy", post_path(post), method: :delete, data:{confirm: "Delete Post?"}, class: "pull-right"

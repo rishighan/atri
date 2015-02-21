@@ -2,29 +2,37 @@
   %h2="Listing Categories"
 
 %div
-  %div.table.twelve.columns
+  %div.five.columns
+    =link_to new_category_path do
+      %button
+        New Category
+
+  %div.table.nine.columns
     %div.trow
       %div.cell.six.columns="Category Title"
-      %div.cell.four.columns="Actions"
+      %div.cell.three.columns="Actions"
 
     -@categories.each do |category|
       %div.trow{class: cycle('even','odd')}
-        %div.cell.six.columns
+        %div.cell.five.columns
           %h4
             =category.title
           %span.caption
             =category.description
+        / actions
+        %div.cell.four.columns
+          %ul.button-group.pull-right
+            %li
+              =link_to category do
+                %button{class:'pull-left'}
+                  Show
+            %li
+              =link_to edit_category_path(category) do
+                %button{class:'pull-left'}
+                  Edit
+            %li
+              =button_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
 
 
 
-        <%= link_to 'Show', category %>
-        <%= link_to 'Edit', edit_category_path(category) %>
-        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </article>
-    <% end %>
 
-</div>
-
-
-
-<%= link_to 'New Category', new_category_path %>
