@@ -28,6 +28,9 @@ gem 'kaminari'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 
+# google analytics and reporting
+gem  'legato'
+
 #slugs and permalinks
 gem 'friendly_id', '~> 5.0.0'
 
