@@ -52,7 +52,7 @@ class Post < ActiveRecord::Base
         post = Post.where('is_draft = (?)', what )
     end
 
-        # Delete the previous articles index in Elasticsearch
+    # Delete the previous articles index in Elasticsearch
     Post.__elasticsearch__.client.indices.delete index: Post.index_name rescue nil
 
     # Create the new index with the new mapping
