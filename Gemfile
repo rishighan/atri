@@ -29,7 +29,7 @@ gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 
 # google analytics and reporting
-gem  'legato'
+gem 'legato'
 
 #oauth
 gem 'oauth2'
