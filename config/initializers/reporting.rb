@@ -18,6 +18,6 @@ client.auth_code.authorize_url({
   :access_type => 'offline'
 })
 access_token = OAuth2::AccessToken.from_hash client, {:access_token => LEGATO_ACCESS_TOKEN}
-user = Legato::User.new(LEGATO_ACCESS_TOKEN)
+#user = Legato::User.new(LEGATO_ACCESS_TOKEN)
 
 response_json = access_token.get('https://www.googleapis.com/analytics/v3/management/accounts').body
