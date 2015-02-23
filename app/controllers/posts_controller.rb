@@ -10,8 +10,6 @@ class PostsController < ApplicationController
       @posts = Post.search(query: {multi_match:{query: params[:search_term], fields: ['title','content']}}).records
     else
       @posts = Post.page(params[:page]).per(10)
-
-
     end
   end
 

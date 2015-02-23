@@ -31,6 +31,9 @@ gem 'elasticsearch-model'
 # google analytics and reporting
 gem  'legato'
 
+#oauth
+gem 'oauth2'
+
 #slugs and permalinks
 gem 'friendly_id', '~> 5.0.0'
 
