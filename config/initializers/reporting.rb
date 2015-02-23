@@ -14,7 +14,7 @@ client = OAuth2::Client.new(LEGATO_OAUTH_CLIENT_ID,LEGATO_OAUTH_SECRET_KEY, {
 
 client.auth_code.authorize_url({
   :scope => 'https://www.googleapis.com/auth/analytics.readonly',
-  :redirect_uri => 'http://localhost',
+  :redirect_uri => 'http://rishighan.com',
   :access_type => 'offline'
 })
 access_token = OAuth2::AccessToken.from_hash client, {:access_token => LEGATO_ACCESS_TOKEN}
