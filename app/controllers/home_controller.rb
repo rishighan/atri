@@ -17,6 +17,9 @@ class HomeController < ApplicationController
     @ha = @log.map { |p| [p.id, p.categories.map(&:title)] }
     @ha = Hash[@ha]
 
+
+
+
   end
 
   def haiku

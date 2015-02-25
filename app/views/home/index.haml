@@ -16,6 +16,7 @@
     -if @ha[log.id].include? "Highlight"
       %article.post.highlight
         %span=markdown(log.content)
+
     -else
       %article.post
         %h3=link_to(log.title, article_path(log.friendly_id))
