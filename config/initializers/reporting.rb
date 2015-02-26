@@ -16,14 +16,5 @@ client.auth_code.authorize_url({
   :redirect_uri => 'http://localhost',
   :access_type => 'offline'
 })
+
 access_token = client.auth_code.get_token(LEGATO_OAUTH_AUTH_CODE, :redirect_uri => 'http://localhost')
-
-
-def results
-  #create user
-  user = Legato::User.new(LEGATO_ACCESS_TOKEN)
-
-  #select profile
-  profile = user.profile.first
-
-end
