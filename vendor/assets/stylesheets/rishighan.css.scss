@@ -205,11 +205,12 @@ $iphone-portrait-max: 959px;
             text-transform: uppercase;
         }
         table {
+            margin:10px 0 10px 0;
             tr {
                 background: $beige;
                 border-bottom: 1px solid $locongray;
                 th {
-                    padding: 10px 0 10px 0;
+                    padding: 10px 0 10px 10px;
                 }
             }
             td {

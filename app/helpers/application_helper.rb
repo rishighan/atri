@@ -42,20 +42,4 @@ def markdown(text)
   markdown.render(text).html_safe
 end
 
-
-def getfilename(url)
-    output = File.basename(url)
-end
-
-def reporting
-  #create user
-  user = Legato::User.new(LEGATO_ACCESS_TOKEN)
-
-  #select profile
-  profile = user.profiles.first
-  return profile
-end
-
-
-
 end
