@@ -2,8 +2,13 @@
 class Pageviews
   extend Legato::Model
 
+
+  user = Legato::User.new(access_token)
+  profile = user.profiles.first
+
   metrics :pageviews, :uniquePageviews
   dimensions :pagePathLevel1
+
 
   filter(:by_index_in_path_level_1) {|page_path_level1| contains(:pagePathLevel1, 'index')}
 
