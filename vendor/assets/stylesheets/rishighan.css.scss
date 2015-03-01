@@ -204,6 +204,10 @@ $iphone-portrait-max: 959px;
             font-size: 13px;
             text-transform: uppercase;
         }
+
+        p{
+            line-height:1.7em;
+        }
         table {
             margin:10px 0 10px 0;
             tr {
@@ -260,6 +264,8 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
+
 // Project single page
 .project-container {
     article {
