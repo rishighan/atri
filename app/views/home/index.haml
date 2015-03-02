@@ -22,7 +22,6 @@
         %h3=link_to(log.title, article_path(log.friendly_id))
         %h5.date=log.created_at.strftime("%d %B, %Y")
         %p=find_and_preserve(markdown(log.content))
-
-
+        %p=authify
 
 =paginate @log
