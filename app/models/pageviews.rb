@@ -5,7 +5,7 @@ class Pageviews < ActiveRecord::Base
   include ReportingHelper
 
   def self.getviews post
-  	client, analytics, parameters = ReportingHelper.initclient
+    client, analytics, parameters = ReportingHelper.initclient
     result   = client.execute(:api_method => analytics.management.profiles.list, parameters: parameters)
     profiles = result.data.items
 
