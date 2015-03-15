@@ -36,7 +36,7 @@ require 'date'
     }
     result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
     interim = result.data.rows.map{|hit| p hit[1]}
-    interim.map{|s| s.to_i}
+
   end
 
 end
