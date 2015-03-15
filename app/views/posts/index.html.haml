@@ -21,7 +21,7 @@
             =post.excerpt
           %span
             / =Pageviews.query(authify, Date.strptime('2015/02/17', '%Y/%m/%d'), Date.strptime('2015/03/03', '%Y/%m/%d')).map { |result| result.pageviews}.join(",")
-            =Pageviews.result(post.id)
+            =Pageviews.result(post.friendly_id)
 
         /infotags
         %div.cell.four.columns.category-tags
