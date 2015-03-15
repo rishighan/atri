@@ -32,7 +32,7 @@ require 'date'
       'start-date'  => (Date.today - 30).strftime("%Y-%m-%d"),
       'end-date'    => Date.today.strftime("%Y-%m-%d"),
       'metrics'     => "ga:pageviews",
-      'dimensions'  => "ga:pagePath",
+      'dimensions'  => "ga:pagePath, ga:date",
       'filters'     => "ga:pagePath=~/#{post}"
     }
     result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
