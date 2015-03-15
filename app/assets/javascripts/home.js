@@ -1,5 +1,3 @@
-var nav = 'site-nav';
-
-var foo = document.getElementById(foo);
-console.log(foo)
-
+$(document).ready(function(){
+    $('.sparky').sparkline();
+})

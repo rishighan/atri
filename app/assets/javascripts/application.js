@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require cocoon
 
+//= require jquery.sparkline
 //= require color-thief
 //= require_tree .

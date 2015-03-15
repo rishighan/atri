@@ -1,7 +1,6 @@
 require 'redcarpet'
 require 'rouge'
 require 'rouge/plugins/redcarpet'
-require 'legato'
 
 module ApplicationHelper
 
