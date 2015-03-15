@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $('.sparky').sparkline();
+    $('.sparky').sparkline({type:'bar'});
 })

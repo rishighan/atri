@@ -16,7 +16,6 @@ require 'date'
       ['https://www.googleapis.com/auth/analytics.readonly', 'https://www.googleapis.com/auth/prediction'],
     key)
     client.authorization = service_account.authorize
-
     analytics = client.discovered_api('analytics', 'v3')
 
     parameters = {
