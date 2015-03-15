@@ -32,11 +32,11 @@ require 'date'
       'start-date'  => (Date.today - 30).strftime("%Y-%m-%d"),
       'end-date'    => Date.today.strftime("%Y-%m-%d"),
       'metrics'     => "ga:pageviews",
-      'dimensions'  => "ga:pagePath, ga:date",
+      'dimensions'  => "ga:date",
       'filters'     => "ga:pagePath=~/#{post}"
     }
     result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
-    result.data.rows[1]
+    result.data.rows.map{|hit| p hit[1]}
   end
 
 end
