@@ -3,6 +3,5 @@ $(document).ready(function(){
 })
 
 $(document).on('page:load', function() {
-
     $('.sparky').sparkline('html', {type:'line'});
 });
