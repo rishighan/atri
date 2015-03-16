@@ -31,6 +31,9 @@ gem 'elasticsearch-model'
 # google analytics and reporting
 gem 'google-api-client'
 
+#new relic reporting
+gem 'newrelic_rpm'
+
 #making http requests and parsing http response
 gem 'httparty'
 
