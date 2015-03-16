@@ -18,6 +18,7 @@ class Pageviews < ActiveRecord::Base
       'filters'     => "ga:pagePath=~/#{post}"
     }
 
+    #cache here
     result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
     interim = result.data.rows.map{|hit| hit[1].to_i}.join(', ')
 
