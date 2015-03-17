@@ -25,9 +25,9 @@
         =notice
       %p.alert
         =alert
+      =render "shared/site_nav"
       / Hero section container
-      %section.posts-container
+      %section.posts-container.twelve.columns.offset-by-two
         / nav
-        =render "shared/site_nav"
-        =yield
+        =render "shared/single_post"
       =render "shared/footer"
