@@ -6,8 +6,6 @@ class Pageviews < ActiveRecord::Base
 
   def self.getviews post
     client, analytics, parameters = ReportingHelper.initclient
-    result   = client.execute(:api_method => analytics.management.profiles.list, parameters: parameters)
-    profiles = result.data.items
 
     parameters = {
       'ids'         => PROFILE,
@@ -18,10 +16,14 @@ class Pageviews < ActiveRecord::Base
       'filters'     => "ga:pagePath=~/#{post}"
     }
 
-    #cache here
     result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
+
+
+    profiles = result.data.items
+
+    #cache here
+    #result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
     interim = result.data.rows.map{|hit| hit[1].to_i}.join(', ')
 
   end
-
 end

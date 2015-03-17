@@ -6,6 +6,7 @@ Atri::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+
   #default URL configuration required for devise
   config.action_mailer.default_url_options = {host: 'localhost:8090'}
 
@@ -14,7 +15,7 @@ Atri::Application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -24,6 +25,7 @@ Atri::Application.configure do
 
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
+  config.active_record.raise_in_transactional_callbacks = true
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

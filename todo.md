@@ -13,3 +13,7 @@
 + on the index page, group posts by date posted.
 
 + deployment using capistrano -> done
+
++ haml-ize the entire website
++ export posts to json objects
++ make the json objects import-able into postgres

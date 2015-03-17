@@ -12,9 +12,9 @@ module ReportingHelper
 
     key = Google::APIClient::PKCS12.load_key(KEY_PATH, 'notasecret')
     service_account = Google::APIClient::JWTAsserter.new(
-      SERVICE_ACCOUNT_EMAIL,
-      ['https://www.googleapis.com/auth/analytics.readonly', 'https://www.googleapis.com/auth/prediction'],
-    key)
+      				  SERVICE_ACCOUNT_EMAIL,
+      				  ['https://www.googleapis.com/auth/analytics.readonly', 'https://www.googleapis.com/auth/prediction'],
+    				  key)
     client.authorization = service_account.authorize
     analytics = client.discovered_api('analytics', 'v3')
 
@@ -24,6 +24,7 @@ module ReportingHelper
     }
 
     return client, analytics, parameters
+    # get these values like so: client, analytics, parameters = ReportingHelper.initclient
   end
 
 end
