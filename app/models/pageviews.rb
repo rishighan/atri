@@ -7,7 +7,6 @@ class Pageviews < ActiveRecord::Base
   def self.getviews post
     client, analytics, parameters = ReportingHelper.initclient
 
-
     parameters = {
       'ids'         => PROFILE,
       'start-date'  => (Date.today - 30).strftime("%Y-%m-%d"),
