@@ -34,6 +34,9 @@ gem 'google-api-client'
 #new relic reporting
 gem 'newrelic_rpm'
 
+# DDos protection
+gem 'rack-attack'
+
 #making http requests and parsing http response
 gem 'httparty'
 
