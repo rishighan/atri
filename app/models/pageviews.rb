@@ -16,14 +16,15 @@ class Pageviews < ActiveRecord::Base
       'filters'     => "ga:pagePath=~/#{post}"
     }
 
-    #result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
+    result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
+    result.data.rows.map{|hit| hit[1].to_i}.join(', ')
+
     #profiles = result.data.items
-    interim = Rails.cache.fetch('google_analytics_api/#{cache_key}', expires_in: 2.minutes) do
-      result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
-      result.data.rows.map{|hit| hit[1].to_i}.join(', ')
-    end
-    #interim = result.data.rows.map{|hit| hit[1].to_i}.join(', ')
-    return interim
+    # interim = Rails.cache.fetch('google_analytics_api/#{cache_key}', expires_in: 2.minutes) do
+    #   result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
+    #   result.data.rows.map{|hit| hit[1].to_i}.join(', ')
+    # end
+
   end
 
 end
