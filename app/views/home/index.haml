@@ -11,7 +11,7 @@
       %li
         %span.tags= link_to(project.title, project_path(project.friendly_id))
 
-%section.posts-container.twelve.columns.offset-by-two
+%section.posts-container.twelve.columns.offset-by-two{itemscope: "", itemtype: "http://schema.org/Article"}
   -@log.each do |log|
     -if @ha[log.id].include? "Highlight"
       %article.post.highlight
@@ -19,8 +19,8 @@
 
     -else
       %article.post
-        %h3=link_to(log.title, article_path(log.friendly_id))
-        %h5.date=log.created_at.strftime("%d %B, %Y")
-        %p=find_and_preserve(markdown(log.content))
+        %h3{itemprop: "name"}=link_to(log.title, article_path(log.friendly_id))
+        %h5.date{itemprop: "dateCreated"}=log.created_at.strftime("%d %B, %Y")
+        %p{itemprop: "articleBody"}=find_and_preserve(markdown(log.content))
 
 =paginate @log
