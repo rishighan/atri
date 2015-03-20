@@ -209,7 +209,7 @@ $iphone-portrait-max: 959px;
             line-height:1.7em;
         }
         table {
-
+            white-space: pre;
             tr {
                 background: $beige;
                 border-bottom: 1px solid $locongray;
@@ -221,10 +221,14 @@ $iphone-portrait-max: 959px;
                 padding: $normal-padding;
             }
         }
+
+
+
         h3 {
             font-family: Montserrat-Regular;
             color: $thatblack;
         }
+
         code {
             margin: 0;
             // border: 1px solid $gray;
@@ -232,6 +236,7 @@ $iphone-portrait-max: 959px;
             border-radius: 3px;
             padding: 3px;
         }
+
         // footnotes
         .footnotes {
             ol li {
@@ -242,6 +247,7 @@ $iphone-portrait-max: 959px;
             }
         }
     }
+
     .highlight {
         font-family: DayRoman-regular;
         background: $rg-generic-gray;
