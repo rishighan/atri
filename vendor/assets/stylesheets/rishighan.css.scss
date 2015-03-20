@@ -209,7 +209,7 @@ $iphone-portrait-max: 959px;
             line-height:1.7em;
         }
         table {
-            white-space: pre;
+
             tr {
                 background: $beige;
                 border-bottom: 1px solid $locongray;
@@ -220,6 +220,10 @@ $iphone-portrait-max: 959px;
             td {
                 padding: $normal-padding;
             }
+        }
+
+        table::after{
+            content: '/a'
         }
 
 
