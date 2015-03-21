@@ -209,7 +209,6 @@ $iphone-portrait-max: 959px;
             line-height:1.7em;
         }
         table {
-
             tr {
                 background: $beige;
                 border-bottom: 1px solid $locongray;
@@ -222,8 +221,8 @@ $iphone-portrait-max: 959px;
             }
         }
 
-        table::after{
-            content: '\a'
+        >table::after{
+             content: '\10'
         }
 
 
