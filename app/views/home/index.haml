@@ -22,5 +22,3 @@
         %h3{itemprop: "name"}=link_to(log.title, article_path(log.friendly_id))
         %h5.date{itemprop: "dateCreated"}=log.created_at.strftime("%d %B, %Y")
         %p{itemprop: "articleBody"}=find_and_preserve(markdown(log.content))
-
-=paginate @log
