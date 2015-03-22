@@ -48,8 +48,16 @@ $small-padding: 5px;
 $tiny-padding: 3px;
 // margins
 $margin-ten:10px;
+
 // LAYOUT
 //centering
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 .center-text {
     text-align: center;
 }
@@ -92,13 +100,14 @@ a {
     font-family: Bitter-bold;
     src: asset-url("Bitter-Bold.ttf");
 }
+
 // Serif for highlights and haiku
 @font-face {
     font-family: DayRoman-regular;
     src: asset-url("DayRoman.ttf")
 }
-/* sans-serif for the poor */
 
+/* sans-serif for the poor */
 @font-face {
     font-family: Lato-regular;
     src: asset-url("Lato-Regular.ttf");
@@ -111,6 +120,7 @@ a {
     font-family: Montserrat-regular;
     src: asset-url("Montserrat-Regular.ttf");
 }
+
 // Breakpoints for various media
 $iphone-portrait-max: 959px;
 /* Section-specific styles start here */
@@ -276,7 +286,6 @@ $iphone-portrait-max: 959px;
     }
 }
 
-
 // Project single page
 .project-container {
     article {
@@ -301,6 +310,7 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
 .archive {
     min-height: 400px;
     ul {
@@ -312,12 +322,30 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
 // Post single page
 .single-post-container {
     .caption {
         font-size: $caption;
     }
 }
+// meta info on top of the single post page
+.meta
+{
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+    .left-meta{
+      float: left;
+      padding:20px 20px 0 20px;
+    }
+
+    .right-meta{
+     float:left;
+     padding:10px 0 10px 10px;
+     border-left:1px solid $gray;
+    }
+}
+
 // Instagram page / photolog
 #instagram-container {
     ul {
@@ -329,7 +357,6 @@ $iphone-portrait-max: 959px;
     }
 }
 /* Poetry page */
-
 .haiku {
     font-family: Bitter-bold;
     font-size: 1em;
@@ -556,7 +583,6 @@ footer {
     }
 }
 /* All Mobile Sizes (devices and browser) */
-
 @media only screen and (max-width: 767px) {
     // hero nav on the home page
     .hero-nav {
@@ -578,7 +604,6 @@ footer {
     }
 }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     // hero nav on the home page
     .hero-nav {

@@ -1,4 +1,9 @@
+%div.meta.clearfix
+  %div.left-meta.sparky
+    =Pageviews.getviews(@post.friendly_id)
+  %div.right-meta
+    %h4{itemprop: "name"}=link_to(@post.title, article_path(@post.friendly_id))
+    %h6.date{itemprop: "dateCreated"}=@post.created_at.strftime("%d %B, %Y")
+
 %article.post
-  %h3=link_to(@post.title, article_path(@post.friendly_id))
-  %h5.date=@post.created_at.strftime("%d %B, %Y")
-  %p=find_and_preserve(markdown(@post.content))
+  %p{itemprop: "articleBody"}=find_and_preserve(markdown(@post.content))
