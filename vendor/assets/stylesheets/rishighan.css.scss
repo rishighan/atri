@@ -171,6 +171,7 @@ $iphone-portrait-max: 959px;
     top: 0;
     margin: 0 0 -510px 0;
 }
+
 // hero nav shenanigans
 .hero-nav {
     font-family: Montserrat-Regular;
@@ -235,8 +236,6 @@ $iphone-portrait-max: 959px;
              content: '\10'
         }
 
-
-
         h3 {
             font-family: Montserrat-Regular;
             color: $thatblack;
@@ -286,6 +285,17 @@ $iphone-portrait-max: 959px;
     }
 }
 
+// TRAMPOLINE
+.trampoline{
+    font-family: "Bitter-Regular";
+    font-size:1.2em;
+    line-height: 2em;
+
+
+    h1,h2{
+        font-family: "Bitter-Regular";
+    }
+}
 // Project single page
 .project-container {
     article {

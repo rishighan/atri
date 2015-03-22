@@ -1,5 +1,5 @@
 %div.meta.clearfix
-  %div.left-meta.sparky
+  %div.left-meta
     =Pageviews.getviews(@post.friendly_id)
   %div.right-meta
     %h4{itemprop: "name"}=link_to(@post.title, article_path(@post.friendly_id))

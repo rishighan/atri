@@ -1,6 +1,5 @@
-%section.posts-container.twelve.columns.offset-by-two
+%section.posts-container.trampoline.twelve.columns.offset-by-two{itemscope: "", itemtype: "http://schema.org/Article"}
   -@trampoline.each do |post|
     %article
-      %h3!= post.title
-      %p!= post.content
-
+      %h2{itemprop: "name"}!= post.title
+      %p{itemprop: "articleBody"}!= find_and_preserve(markdown(post.content))
