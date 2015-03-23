@@ -4,6 +4,7 @@
 .clear-both {
     clear: both;
 }
+
 // lo-con color scheme
 // brand colors
 $rg-red: #ff4d45;
@@ -27,8 +28,12 @@ $actionitems: #d4d4be;
 $information: #fff0d3;
 $error: #ff7f7f;
 $danger: #ff3232;
-$fallback-sans: Arial, Helvetica, sans-serif;
-$fallback-serif: Georgia, Times New Roman, serif;
+$fallback-sans: Arial,
+Helvetica,
+sans-serif;
+$fallback-serif: Georgia,
+Times New Roman,
+serif;
 // typography
 $heading: 4em;
 //h1
@@ -48,28 +53,37 @@ $small-padding: 5px;
 $tiny-padding: 3px;
 // margins
 $margin-ten:10px;
-
 // LAYOUT
 //centering
 .clearfix:after {
-   content: " ";
-   display: block;
-   height: 0;
-   clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
 }
 
 .center-text {
     text-align: center;
 }
+
 .pull-left {
     float: left;
 }
+
 .pull-right {
     float: right;
 }
+
 .clearboth {
     clear: both;
 }
+
+// notices
+.sitewide-notice {
+    font-size: 0.7em;
+    display:inline-block;
+}
+
 // decorations
 .infotags {
     background: $information;
@@ -79,23 +93,28 @@ $margin-ten:10px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+
 // links
 a {
     text-decoration: none;
-    &:visited {} &:hover {
+    &:visited {}
+    &:hover {
         text-decoration: none;
         background: 0 none;
     }
 }
+
 // Custom Typefaces
 @font-face {
     font-family: Bitter-regular;
     src: asset-url("Bitter-Regular.ttf");
 }
+
 @font-face {
     font-family: Bitter-italic;
     src: asset-url("Bitter-Italic.ttf");
 }
+
 @font-face {
     font-family: Bitter-bold;
     src: asset-url("Bitter-Bold.ttf");
@@ -106,16 +125,18 @@ a {
     font-family: DayRoman-regular;
     src: asset-url("DayRoman.ttf")
 }
-
 /* sans-serif for the poor */
+
 @font-face {
     font-family: Lato-regular;
     src: asset-url("Lato-Regular.ttf");
 }
+
 @font-face {
     font-family: Muli-regular;
     src: asset-url("Muli-Regular.ttf");
 }
+
 @font-face {
     font-family: Montserrat-regular;
     src: asset-url("Montserrat-Regular.ttf");
@@ -137,12 +158,14 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
 // firefox specific hack
 @-moz-document url-prefix() {
     .fixed {
         left: 125px;
     }
 }
+
 .fixed {
     color: #CCC;
     position: fixed;
@@ -158,6 +181,7 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
 // hero background
 .hero-bg {
     background: url("hero-bg-smudges.jpg") no-repeat center center fixed;
@@ -169,7 +193,7 @@ $iphone-portrait-max: 959px;
     height: 510px;
     overflow: hidden;
     top: 0;
-    margin: 0 0 -510px 0;
+    margin: 0 0 -490px 0;
 }
 
 // hero nav shenanigans
@@ -206,6 +230,7 @@ $iphone-portrait-max: 959px;
         border-bottom: 1px solid $thatblack;
     }
 }
+
 // Posts
 .posts-container {
     article {
@@ -215,9 +240,8 @@ $iphone-portrait-max: 959px;
             font-size: 13px;
             text-transform: uppercase;
         }
-
-        p{
-            line-height:1.7em;
+        p {
+            line-height: 1.7em;
         }
         table {
             tr {
@@ -231,16 +255,13 @@ $iphone-portrait-max: 959px;
                 padding: $normal-padding;
             }
         }
-
-        >table::after{
-             content: '\10'
+        >table::after {
+            content: '\10'
         }
-
         h3 {
             font-family: Montserrat-Regular;
             color: $thatblack;
         }
-
         code {
             margin: 0;
             // border: 1px solid $gray;
@@ -248,7 +269,6 @@ $iphone-portrait-max: 959px;
             border-radius: 3px;
             padding: 3px;
         }
-
         // footnotes
         .footnotes {
             ol li {
@@ -259,7 +279,6 @@ $iphone-portrait-max: 959px;
             }
         }
     }
-
     .highlight {
         font-family: DayRoman-regular;
         background: $rg-generic-gray;
@@ -275,8 +294,8 @@ $iphone-portrait-max: 959px;
             tr {
                 background: none;
                 border: 0 none;
-                padding:0;
-                margin:0;
+                padding: 0;
+                margin: 0;
             }
             td {
                 padding: 0;
@@ -286,16 +305,23 @@ $iphone-portrait-max: 959px;
 }
 
 // TRAMPOLINE
-.trampoline{
+.trampoline {
     font-family: "Bitter-Regular";
-    font-size:1.2em;
+    font-size: 1.2em;
     line-height: 2em;
-
-
-    h1,h2{
+    h1, h2 {
         font-family: "Bitter-Regular";
     }
 }
+
+.trampoline-hero-bg {
+    width: 100%;
+    height: 510px;
+    overflow: hidden;
+    top: 0;
+    margin: 0 0 -490px 0;
+}
+
 // Project single page
 .project-container {
     article {
@@ -339,20 +365,19 @@ $iphone-portrait-max: 959px;
         font-size: $caption;
     }
 }
-// meta info on top of the single post page
-.meta
-{
-  border-top: 1px solid $gray;
-  border-bottom: 1px solid $gray;
-    .left-meta{
-      float: left;
-      padding:20px 20px 0 20px;
-    }
 
-    .right-meta{
-     float:left;
-     padding:10px 0 10px 10px;
-     border-left:1px solid $gray;
+// meta info on top of the single post page
+.meta {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    .left-meta {
+        float: left;
+        padding: 20px 20px 0 20px;
+    }
+    .right-meta {
+        float: left;
+        padding: 10px 0 10px 10px;
+        border-left: 1px solid $gray;
     }
 }
 
@@ -367,12 +392,14 @@ $iphone-portrait-max: 959px;
     }
 }
 /* Poetry page */
+
 .haiku {
     font-family: Bitter-bold;
     font-size: 1em;
     line-height: 1.4em;
     letter-spacing: 0.03em;
 }
+
 //  Admin styles
 .admin-nav-container {
     background-color: $rg-admin-navbar;
@@ -380,6 +407,7 @@ $iphone-portrait-max: 959px;
     height: 50px;
     border-bottom: 1px solid $gray;
 }
+
 .admin-nav {
     ul {
         list-style: none;
@@ -404,6 +432,7 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
 .error_explanation {
     background-color: $error;
     display: block;
@@ -416,6 +445,7 @@ $iphone-portrait-max: 959px;
         font-family: Lato-regular;
     }
 }
+
 .admin {
     h2, h3, h4, h5 {
         font-family: 'Muli-regular';
@@ -438,7 +468,8 @@ $iphone-portrait-max: 959px;
             font-family: 'Muli-regular';
             text-decoration: none;
             font-size: $subheading2;
-            &:visited {} &:hover {
+            &:visited {}
+            &:hover {
                 color: $gray;
             }
         }
@@ -539,6 +570,7 @@ $iphone-portrait-max: 959px;
         }
     }
 }
+
 // Footer
 footer {
     margin: 20px 0 0 0;
@@ -552,6 +584,7 @@ footer {
         }
     }
 }
+
 // Media Queries
 /* Smaller than standard 960 (devices and browsers) */
 
@@ -593,6 +626,7 @@ footer {
     }
 }
 /* All Mobile Sizes (devices and browser) */
+
 @media only screen and (max-width: 767px) {
     // hero nav on the home page
     .hero-nav {
@@ -614,6 +648,7 @@ footer {
     }
 }
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     // hero nav on the home page
     .hero-nav {
