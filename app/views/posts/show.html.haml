@@ -11,7 +11,7 @@
 
 %p
   %strong="Content:"
-  =@post.content
+  =find_and_preserve(markdown(@post.content))
 
 -if @post.attachments.any?
   %p.well
