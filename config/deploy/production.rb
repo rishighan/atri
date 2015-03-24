@@ -4,18 +4,13 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-# role :app, %w{rishi@rishighan.com}
-# role :web, %w{rishi@rishighan.com}
-# role :db,  %w{rishi@rishighan.com}
-
-
-#104.236.209.163
-role :app, %w{rishi@104.236.209.163}
-role :web, %w{rishi@104.236.209.163}
-role :db,  %w{rishi@104.236.209.163}
+# deploy roles
+role :app, %w{rishi@rishighan.com}
+role :web, %w{rishi@rishighan.com}
+role :db,  %w{rishi@rishighan.com}
 
 set :stage, :production
-server '104.236.209.163', user: 'rishi', roles: %w{web app}
+server 'rishighan.com', user: 'rishi', roles: %w{web app}
 
 #RVM stuff
 set :rvm_type, :user
