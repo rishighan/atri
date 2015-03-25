@@ -2,8 +2,8 @@ Atri::Application.routes.draw do
 
   get "reportcontroller/new"
   get "reportcontroller/callback"
-devise_for :users
-#get "home/index"
+  devise_for :users
+  #get "home/index"
 
 resources :categories
 
@@ -30,6 +30,7 @@ get 'colophon' => 'home#colophon'
 get 'archive'  => 'home#archive'
 get 'photolog' => "home#photolog"
 get 'trampoline' => "home#trampoline"
+get 'trampoline/:id' => "home#article", as: :scrap
 
 
   # Example of regular route:
