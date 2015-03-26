@@ -162,7 +162,7 @@ $iphone-portrait-max: 959px;
 // firefox specific hack
 @-moz-document url-prefix() {
     .fixed {
-        left: 105px;
+        left: 115px;
     }
 }
 
