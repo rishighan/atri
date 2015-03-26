@@ -162,7 +162,7 @@ $iphone-portrait-max: 959px;
 // firefox specific hack
 @-moz-document url-prefix() {
     .fixed {
-        left: 125px;
+        left: 105px;
     }
 }
 
@@ -311,6 +311,10 @@ $iphone-portrait-max: 959px;
     line-height: 2em;
     h1, h2 {
         font-family: "Bitter-Regular";
+    }
+
+    article{
+        margin: 0 0 100px 0;
     }
 }
 
