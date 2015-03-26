@@ -1,4 +1,6 @@
 %section.posts-container.trampoline.twelve.columns.offset-by-two{itemscope: "", itemtype: "http://schema.org/Article"}
+  %div.disclaimer
+    ="All opinions expressed on this website, and by extension, to any other social channels are categorically my own and do not represent the interests of my employer in any form."
   -@trampoline.each do |post|
     %article
       %h2{itemprop: "name"}!= link_to(post.title, scrap_path(post.friendly_id))

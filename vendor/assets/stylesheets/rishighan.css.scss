@@ -313,6 +313,18 @@ $iphone-portrait-max: 959px;
         font-family: "Bitter-Regular";
     }
 
+    .disclaimer{
+        color:$lightblack;
+        border-top:1px solid $gray;
+        border-bottom:1px solid $gray;
+        line-height:1.5em;
+        font-size:0.8em;
+        font-family: "Bitter-Italic";
+        padding:10px;
+        margin:30px 0 30px 0;
+
+    }
+
     article{
         margin: 0 0 100px 0;
     }
