@@ -4,7 +4,7 @@
   %ul.left.six.columns
     -@postheroes.each do |post|
       %li
-        %span.tags= post.title
+        %span.tags= link_to(post.title, article_path(post.friendly_id))
 
   %ul.right.four.columns
     -@projectheroes.each do |project|
