@@ -1,4 +1,4 @@
-* Rishi Ghan's personal website *
+**Rishi Ghan's personal website**
 
 This repository holds the files for my personal website.
 It is built on the Ruby on Rails framework.
