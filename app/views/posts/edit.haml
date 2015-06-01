@@ -1,8 +1,8 @@
 %p
   %h2
     Editing post
-  %span.infotags
-    - if @post.is_draft == 'yes'
+  - if @post.is_draft == 'yes'
+    %span.infotags
       Draft
 
 =render 'form'
