@@ -89,6 +89,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :excerpt, :is_draft, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
+      params.require(:post).permit(:title, :content, :excerpt, :is_draft, :draft_status, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
     end
 end

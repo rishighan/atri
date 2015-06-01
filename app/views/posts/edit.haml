@@ -1,9 +1,11 @@
 %p
   %h2
     Editing post
+  %span.infotags
+    - if @post.is_draft == 'yes'
+      Draft
 
 =render 'form'
 
-=link_to 'Show', @post
-|
+=link_to 'Preview Post', @post
 =link_to 'Back', posts_path
