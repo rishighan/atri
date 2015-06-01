@@ -11,4 +11,4 @@ content quickly and without fuss.
 
 I wish to maintain this website actively and keep building on it.
 
-It is licensed under the MIT license (MIT).
+It is licensed under the MIT license (MIT)
