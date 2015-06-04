@@ -14,6 +14,6 @@
 
 + deployment using capistrano -> done
 
-+ haml-ize the entire website
++ haml-ize the entire website -> in progress
 + export posts to json objects
 + make the json objects import-able into postgres
