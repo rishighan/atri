@@ -68,8 +68,8 @@ Heroize.prototype = {
     // want the dominant color calculated on.
     var target = document.getElementById(this.colorTarget);
     if (target !== null) {
-      var targetWidth = target.width(),
-        targetHeight = target.height(),
+      var targetWidth = target.width,
+        targetHeight = target.height,
         finalSrc = target.attr('src');
 
       // have to create an Image object for Color Thief
