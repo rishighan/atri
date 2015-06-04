@@ -637,7 +637,7 @@ footer {
         margin: 0px auto;
         position: relative;
         top: 140px;
-left: 21px;
+        left: 21px;
         .left {
             float: left;
             text-align: right;
@@ -662,6 +662,11 @@ left: 21px;
         padding: 10px 0 10px 10px;
         border-left: 1px solid $gray;
        }
+    }
+
+    // post container top margin adjustment
+    .posts-container{
+      margin: 160px 0 0 0;
     }
 }
 /* All Mobile Sizes (devices and browser) */
