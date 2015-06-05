@@ -62,7 +62,7 @@ class HomeController < ApplicationController
 
   def archive
     #group by created_at date
-    @archive = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Colophon"]).group_by {|x| x.created_at.beginning_of_month}
+    @archive = Post.is_draft("no").group_by_category("exclude", ["Projects", "Hero", "Colophon", "Trampoline"]).group_by {|x| x.created_at.beginning_of_month}
   end
 
 
