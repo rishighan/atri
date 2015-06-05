@@ -70,7 +70,7 @@ Heroize.prototype = {
     if (target !== null) {
       var targetWidth = target.width,
         targetHeight = target.height,
-        finalSrc = target.attr('src');
+        finalSrc = target.getAttribute('src');
 
       // have to create an Image object for Color Thief
       var finalImg = new Image(targetWidth, targetHeight);
