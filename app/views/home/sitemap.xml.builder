@@ -16,10 +16,4 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
         end
     end
 
-    @categories.each do |cat|
-        xml.url do
-            xml.loc category_url(cat)
-            xml.priority 1.0
-         end
-    end
 end
