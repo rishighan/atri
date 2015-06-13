@@ -1,5 +1,5 @@
 %p
-  %h2="Showing All Posts"
+  %h2= I18n.t 'admin_header'
   %h4=pluralize(@allposts.count, 'post') + " in all"
   =form_tag(posts_path, method: :get) do
     =text_field_tag(:search_term, params[:search_term], placeholder: "Search Posts")
@@ -7,33 +7,10 @@
 
 =paginate @posts
 %div
-  %div.table.twelve.columns
-    %div.trow
-      %div.cell.five.columns="Title"
-      %div.cell.four.columns="Categories"
-      %div.cell.three.columns="Actions"
+  %div.twelve.columns
+    / Posts with high pageviews
+    %div.seven.columns
+      %h3=I18n.t 'trending_posts'
 
-    -@posts.each do |post|
-      %div.trow{class: cycle('even','odd')}
-        %div.five.columns
-          %h4=post.title.titleize
-          %span.caption
-            =post.excerpt
-          %div.sparky
-            =Pageviews.getviews(post.friendly_id)
-
-        /infotags
-        %div.cell.four.columns.category-tags
-          -if post.is_draft == 'yes'
-            %span.infotags="draft"
-          -post.categories.each do |cat|
-            %span.infotags=cat.title unless cat.title.empty?
-        /actions
-        %div.cell.three.columns
-          %ul.button-group
-            %li
-              =link_to edit_post_path(post) do
-                %button{class: "pull-left"}
-                  Edit Post
-            %li
-              =button_to "Destroy", post_path(post), method: :delete, data:{confirm: "Delete Post?"}, class: "pull-right"
+    %div.five.columns
+      %h3=I18n.t 'drafts'

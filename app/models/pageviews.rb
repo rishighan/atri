@@ -27,4 +27,8 @@ class Pageviews < ActiveRecord::Base
 
     # end
   end
+
+  def self.getTrending post
+    self.getviews(post)
+  end
 end

@@ -6,6 +6,9 @@ class Post < ActiveRecord::Base
     # pagination
     paginates_per 10
 
+    #autocomplete support
+    searchkick
+
     # this is to map search keywords
     settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do

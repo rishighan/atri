@@ -28,6 +28,9 @@ gem 'kaminari'
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 
+#searchkick for elasticsearch-powered autocomplete
+gem 'searchkick'
+
 # google analytics and reporting
 gem 'google-api-client'
 
