@@ -12,7 +12,8 @@
     %div.seven.columns
       %h3=I18n.t 'trending_posts'
       %div.trending
-        =@trending
+        -@trending.each do |p|
+          
 
 
     %div.five.columns
