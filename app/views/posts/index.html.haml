@@ -9,12 +9,16 @@
 %div
   %div.twelve.columns
     / Posts with high pageviews
-    %div.seven.columns
+    %div.eight.columns
       %h3=I18n.t 'trending_posts'
       %div.trending
-        -@trending.each do |p|
-          
+        -@trending.each do |post|
+          %h4.heading=post[0]
+          %span=post[1]
+          %div.sparky
+            =post[3]
 
 
-    %div.five.columns
+
+    %div.four.columns
       %h3=I18n.t 'drafts'

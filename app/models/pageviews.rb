@@ -35,9 +35,9 @@ class Pageviews < ActiveRecord::Base
 
   # sort a two-dimensional array descending
   #todo: add a param for direction
-  def self.sortArray arr
+  def self.sortArray arr, index
     arr.sort do |a, b|
-      b[1] <=> a[1]
+      b[index] <=> a[index]
     end
   end
 end

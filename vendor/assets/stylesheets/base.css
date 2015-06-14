@@ -274,8 +274,8 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
     border: 1px solid #ccc;
     padding: 6px 4px;
     outline: none;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
+    /*-moz-border-radius: 2px;
+    -webkit-border-radius: 2px;*/
     border-radius: 2px;
     font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #777;
