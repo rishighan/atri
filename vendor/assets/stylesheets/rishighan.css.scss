@@ -499,27 +499,11 @@ $iphone-portrait-max: 959px;
             display: inline;
         }
     }
-    div.table {
-        display: table;
-        div.cell {
-            vertical-align: middle;
-            display: table-cell;
-            .button-group {
-                li {
-                    float: left;
-                    margin: 0 5px 0 0;
-                }
-            }
-        }
-        .category-tags {
-            line-height: 30px;
-        }
-        div.trow {
-            display: table;
-            border-bottom: 1px solid $locongray;
-            padding: 10px 0 10px 15px;
-        }
-    }
+
+    // more admin styles
+    
+
+
     // zebra-stripes
     .even {
         background: $beige;

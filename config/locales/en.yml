@@ -22,6 +22,11 @@
 en:
   hello: "Hello world"
 
+  #buttons
+  submit: "Submit"
+  search: "Search"
+  search_posts: "Search Posts"
+
   #admin page
   admin_header: "Dashboard"
   trending_posts: "Trending Posts"

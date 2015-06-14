@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.page(params[:page]).per(10)
     end
+    @trending = @allposts.map{|post| [post.friendly_id, Pageviews.getviews(post.friendly_id) ]}
   end
 
   # GET /posts/1

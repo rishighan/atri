@@ -2,8 +2,8 @@
   %h2= I18n.t 'admin_header'
   %h4=pluralize(@allposts.count, 'post') + " in all"
   =form_tag(posts_path, method: :get) do
-    =text_field_tag(:search_term, params[:search_term], placeholder: "Search Posts")
-    %input{:type=>"submit", :value=> "Search"}
+    =text_field_tag(:search_term, params[:search_term], placeholder: t('search_posts'))
+    %input{:type=>"submit", :value=> t('search')}
 
 =paginate @posts
 %div
@@ -11,6 +11,9 @@
     / Posts with high pageviews
     %div.seven.columns
       %h3=I18n.t 'trending_posts'
+      %div.trending
+        =@trending
+
 
     %div.five.columns
       %h3=I18n.t 'drafts'
