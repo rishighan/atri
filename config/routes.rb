@@ -8,7 +8,10 @@ Atri::Application.routes.draw do
 resources :categories
 
 resources :posts do
-   resources :attachments
+  collection do
+    get :autocomplete
+  end
+  resources :attachments 
 end
 
 # sitemap

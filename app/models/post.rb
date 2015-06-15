@@ -1,21 +1,11 @@
 class Post < ActiveRecord::Base
     include FriendlyId
-    include Elasticsearch::Model
-    include Elasticsearch::Model::Callbacks
 
     # pagination
     paginates_per 10
 
     #autocomplete support
-    searchkick
-
-    # this is to map search keywords
-    settings index: { number_of_shards: 1 } do
-    mappings dynamic: 'false' do
-        indexes :title, analyzer: 'english'
-        indexes :content, analyzer: 'english'
-    end
-    end
+    searchkick autocomplete: ['title', 'excerpt']
 
     friendly_id :title, use:[:slugged, :I18n, :finders]
     validates :title, presence: true
@@ -54,17 +44,6 @@ class Post < ActiveRecord::Base
     def self.is_draft(what)
         post = Post.where('is_draft = (?)', what )
     end
-
-    # Delete the previous articles index in Elasticsearch
-    Post.__elasticsearch__.client.indices.delete index: Post.index_name rescue nil
-
-    # Create the new index with the new mapping
-    Post.__elasticsearch__.client.indices.create \
-      index: Post.index_name,
-      body: { settings: Post.settings.to_hash, mappings: Post.mappings.to_hash }
-
-    # Index all article records from the DB to Elasticsearch
-    Post.import
 
 
 end

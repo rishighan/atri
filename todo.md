@@ -17,5 +17,5 @@
 + haml-ize the entire website -> done
 + export posts to json objects
 + make the json objects import-able into postgres
-+ bower-ize the JS dependencies
++ bower-ize the JS dependencies -> in progress
 + require.js loading of JS

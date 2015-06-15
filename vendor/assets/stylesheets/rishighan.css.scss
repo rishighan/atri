@@ -503,7 +503,7 @@ $iphone-portrait-max: 959px;
   }
 
   // more admin styles
-  input#search_term {
+  input#query {
     padding: 4px;
     font-size:1.5em;
     -webkit-appearance: none;
@@ -512,9 +512,10 @@ $iphone-portrait-max: 959px;
     border-right: none;
     border-top: none;
     border-bottom: 1px solid #ccc;
+    vertical-align: baseline !important;
 
   }
-  input#search_term:focus {
+  input#query:focus {
     -webkit-appearance: none;
     box-shadow: none;
     -webkit-box-shadow: none;

@@ -2,10 +2,11 @@
   %h2= I18n.t 'admin_header'
   %h4=pluralize(@allposts.count, 'post') + " in all"
   =form_tag(posts_path, method: :get) do
-    =text_field_tag(:search_term, params[:search_term], placeholder: t('search_posts'))
+    =text_field_tag(:query, params[:query], autocomplete: 'off', class: 'typeahead')
     %input{:type=>"submit", :value=> t('search')}
 
 =paginate @posts
+
 %div
   %div.twelve.columns
     / Posts with high pageviews
@@ -13,7 +14,7 @@
       %h3=I18n.t 'trending_posts'
       %div.trending
         -@trending.each do |post|
-          %h4.heading=post[0]
+          %h4.heading= link_to post[0], edit_post_path(post[4])
           %span=post[1]
           %div.sparky
             =post[3]
@@ -23,5 +24,5 @@
       %h3=I18n.t 'drafts'
       %div.drafts
         -@drafts.each do |draft|
-          %h4.heading= draft.title
+          %h4.heading= link_to draft.title, edit_post_path(draft.friendly_id)
           %span=draft.excerpt
