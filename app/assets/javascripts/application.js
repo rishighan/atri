@@ -10,12 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery/dist/jquery.min
+//= require jquery-ujs/src/rails
 //= require quantize
 //= require turbolinks
 //= require cocoon
 
-//= require jquery.sparkline
-//= require color-thief
+//= require typeahead.js/dist/typeahead.jquery.min
+//= require typeahead.js/dist/bloodhound.min
+//= require jquery-sparkline/dist/jquery.sparkline
+//= require color-thief/src/color-thief
 //= require_tree .

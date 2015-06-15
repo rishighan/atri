@@ -6,12 +6,23 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @allposts = Post.all
-    if params[:search_term].present?
-      @posts = Post.search(query: {multi_match:{query: params[:search_term], fields: ['title','content']}}).records
+    @allposts = Post.is_draft('no').all
+    if params[:query].present?
+      @posts = Post.search(params[:query], page: params[:page])
     else
       @posts = Post.page(params[:page]).per(10)
     end
+    # trending posts
+    @trending = @allposts.limit(5).map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id ]}
+    @trending = Pageviews.sortArray(@trending)
+    # drafts
+    @drafts = Post.limit(5).is_draft('yes')
+  end
+
+  def autocomplete
+   render json: Post.search(params[:query], autocomplete: true, limit: 10).map do |post|
+     {title:post.title, excerpt: post.excerpt}
+   end
   end
 
   # GET /posts/1

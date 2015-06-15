@@ -82,11 +82,11 @@ Heroize.prototype = {
         console.log("Color analysis complete.");
         colorThief.getColor(finalImg);
         console.log(colorThief.getColor(finalImg));
-      }
+      };
     }
 
   }
-}
+};
 
 
 
@@ -105,7 +105,7 @@ $(document).ready(function() {
 $(window).bind('scroll', function() {
   toggleFixed('#site-nav');
 
-})
+});
 
 // and one for the turbo
 $(document).on('page:load', function() {
@@ -116,7 +116,7 @@ $(document).on('page:load', function() {
     },
     foo = new Heroize(opts);
   foo.setProjectHeroImage();
-  foo.setDominantColor(opts.colorTarget)
+  foo.setDominantColor(opts.colorTarget);
 
 
 

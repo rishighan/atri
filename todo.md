@@ -1,7 +1,7 @@
 + paperclip multiple attachments -> done
 + categories, habtm -> done
 + user authentication -> done
-+ 'feature' post
++ 'feature' post -> in progress
 + pagination -> in progress
 + search (elasticsearch) -> in progress
 + drafts -> in progress
@@ -14,6 +14,8 @@
 
 + deployment using capistrano -> done
 
-+ haml-ize the entire website -> in progress
++ haml-ize the entire website -> done
 + export posts to json objects
 + make the json objects import-able into postgres
++ bower-ize the JS dependencies -> in progress
++ require.js loading of JS
