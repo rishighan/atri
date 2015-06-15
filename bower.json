@@ -1,0 +1,29 @@
+{
+  "name": "atri",
+  "version": "1.0.0",
+  "homepage": "http://rishighan.com",
+  "authors": [
+    "Rishi Ghan <rishi.ghan@gmail.com>"
+  ],
+  "description": "Rishi Ghan's website",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "Rishi",
+    "Ghan"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "color-thief": "*"
+  }
+}

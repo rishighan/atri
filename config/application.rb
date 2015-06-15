@@ -21,5 +21,6 @@ module Atri
     # config.i18n.default_locale = :de
 
     Paperclip.options[:command_path] = "/usr/local/bin/identify"
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
   end
 end

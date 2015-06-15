@@ -21,3 +21,7 @@
     / Drafts
     %div.four.columns
       %h3=I18n.t 'drafts'
+      %div.drafts
+        -@drafts.each do |draft|
+          %h4.heading= draft.title
+          %span=draft.excerpt
