@@ -32,7 +32,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 #bower
 set :bower_flags, '--quiet --config.interactive=false'
 set :bower_roles, :web
-set :bower_target_path, "#{release_path}"
+set :bower_target_path, current_path
 set :bower_bin, :bower
 
 # Default value for default_env is {}
@@ -44,7 +44,6 @@ set :rvm_ruby_version, "2.1.2"
 # set :keep_releases, 5
 
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
