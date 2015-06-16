@@ -82,6 +82,7 @@ group :doc do
 end
 
 group :development do
+  gem 'capistrano-bower'
   gem 'capistrano', '~> 3.2.0'
   gem 'net-ssh'
   gem 'capistrano-rvm'
