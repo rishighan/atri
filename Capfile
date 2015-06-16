@@ -1,9 +1,6 @@
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
-# Bower install
-require 'capistrano/bower'
-
 # Gem install support in the context of rvm-enabled ruby
 require 'capistrano/rvm'
 #require 'capistrano/rails'
@@ -29,3 +26,5 @@ require 'capistrano/bundler'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
+# Bower install
+require 'capistrano/bower'
