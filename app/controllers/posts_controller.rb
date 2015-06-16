@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def index
     @allposts = Post.is_draft('no').all
     if params[:query].present?
-      @posts = Post.search(params[:query], page: params[:page])
+      @posts = Post.search(params[:query])
     end
     # trending posts
     @trending = @allposts.map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id ]}
