@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       @posts = Post.page(params[:page]).per(10)
     end
     # trending posts
-    @trending = @allposts.limit(5).map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id ]}
+    @trending = @allposts.map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id ]}
     @trending = Pageviews.sortArray(@trending)
     # drafts
     @drafts = Post.limit(5).is_draft('yes')
