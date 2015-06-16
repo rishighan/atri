@@ -1,8 +1,10 @@
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
-# Gem install support in the context of rvm-enabled ruby
+# Bower install
+require 'capistrano/bower'
 
+# Gem install support in the context of rvm-enabled ruby
 require 'capistrano/rvm'
 #require 'capistrano/rails'
 

@@ -12,7 +12,7 @@ set :use_sudo, false
 set :deploy_to, '/home/rishi/atri'
 
 # Default value for :scm is :git
- set :scm, :git
+set :scm, :git
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -28,6 +28,12 @@ set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+#bower
+set :bower_flags, '--quiet --config.interactive=false'
+set :bower_roles, :web
+set :bower_target_path, nil
+set :bower_bin, :bower
 
 # Default value for default_env is {}
 #set :default_env, { path: "~/.rvm/rubies/:$PATH" }
