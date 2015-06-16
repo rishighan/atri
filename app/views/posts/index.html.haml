@@ -5,8 +5,6 @@
     =text_field_tag(:query, params[:query], autocomplete: 'off', class: 'typeahead')
     %input{:type=>"submit", :value=> t('search')}
 
-=paginate @posts
-
 %div
   %div.twelve.columns
     / Posts with high pageviews
