@@ -24,10 +24,6 @@ gem 'rouge'
 #use kaminari for pagination
 gem 'kaminari'
 
-#elasticsearch for search
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
-
 #searchkick for elasticsearch-powered autocomplete
 gem 'searchkick'
 

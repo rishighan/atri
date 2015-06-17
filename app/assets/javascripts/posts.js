@@ -100,6 +100,22 @@ $(document).ready(function() {
   foo.setProjectHeroImage();
   foo.setDominantColor(opts.colorTarget);
 
+// Autocomplete search
+  var posts = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: '/posts/autocomplete.json',
+  remote: {
+    url: "/posts/autocomplete.json?query=%QUERY"
+  }
+});
+
+$('.typeahead').typeahead(null, {
+  name: 'query',
+  display: 'value',
+  source: posts
+});
+
 });
 
 $(window).bind('scroll', function() {

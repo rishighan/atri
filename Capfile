@@ -2,7 +2,6 @@
 require 'capistrano/setup'
 
 # Gem install support in the context of rvm-enabled ruby
-
 require 'capistrano/rvm'
 #require 'capistrano/rails'
 

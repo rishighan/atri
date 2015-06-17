@@ -18,9 +18,7 @@ class PostsController < ApplicationController
   end
 
   def autocomplete
-   render json: Post.search(params[:query], autocomplete: true, limit: 10).map do |post|
-     {title:post.title, excerpt: post.excerpt}
-   end
+   render json: Post.search(params[:query], autocomplete: true, limit: 10).map(&:title)
   end
 
   # GET /posts/1
