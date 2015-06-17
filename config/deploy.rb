@@ -55,7 +55,7 @@ namespace :deploy do
       end
     end
   end
-  after :published, :bower_and_npm_install
+  after :published, :bower_install
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

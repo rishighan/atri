@@ -24,10 +24,6 @@ gem 'rouge'
 #use kaminari for pagination
 gem 'kaminari'
 
-#elasticsearch for search
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
-
 #searchkick for elasticsearch-powered autocomplete
 gem 'searchkick'
 
@@ -82,7 +78,6 @@ group :doc do
 end
 
 group :development do
-  gem 'capistrano-bower'
   gem 'capistrano', '~> 3.2.0'
   gem 'net-ssh'
   gem 'capistrano-rvm'
