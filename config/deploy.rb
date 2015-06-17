@@ -29,12 +29,6 @@ set :linked_files, %w{config/database.yml}
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-#bower
-set :bower_flags, '--quiet --config.interactive=false'
-set :bower_roles, :web
-set :bower_target_path, current_path
-set :bower_bin, :bower
-
 # Default value for default_env is {}
 #set :default_env, { path: "~/.rvm/rubies/:$PATH" }
 
@@ -53,6 +47,15 @@ namespace :deploy do
   end
 
   after :publishing, :restart
+
+  task :bower_install do
+    on roles(:app), in: :sequence, wait: 5 do
+      within release_path do
+        execute :bower, "install"
+      end
+    end
+  end
+  after :published, :bower_and_npm_install
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
