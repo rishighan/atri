@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
     paginates_per 10
 
     #autocomplete support
-    searchkick autocomplete: ['title', 'excerpt']
+    searchkick autocomplete: ['title']
 
     friendly_id :title, use:[:slugged, :I18n, :finders]
     validates :title, presence: true

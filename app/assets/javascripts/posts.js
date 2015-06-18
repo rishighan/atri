@@ -100,21 +100,22 @@ $(document).ready(function() {
   foo.setProjectHeroImage();
   foo.setDominantColor(opts.colorTarget);
 
-// Autocomplete search
+  // Autocomplete search
   var posts = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: '/posts/autocomplete.json',
-  remote: {
-    url: "/posts/autocomplete.json?query=%QUERY"
-  }
-});
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: '/posts/autocomplete.json',
+    remote: {
+      url: '/posts/autocomplete.json?query=%QUERY',
+      wildcard: '%QUERY'
+    }
+  });
 
-$('.typeahead').typeahead(null, {
-  name: 'query',
-  display: 'value',
-  source: posts
-});
+  $('.typeahead').typeahead(null, {
+    name: 'posts',
+    display: 'title',
+    source: posts
+  });
 
 });
 
