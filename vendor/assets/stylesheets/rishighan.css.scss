@@ -505,7 +505,7 @@ $iphone-portrait-max: 959px;
   // more admin styles
   input#query {
     padding: 4px;
-    font-size:1.5em;
+    font-size: 1.5em;
     -webkit-appearance: none;
     -moz-appearance: none;
     border-left: none;
@@ -513,7 +513,6 @@ $iphone-portrait-max: 959px;
     border-top: none;
     border-bottom: 1px solid #ccc;
     vertical-align: baseline !important;
-
   }
   input#query:focus {
     -webkit-appearance: none;
@@ -521,6 +520,25 @@ $iphone-portrait-max: 959px;
     -webkit-box-shadow: none;
     -webkit-padding: 3px;
     outline: 0;
+  }
+
+  // Autocomplete result hint
+  .tt-hint{
+    left: -1px !important;
+    top: -3px !important;
+    font-size:1.5em !important;
+  }
+
+  // Autocomplete search results menu
+  div.tt-menu {
+    background: $locongray;
+    top: 35px !important;
+    width: 100% !important;
+
+    // result display
+    div.tt-dataset {
+      padding: 5px !important;
+    }
   }
 
   // zebra-stripes
