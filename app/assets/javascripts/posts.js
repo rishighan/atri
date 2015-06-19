@@ -114,7 +114,15 @@ $(document).ready(function() {
   $('.typeahead').typeahead(null, {
     name: 'posts',
     display: 'title',
-    source: posts
+    source: posts,
+    templates: {
+      empty: [
+      '<div class="empty-message">',
+        'No posts matching the current query were found',
+      '</div>'
+    ].join('\n'),
+    suggestion: Handlebars.compile('<div class="search-result"><strong>{{title}}</strong><br> <small>{{excerpt}}<small> </div>')
+    }
   });
 
 });

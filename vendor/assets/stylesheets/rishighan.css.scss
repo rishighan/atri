@@ -466,42 +466,11 @@ $iphone-portrait-max: 959px;
   }
 }
 .admin {
-  h2,
-  h3,
-  h4,
-  h5 {
+  h2, h3, h4, h5 {
     font-family: 'Muli-regular';
   }
-  .caption {
-    font-style: italic;
-    font-size: $subheading2;
-    color: $thatblack;
-  }
-  .cat-list {
-    div {
-      padding: $normal-padding;
-    }
-  }
-  .well {
-    background: $information;
-    padding: $normal-padding;
-    border-bottom: 1px solid $gray;
-    a {
-      font-family: 'Muli-regular';
-      text-decoration: none;
-      font-size: $subheading2;
-      &:visited {
 
-      }
-      &:hover {
-        color: $gray;
-      }
-    }
-    label {
-      display: inline;
-    }
-  }
-
+  // Searchkick autocomplete
   // more admin styles
   input#query {
     padding: 4px;
@@ -534,12 +503,55 @@ $iphone-portrait-max: 959px;
     background: $locongray;
     top: 35px !important;
     width: 100% !important;
+  }
 
-    // result display
-    div.tt-dataset {
-      padding: 5px !important;
+  // Search results
+  .search-result{
+    padding: 0 10px;
+  }
+
+  .tt-cursor{
+    background: $loconbeige;
+  }
+
+  // Search button
+  .search-button{
+    vertical-align: top;
+    margin:0px;
+    font-size:1.2em;
+  }
+
+  .caption {
+    font-style: italic;
+    font-size: $subheading2;
+    color: $thatblack;
+  }
+  .cat-list {
+    div {
+      padding: $normal-padding;
     }
   }
+  .well {
+    background: $information;
+    padding: $normal-padding;
+    border-bottom: 1px solid $gray;
+    a {
+      font-family: 'Muli-regular';
+      text-decoration: none;
+      font-size: $subheading2;
+      &:visited {
+
+      }
+      &:hover {
+        color: $gray;
+      }
+    }
+    label {
+      display: inline;
+    }
+  }
+
+
 
   // zebra-stripes
   .even {

@@ -19,4 +19,5 @@
 //= require typeahead.js/dist/typeahead.bundle
 //= require jquery-sparkline/dist/jquery.sparkline
 //= require color-thief/src/color-thief
+//= require handlebars/handlebars.min
 //= require_tree .
