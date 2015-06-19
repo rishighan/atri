@@ -16,8 +16,8 @@
 //= require turbolinks
 //= require cocoon
 
-//= require typeahead.js/dist/typeahead.jquery.min
-//= require typeahead.js/dist/bloodhound.min
+//= require typeahead.js/dist/typeahead.bundle
 //= require jquery-sparkline/dist/jquery.sparkline
 //= require color-thief/src/color-thief
+//= require handlebars/handlebars.min
 //= require_tree .

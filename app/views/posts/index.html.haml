@@ -2,8 +2,8 @@
   %h2= I18n.t 'admin_header'
   %h4=pluralize(@allposts.count, 'post') + " in all"
   =form_tag(posts_path, method: :get) do
-    =text_field_tag(:query, params[:query], autocomplete: 'off', class: 'typeahead')
-    %input{:type=>"submit", :value=> t('search')}
+    =text_field_tag(:query, params[:query], autocomplete: 'off', class: 'typeahead six columns')
+    %input{:type=>"submit", :value=> t('search'), class: 'search-button'}
 
 %div
   %div.twelve.columns
