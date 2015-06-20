@@ -3,7 +3,7 @@
 + user authentication -> done
 + 'feature' post -> in progress
 + pagination -> in progress
-+ search (elasticsearch) -> in progress
++ search (elasticsearch) -> done, improve the search config
 + drafts -> in progress
 + archival feature -> in progress
 + filtering the posts in the CMS by tags
