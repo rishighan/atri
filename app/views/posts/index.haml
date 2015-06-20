@@ -10,12 +10,13 @@
     / Posts with high pageviews
     %div.eight.columns
       %h3=I18n.t 'trending_posts'
-      %div.trending
+      %ul.trending
         -@trending.first(5).each do |post|
-          %h4.heading= link_to post[0], edit_post_path(post[4])
-          %span=post[1]
-          %div.sparky
-            =post[3]
+          %li
+            %h4.heading= link_to post[0], edit_post_path(post[4])
+            %span=post[1]
+            %div.sparky
+              =post[3]
 
     / Drafts
     %div.four.columns

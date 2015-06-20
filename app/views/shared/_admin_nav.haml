@@ -1,0 +1,13 @@
+%nav.admin-nav.container
+
+  %ul.thirteen.columns
+    %li=link_to "Dashboard", :controller => 'posts'
+    %li=link_to "New Post", new_post_path
+
+    %li=link_to "New Category", new_category_path
+    %li=link_to "All Categories", categories_path
+    %li
+      ="Logged in as"
+      = current_user.email
+    -if user_signed_in?
+      %li=link_to "Log Out", destroy_user_session_path, method: :delete
