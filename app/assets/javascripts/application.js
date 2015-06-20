@@ -11,9 +11,9 @@
 // about supported directives.
 //
 //= require jquery/dist/jquery.min
+//= require turbolinks
 //= require jquery-ujs/src/rails
 //= require quantize
-//= require turbolinks
 //= require cocoon
 
 //= require typeahead.js/dist/typeahead.bundle
