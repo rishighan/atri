@@ -90,11 +90,12 @@ $margin-ten: 10px;
 // decorations
 .infotags {
   background: $information;
-  padding: $small-padding;
+  padding: 4px 5px 4px 5px;
   border-bottom: $gray;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  font-size: 0.9em;
 }
 
 // links
@@ -471,7 +472,11 @@ $iphone-portrait-max: 959px;
   }
 
   .trending li{
-    margin: 15px 0;
+    margin: 5px 0;
+
+    .categories{
+      margin:10px 0 8px 0;
+    }
   }
 
   // Searchkick autocomplete
