@@ -88,8 +88,6 @@ Heroize.prototype = {
   }
 };
 
-
-
 // one for old times sake.
 $(document).ready(function() {
   // set the options object
@@ -117,11 +115,11 @@ $(document).ready(function() {
     source: posts,
     templates: {
       empty: [
-      '<div class="empty-message">',
+        '<div class="empty-message">',
         'No posts matching the current query were found',
-      '</div>'
-    ].join('\n'),
-    suggestion: Handlebars.compile('<div class="search-result"><strong>{{title}}</strong><br> <small>{{excerpt}}<small> </div>')
+        '</div>'
+      ].join('\n'),
+      suggestion: Handlebars.compile('<div class="search-result"><strong>{{title}}</strong><br> <small>{{excerpt}}<small> </div>')
     }
   });
 
@@ -132,16 +130,16 @@ $(window).bind('scroll', function() {
 
 });
 
-// and one for the turbo
+// and one for the turbolinks
 $(document).on('page:load', function() {
 
   // set the options object
   var opts = {
       colorTarget: 'color-target'
     },
-    foo = new Heroize(opts);
-  foo.setProjectHeroImage();
-  foo.setDominantColor(opts.colorTarget);
+      foo = new Heroize(opts);
+      foo.setProjectHeroImage();
+      foo.setDominantColor(opts.colorTarget);
 
 
 

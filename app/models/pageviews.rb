@@ -4,9 +4,9 @@ class Pageviews < ActiveRecord::Base
   require 'date'
   include ReportingHelper
 
+
   def self.getviews post
     client, analytics, parameters = ReportingHelper.initclient
-
     parameters = {
       'ids'         => PROFILE,
       'start-date'  => (Date.today - 30).strftime("%Y-%m-%d"),
@@ -20,11 +20,7 @@ class Pageviews < ActiveRecord::Base
     result.data.rows.map{|hit| hit[1].to_i}.join(', ')
     #profiles = result.data.items
 
-  #   Rails.cache.fetch('google_analytics_api/#{post}', expires_in: 2.minutes) do
-  #      result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
-  #      result.data.rows.map{|hit| hit[1].to_i}.join(', ')
-  #
-  #    end
+
   end
 
   # get just the total of the pageviews
