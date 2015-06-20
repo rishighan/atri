@@ -1,6 +1,8 @@
 %p
   %h2= I18n.t 'admin_header'
-  %h4=pluralize(@allposts.count, 'post') + " in all"
+  %h4
+    =pluralize(@allposts.count, 'post') + ", "
+    =pluralize(@alldrafts.count, 'draft')
   =form_tag(posts_path, method: :get) do
     =text_field_tag(:query, params[:query], autocomplete: 'off', class: 'typeahead six columns')
     %input{:type=>"submit", :value=> t('search'), class: 'search-button'}
@@ -14,8 +16,12 @@
         -@trending.first(5).each do |post|
           %li
             %h4.heading= link_to post[0], edit_post_path(post[4])
-            %span=post[1]
-            %div.sparky
+            %div
+              %span.clearfix=post[1]
+              %p.categories
+                -post[5].each do |category|
+                  %span.infotags=category.title
+            %p.sparky
               =post[3]
 
     / Drafts

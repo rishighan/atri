@@ -7,11 +7,12 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @allposts = Post.is_draft('no').all
+    @alldrafts = Post.is_draft('yes').all
     if params[:query].present?
       @posts = Post.search(params[:query])
     end
     # trending posts
-    @trending = @allposts.map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id ]}
+    @trending = @allposts.map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id, post.categories ]}
     @trending = Pageviews.sortArray(@trending)
     # drafts
     @drafts = Post.limit(5).is_draft('yes')
