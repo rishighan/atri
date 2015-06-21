@@ -30,6 +30,9 @@ gem 'searchkick'
 # google analytics and reporting
 gem 'google-api-client'
 
+# sidekiq for background job processing
+gem 'sidekiq', '3.2.5'
+
 #new relic reporting
 gem 'newrelic_rpm'
 
