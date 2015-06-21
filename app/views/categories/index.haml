@@ -7,32 +7,17 @@
       %button
         New Category
 
-  %div.table.nine.columns
-    %div.trow
-      %div.cell.six.columns="Category Title"
-      %div.cell.three.columns="Actions"
-
+  %div.nine.columns
     -@categories.each do |category|
-      %div.trow{class: cycle('even','odd')}
-        %div.cell.five.columns
+      %div.clearfix.listing{class: cycle('even','odd')}
+        %div.pull-left
           %h4
             =category.title
-          %span.caption
+          %p.caption
             =category.description
-        / actions
-        %div.cell.four.columns
-          %ul.button-group.pull-right
-            %li
-              =link_to category do
-                %button{class:'pull-left'}
-                  Show
-            %li
-              =link_to edit_category_path(category) do
-                %button{class:'pull-left'}
-                  Edit
-            %li
-              =button_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+        %div.pull-right.button-group
+          =link_to "Show", category_path(category), class: 'button-default'
 
 
-
-
+          =link_to "Edit", edit_category_path(category.id), class: 'button-default'
+          =link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-default'
