@@ -19,8 +19,6 @@ class Pageviews < ActiveRecord::Base
     result = client.execute(:api_method => analytics.data.ga.get, :parameters => parameters)
     result.data.rows.map{|hit| hit[1].to_i}.join(', ')
     #profiles = result.data.items
-
-
   end
 
   # get just the total of the pageviews

@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   layout "admin"
 
+
   # GET /posts
   # GET /posts.json
   def index

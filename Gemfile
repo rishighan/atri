@@ -30,8 +30,11 @@ gem 'searchkick'
 # google analytics and reporting
 gem 'google-api-client'
 
-# sidekiq for background job processing
-gem 'sidekiq', '3.2.5'
+#cache
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
 
 #new relic reporting
 gem 'newrelic_rpm'
@@ -69,8 +72,6 @@ gem "devise"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
