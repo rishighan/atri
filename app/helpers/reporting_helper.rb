@@ -20,7 +20,6 @@ module ReportingHelper
       ['https://www.googleapis.com/auth/analytics.readonly', 'https://www.googleapis.com/auth/prediction'],
     key)
     @client.authorization = service_account.authorize
-    #analytics = client.discovered_api('analytics', API_VERSION)
     @analytics = @client.discovered_api('analytics', API_VERSION)
 
     parameters = {
