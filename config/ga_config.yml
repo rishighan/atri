@@ -1,0 +1,8 @@
+## Include correct information about the app and key details
+## And rename this file to ga_config.yml
+service_account_email: 142715827895-7j2bdg768lnqkgdmfat8r47fen5qlcpr@developer.gserviceaccount.com
+key_file: config/rishighan-e2d48dda2835.p12
+key_secret: notasecret
+profileID: 17894417
+application_name: rishighan
+application_version: 1.0

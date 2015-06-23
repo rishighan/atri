@@ -30,12 +30,6 @@ gem 'searchkick'
 # google analytics and reporting
 gem 'google-api-client'
 
-#cache
-gem 'redis'
-gem 'redis-namespace'
-gem 'redis-rails'
-gem 'redis-rack-cache'
-
 #new relic reporting
 gem 'newrelic_rpm'
 
