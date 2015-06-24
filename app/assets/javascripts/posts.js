@@ -123,24 +123,41 @@ $(document).ready(function() {
     }
   });
 
+  // Category autosuggestion
+  var citynames = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: '/categories/autocats.json',
+    remote: {
+      url: '/categories/autocats.json',
+      filter: function(list) {
+        return $.map(list, function(cityname, catid) {
+          return {
+            name: cityname,
+            id: catid
+          };
+        });
+
+      }
+    }
+  });
+  citynames.initialize();
+
+
+  $('input#category_selection').tagsinput({
+    typeaheadjs: {
+      name: 'citynames',
+      displayKey: 'name',
+      valueKey: 'name',
+      source: citynames.ttAdapter()
+    }
+  });
+
+
+
 });
 
 $(window).bind('scroll', function() {
   toggleFixed('#site-nav');
-
-});
-
-// and one for the turbolinks
-$(document).on('page:load', function() {
-
-  // set the options object
-  var opts = {
-      colorTarget: 'color-target'
-    },
-      foo = new Heroize(opts);
-      foo.setProjectHeroImage();
-      foo.setDominantColor(opts.colorTarget);
-
-
 
 });

@@ -14,6 +14,7 @@
 //= require jquery-ujs/src/rails
 //= require quantize
 //= require cocoon
+//= require bootstrap-tagsinput/dist/bootstrap-tagsinput
 
 //= require typeahead.js/dist/typeahead.bundle
 //= require jquery-sparkline/dist/jquery.sparkline

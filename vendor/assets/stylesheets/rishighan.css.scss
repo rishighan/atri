@@ -505,7 +505,7 @@ $iphone-portrait-max: 959px;
 
   // Searchkick autocomplete
   // more admin styles
-  input#query {
+  input#query, input#category_selection {
     padding: 4px;
     font-size: 1.5em;
     -webkit-appearance: none;

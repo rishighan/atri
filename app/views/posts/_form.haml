@@ -14,14 +14,16 @@
     %p=f.text_field(:title, size: "70")
 
   /categories
-  %p.well
+  %p
     =f.label :category
     %br/
-    =hidden_field_tag "post[category_ids][]", nil
-    -Category.order(:title).each do |cat|
-      %label
-        =check_box_tag("post[category_ids][]", cat.id, cat.id.in?(@post.categories.collect(&:id)))
-        =cat.title
+    %input{type:"text", name: "post[category_ids][]", value:"", data_role: 'tagsinput', id:'category_selection'}
+
+    -# =hidden_field_tag "post[category_ids][]", nil
+    -# -Category.order(:title).each do |cat|
+    -#   %label
+    -#     =check_box_tag("post[category_ids][]", cat.id, cat.id.in?(@post.categories.collect(&:id)))
+    -#     =cat.title
 
   /content
   %p
@@ -65,4 +67,3 @@
     %p
       =f.submit
       =f.submit "Save Draft"
-
