@@ -124,32 +124,43 @@ $(document).ready(function() {
   });
 
   // Category autosuggestion
-  var citynames = new Bloodhound({
+  var categories = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     prefetch: '/categories/autocats.json',
     remote: {
       url: '/categories/autocats.json',
       filter: function(list) {
-        return $.map(list, function(cityname, catid) {
+        return list.map(function(list) {
           return {
-            name: cityname,
-            id: catid
+            id: list.id,
+            name: list.title,
+            description: list.description
           };
         });
 
       }
     }
   });
-  citynames.initialize();
+  categories.initialize();
 
 
   $('input#category_selection').tagsinput({
     typeaheadjs: {
-      name: 'citynames',
+      name: 'categories',
       displayKey: 'name',
-      valueKey: 'name',
-      source: citynames.ttAdapter()
+      itemValue: 'id',
+      itemText: 'name',
+      freeInput: false,
+      templates: {
+        empty: [
+          '<div class="empty-message">',
+          'No posts matching the current query were found',
+          '</div>'
+        ].join('\n'),
+        suggestion: Handlebars.compile('<div class="search-result"><strong>{{name}}</strong><br> <small>{{description}}<small> </div>')
+      },
+      source: categories.ttAdapter()
     }
   });
 

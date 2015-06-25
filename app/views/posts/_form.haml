@@ -16,8 +16,9 @@
   /categories
   %p
     =f.label :category
+    %small="Start typing and you will receive suggestions."
     %br/
-    %input{type:"text", name: "post[category_ids][]", value:"", data_role: 'tagsinput', id:'category_selection'}
+    %input{type:"text", name: "post[category_ids][]", value:"", data_role: 'tagsinput', id:'category_selection', }
 
     -# =hidden_field_tag "post[category_ids][]", nil
     -# -Category.order(:title).each do |cat|

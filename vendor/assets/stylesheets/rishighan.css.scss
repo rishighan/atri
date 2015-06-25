@@ -513,7 +513,7 @@ $iphone-portrait-max: 959px;
     border-left: none;
     border-right: none;
     border-top: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $locongray;
     vertical-align: baseline !important;
   }
   input#query:focus {
@@ -535,7 +535,6 @@ $iphone-portrait-max: 959px;
   div.tt-menu {
     background: $locongray;
     top: 35px !important;
-    width: 100% !important;
   }
 
   // Search results
@@ -552,6 +551,29 @@ $iphone-portrait-max: 959px;
     vertical-align: top;
     margin:0px;
     font-size:1.2em;
+  }
+
+  // Category autosuggest
+  .bootstrap-tagsinput{
+    padding: 4px 0;
+    border-bottom:1px solid $locongray;
+    border-top: 0 none;
+    border-right: 0 none;
+    border-left: 0 none;
+    box-shadow: none;
+  }
+  .bootstrap-tagsinput > .tag{
+    font-family: 'Montserrat-regular';
+    font-size: 0.9em;
+    color:$lightblack !important;
+    text-transform: capitalize;
+
+  }
+
+  .bootstrap-tagsinput > .tag.label.label-info{
+    background:$locongray !important;
+    padding:4px;
+    border-radius: 4px;
   }
 
   .caption {
