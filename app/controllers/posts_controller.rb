@@ -67,10 +67,21 @@ end
   def update
     respond_to do |format|
       category_tags = params[:category_tags].split(',')
-      category_tags.each do |cat|
-        
-        @post.categories << Category.where(:title => cat)
+      formparams = Post.check_category(category_tags)
+      existingtags = @post.categories.map(&:id)
+
+      to_insert = formparams - (formparams & existingtags)
+      to_delete = existingtags - (formparams & existingtags)
+
+      # should insert only the ones from the form
+      to_insert.each do |cat|
+        @post.categories << Category.where(:id => cat)
       end
+      # and delete the rest
+      to_delete.each do |del|
+        @post.categories.delete(Category.where(id: del))
+      end
+
       Post.update(@post.id, post_params)
     #save as draft
     case params[:commit]

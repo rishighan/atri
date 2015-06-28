@@ -41,8 +41,18 @@ class Post < ActiveRecord::Base
         end
     end
 
+    #check if draft
     def self.is_draft(what)
         post = Post.where('is_draft = (?)', what )
+    end
+
+    #category selection
+    def self.check_category(cats)
+      result = []
+      cats.each do |cat|
+        result << Category.where("title = ?", cat).select("id").first
+      end
+      result.map(&:id)
     end
 
 
