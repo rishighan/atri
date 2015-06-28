@@ -66,8 +66,14 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      category_tags = params[:category_tags].split(',')
+      category_tags.each do |cat|
+        
+        @post.categories << Category.where(:title => cat)
+      end
       Post.update(@post.id, post_params)
-      case params[:commit]
+    #save as draft
+    case params[:commit]
        when "Save Draft"
           @post.update_attribute(:is_draft, "yes")
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -101,6 +107,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :excerpt, :is_draft, :draft_status, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
+      params.require(:post).permit(:title, :content, :excerpt, :is_draft, :draft_status, {category_ids: []}, attachments_attributes:[:id, :picture, :_destroy])
     end
 end

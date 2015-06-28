@@ -149,7 +149,7 @@ $(document).ready(function() {
     typeaheadjs: {
       name: 'categories',
       displayKey: 'name',
-      itemValue: 'id',
+      itemValue: 'name',
       itemText: 'name',
       freeInput: false,
       templates: {
