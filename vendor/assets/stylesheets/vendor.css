@@ -3,4 +3,5 @@
  *= require skeleton
  *= require layout
  *= require bootstrap-tagsinput/dist/bootstrap-tagsinput.css
+ *= require sass-bootstrap-glyphicons/scss/bootstrap-glyphicons
 */

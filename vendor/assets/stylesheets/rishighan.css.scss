@@ -535,11 +535,26 @@ $iphone-portrait-max: 959px;
   div.tt-menu {
     background: $locongray;
     top: 35px !important;
+    width:100%;
+    min-width:200px;
   }
 
   // Search results
   .search-result{
     padding: 0 10px;
+
+    // draft infotags
+    .draft-infotag{
+      border:1px solid $gray;
+      padding:0px 5px;
+      margin-left:4px;
+      font-weight: bold;
+    }
+  }
+
+  .empty-message{
+    padding:5px;
+    font-size:$subheading3;
   }
 
   .tt-cursor{

@@ -88,7 +88,7 @@ Heroize.prototype = {
   }
 };
 
-// one for old times sake.
+// READY
 $(document).ready(function() {
   // set the options object
   var opts = {
@@ -98,7 +98,7 @@ $(document).ready(function() {
   foo.setProjectHeroImage();
   foo.setDominantColor(opts.colorTarget);
 
-  // Handlebar conditional hack
+  // Handlebar condition hack
   Handlebars.registerHelper('ifCond', function(v1, v2, options) {
     if (v1 === v2) {
       return options.fn(this);
@@ -128,13 +128,16 @@ $(document).ready(function() {
         '</div>'
       ].join('\n'),
       suggestion: Handlebars.compile('<div class="search-result">' +
-                                     '{{#ifCond is_draft "yes"}}<span class="infotags">D</span>{{/ifCond}}' +
-                                     '<strong>{{title}}</strong><br>' +
-                                     '<small>{{excerpt}}<small> </div>')
+                                     '<p><strong>{{title}}</strong>'+
+                                     '{{#ifCond is_draft "yes"}}<span class="draft-infotag infotags">D</span>{{/ifCond}}' +
+                                     '<i class="glyphicon glyphicon-pencil"></i> <i class="glyphicon glyphicon-remove"></i> <br/>' +
+                                     '<small>{{excerpt}}<small></p> '+
+
+                                     '</div>')
     }
   });
 
-  // Category autosuggestion
+  // Category json source config
   var categories = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -154,8 +157,7 @@ $(document).ready(function() {
     }
   });
   categories.initialize();
-
-
+  // typeahead for category suggestions
   $('input#category_selection').tagsinput({
     typeaheadjs: {
       name: 'categories',
