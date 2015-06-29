@@ -98,6 +98,14 @@ $(document).ready(function() {
   foo.setProjectHeroImage();
   foo.setDominantColor(opts.colorTarget);
 
+  // Handlebar conditional hack
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if (v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
   // Autocomplete search
   var posts = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
@@ -119,7 +127,10 @@ $(document).ready(function() {
         'No posts matching the current query were found',
         '</div>'
       ].join('\n'),
-      suggestion: Handlebars.compile('<div class="search-result"><strong>{{title}}</strong><br> <small>{{excerpt}}<small> </div>')
+      suggestion: Handlebars.compile('<div class="search-result">' +
+                                     '{{#ifCond is_draft "yes"}}<span class="infotags">D</span>{{/ifCond}}' +
+                                     '<strong>{{title}}</strong><br>' +
+                                     '<small>{{excerpt}}<small> </div>')
     }
   });
 
