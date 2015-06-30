@@ -14,14 +14,11 @@
     %p=f.text_field(:title, size: "70")
 
   /categories
-  %p.well
+  %p
     =f.label :category
+    %small="Start typing and you will receive suggestions."
     %br/
-    =hidden_field_tag "post[category_ids][]", nil
-    -Category.order(:title).each do |cat|
-      %label
-        =check_box_tag("post[category_ids][]", cat.id, cat.id.in?(@post.categories.collect(&:id)))
-        =cat.title
+    %input{type:"text", name: "category_tags", value:"#{@post.categories.collect(&:title).join(',')}", data_role: 'tagsinput', id:'category_selection', }
 
   /content
   %p
@@ -65,4 +62,3 @@
     %p
       =f.submit
       =f.submit "Save Draft"
-

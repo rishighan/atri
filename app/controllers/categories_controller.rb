@@ -8,6 +8,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def autocats
+    render json: Category.all.map{|category| {id: category.id, title:category.title, description:category.description}}
+  end
+
   # GET /categories/1
   # GET /categories/1.json
   def show

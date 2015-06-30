@@ -5,7 +5,11 @@ Atri::Application.routes.draw do
   devise_for :users
   #get "home/index"
 
-resources :categories
+resources :categories do
+  collection do
+    get :autocats
+  end
+end
 
 resources :posts do
   resources :attachments

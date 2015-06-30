@@ -88,7 +88,7 @@ Heroize.prototype = {
   }
 };
 
-// one for old times sake.
+// READY
 $(document).ready(function() {
   // set the options object
   var opts = {
@@ -97,6 +97,14 @@ $(document).ready(function() {
     foo = new Heroize(opts);
   foo.setProjectHeroImage();
   foo.setDominantColor(opts.colorTarget);
+
+  // Handlebar condition hack
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if (v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
 
   // Autocomplete search
   var posts = new Bloodhound({
@@ -119,28 +127,60 @@ $(document).ready(function() {
         'No posts matching the current query were found',
         '</div>'
       ].join('\n'),
-      suggestion: Handlebars.compile('<div class="search-result"><strong>{{title}}</strong><br> <small>{{excerpt}}<small> </div>')
+      suggestion: Handlebars.compile('<div class="search-result">' +
+        '<p><strong>{{title}}</strong>' +
+        '{{#ifCond is_draft "yes"}}<span class="draft-infotag infotags">D</span>{{/ifCond}}' +
+        '<span class="edit-controls"><a href="/posts/{{slug}}/edit"><i class="glyphicon glyphicon-pencil"></i></a></span> <br/>' +
+        '<small>{{excerpt}}<small></p> ' +
+        '</div>')
     }
   });
+
+  // Category json source config
+  var categories = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: '/categories/autocats.json',
+    remote: {
+      url: '/categories/autocats.json',
+      filter: function(list) {
+        return list.map(function(list) {
+          return {
+            id: list.id,
+            name: list.title,
+            description: list.description
+          };
+        });
+
+      }
+    }
+  });
+  categories.initialize();
+  // typeahead for category suggestions
+  $('input#category_selection').tagsinput({
+    typeaheadjs: {
+      name: 'categories',
+      displayKey: 'name',
+      itemValue: 'name',
+      itemText: 'name',
+      freeInput: false,
+      templates: {
+        empty: [
+          '<div class="empty-message">',
+          'No posts matching the current query were found',
+          '</div>'
+        ].join('\n'),
+        suggestion: Handlebars.compile('<div class="search-result"><strong>{{name}}</strong><br> <small>{{description}}<small> </div>')
+      },
+      source: categories.ttAdapter()
+    }
+  });
+
+
 
 });
 
 $(window).bind('scroll', function() {
   toggleFixed('#site-nav');
-
-});
-
-// and one for the turbolinks
-$(document).on('page:load', function() {
-
-  // set the options object
-  var opts = {
-      colorTarget: 'color-target'
-    },
-      foo = new Heroize(opts);
-      foo.setProjectHeroImage();
-      foo.setDominantColor(opts.colorTarget);
-
-
 
 });

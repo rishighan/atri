@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
     has_and_belongs_to_many :categories, join_table: :categories_posts
     accepts_nested_attributes_for :categories
 
-    #scope that isolates "heroes" and "projects"
+    #named scope that isolates "heroes" and "projects"
     scope :hero, -> {Post.group_by_category("exactly", ["Hero"])}
     scope :projects, -> {Post.group_by_category("exactly", ["Projects"])}
     scope :desc, -> {Post.order("posts.created_at DESC")}
@@ -41,8 +41,18 @@ class Post < ActiveRecord::Base
         end
     end
 
+    #check if draft
     def self.is_draft(what)
         post = Post.where('is_draft = (?)', what )
+    end
+
+    #category selection
+    def self.check_category(cats)
+      result = []
+      cats.each do |cat|
+        result << Category.where("title = ?", cat).select("id").first
+      end
+      result.map(&:id)
     end
 
 

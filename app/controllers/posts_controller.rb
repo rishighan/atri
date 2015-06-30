@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       @posts = Post.search(params[:query])
     end
     # trending posts
-    @trending = @allposts.map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id, post.categories ]}
+    @trending = @allposts.map{|post| [post.title, post.excerpt, Pageviews.getTotalPageviews(Pageviews.getviews(post.friendly_id)), Pageviews.getviews(post.friendly_id), post.friendly_id, post.categories]}
     @trending = Pageviews.sortArray(@trending)
     # drafts
     @drafts = Post.limit(5).is_draft('yes')
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def autocomplete
    render json: Post.search(params[:query], autocomplete: true, limit: 10).map do |post|
-     {title: post.title, excerpt: post.excerpt}
+     {title: post.title, excerpt: post.excerpt, draft: post.is_draft}
    end
 
   end
@@ -66,8 +66,29 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      # the general idea here is as follows:
+      # take the input set set1 and the existing set set2
+      # find res1 = set1 - (set1 & set2) and res2 = set2 -(set1 & set2)
+      # insert res1 in the join table and delete res2 from it.
+      category_tags = params[:category_tags].split(',')
+      formparams = Post.check_category(category_tags)
+      existingtags = @post.categories.map(&:id)
+
+      to_insert = formparams - (formparams & existingtags)
+      to_delete = existingtags - (formparams & existingtags)
+
+      # should insert only the ones from the form
+      to_insert.each do |cat|
+        @post.categories << Category.where(:id => cat)
+      end
+      # and delete the rest
+      to_delete.each do |del|
+        @post.categories.delete(Category.where(id: del))
+      end
+
       Post.update(@post.id, post_params)
-      case params[:commit]
+    #save as draft
+    case params[:commit]
        when "Save Draft"
           @post.update_attribute(:is_draft, "yes")
           format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -101,6 +122,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :excerpt, :is_draft, :draft_status, {:category_ids=>[]}, attachments_attributes:[:id, :picture, :_destroy])
+      params.require(:post).permit(:title, :content, :excerpt, :is_draft, :draft_status, {category_ids: []}, attachments_attributes:[:id, :picture, :_destroy])
     end
 end
