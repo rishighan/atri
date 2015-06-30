@@ -128,12 +128,11 @@ $(document).ready(function() {
         '</div>'
       ].join('\n'),
       suggestion: Handlebars.compile('<div class="search-result">' +
-                                     '<p><strong>{{title}}</strong>'+
-                                     '{{#ifCond is_draft "yes"}}<span class="draft-infotag infotags">D</span>{{/ifCond}}' +
-                                     '<i class="glyphicon glyphicon-pencil"></i> <i class="glyphicon glyphicon-remove"></i> <br/>' +
-                                     '<small>{{excerpt}}<small></p> '+
-
-                                     '</div>')
+        '<p><strong>{{title}}</strong>' +
+        '{{#ifCond is_draft "yes"}}<span class="draft-infotag infotags">D</span>{{/ifCond}}' +
+        '<span class="edit-controls"><a href="/posts/{{slug}}/edit"><i class="glyphicon glyphicon-pencil"></i></a></span> <br/>' +
+        '<small>{{excerpt}}<small></p> ' +
+        '</div>')
     }
   });
 

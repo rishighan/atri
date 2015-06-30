@@ -15,10 +15,14 @@
       %ul.trending
         -@trending.first(5).each do |post|
           %li
-            %h4.heading= link_to post[0], edit_post_path(post[4])
-            %div
-              =link_to 'Destroy', posts_path + '/' + post[4], method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-default'
+            %div.clearfix.seven.columns
+              / Title
+              %h4.heading.pull-left= link_to post[0], edit_post_path(post[4])
+              =link_to '', posts_path + '/' + post[4], method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove pull-right post-controls'
+            %div.seven.columns
+              / Excerpt
               %span.clearfix=post[1]
+              / Tags
               %p.categories
                 -post[5].each do |category|
                   %span.infotags=category.title

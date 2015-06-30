@@ -90,7 +90,7 @@ $margin-ten: 10px;
 // decorations
 .infotags {
   background: $information;
-  padding: 4px 5px 4px 5px;
+  padding: 4px 5px;
   border-bottom: $gray;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -148,29 +148,29 @@ a {
   src: asset-url("Montserrat-Light.otf");
 }
 
-
 // button style
-  .input[type="button"] {font-family: 'Montserrat-regular' !important;}
-  .input[type="submit"], .button-default{
-    background: #eee !important;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    color: #444;
-    display: inline-block;
-    font-size: 11px;
-    /* font-weight: bold; */
-    text-decoration: none;
-    border: 1px solid #999;
-    cursor: pointer;
-    margin-bottom: 20px;
-    line-height: normal;
-    padding: 6px;
-    font-family:'Montserrat-regular';
-    text-transform: uppercase;
-  }
-
-
+.input[type="button"] {
+  font-family: 'Montserrat-regular' !important;
+}
+.input[type="submit"],
+.button-default {
+  background: #eee !important;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #444;
+  display: inline-block;
+  font-size: 11px;
+  /* font-weight: bold; */
+  text-decoration: none;
+  border: 1px solid #999;
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: normal;
+  padding: 6px;
+  font-family: 'Montserrat-regular';
+  text-transform: uppercase;
+}
 
 // Breakpoints for various media
 $iphone-portrait-max: 959px;
@@ -491,21 +491,34 @@ $iphone-portrait-max: 959px;
   }
 }
 .admin {
-  h2, h3, h4, h5 {
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: 'Muli-regular';
   }
-
-  .trending li{
+  .trending li {
     margin: 5px 0;
-
-    .categories{
-      margin:10px 0 8px 0;
+    .categories {
+      margin: 10px 0 8px;
+    }
+  // Edit and Delete controls
+  .post-controls{
+    margin:10px 0 0 0;
+    color:$lightblack;
+    &:hover{
+      text-decoration: none;
+      color:$rg-red;
     }
   }
 
+  }
+
+
   // Searchkick autocomplete
   // more admin styles
-  input#query, input#category_selection {
+  input#query,
+  input#category_selection {
     padding: 4px;
     font-size: 1.5em;
     -webkit-appearance: none;
@@ -525,72 +538,74 @@ $iphone-portrait-max: 959px;
   }
 
   // Autocomplete result hint
-  .tt-hint{
+  .tt-hint {
     left: -1px !important;
     top: -3px !important;
-    font-size:1.5em !important;
+    font-size: 1.5em !important;
   }
 
   // Autocomplete search results menu
   div.tt-menu {
     background: $locongray;
     top: 35px !important;
-    width:100%;
-    min-width:200px;
+    width: 100%;
+    min-width: 200px;
   }
 
   // Search results
-  .search-result{
+  .search-result {
     padding: 0 10px;
 
     // draft infotags
-    .draft-infotag{
-      border:1px solid $gray;
-      padding:0px 5px;
-      margin-left:4px;
+    .draft-infotag {
+      border: 1px solid $gray;
+      padding: 0 5px;
+      margin-left: 4px;
       font-weight: bold;
     }
   }
-
-  .empty-message{
-    padding:5px;
-    font-size:$subheading3;
+  .empty-message {
+    padding: 5px;
+    font-size: $subheading3;
   }
-
-  .tt-cursor{
+  .tt-cursor {
     background: $loconbeige;
   }
 
   // Search button
-  .search-button{
+  .search-button {
     vertical-align: top;
-    margin:0px;
-    font-size:1.2em;
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  // edit controls
+  .edit-controls {
+    margin: 4px 0 0 10px;
+    position: relative;
+    float: right;
   }
 
   // Category autosuggest
-  .bootstrap-tagsinput{
+  .bootstrap-tagsinput {
     padding: 4px 0;
-    border-bottom:1px solid $locongray;
+    border-bottom: 1px solid $locongray;
     border-top: 0 none;
     border-right: 0 none;
     border-left: 0 none;
     box-shadow: none;
   }
-  .bootstrap-tagsinput > .tag{
+  .bootstrap-tagsinput > .tag {
     font-family: 'Montserrat-regular';
     font-size: 0.9em;
-    color:$lightblack !important;
+    color: $lightblack !important;
     text-transform: capitalize;
-
   }
-
-  .bootstrap-tagsinput > .tag.label.label-info{
-    background:$locongray !important;
-    padding:4px;
+  .bootstrap-tagsinput > .tag.label.label-info {
+    background: $locongray !important;
+    padding: 4px;
     border-radius: 4px;
   }
-
   .caption {
     font-style: italic;
     font-size: $subheading2;
@@ -621,8 +636,6 @@ $iphone-portrait-max: 959px;
     }
   }
 
-
-
   // zebra-stripes
   .even {
     background: $beige;
@@ -630,22 +643,19 @@ $iphone-portrait-max: 959px;
   .odd {
     background: $loconbeige;
   }
-
-  .listing{
-    padding:10px;
-    border-bottom:1px solid $locongray;
+  .listing {
+    padding: 10px;
+    border-bottom: 1px solid $locongray;
   }
 
   // Button group
-  .button-group{
-    min-width:160px;
-    margin:10px 0 0 0;
-
-    form{
-      float:left;
+  .button-group {
+    min-width: 160px;
+    margin: 10px 0 0;
+    form {
+      float: left;
     }
   }
-
   .field_with_errors {
     background: none;
     input,
