@@ -128,10 +128,12 @@ $(document).ready(function() {
         '</div>'
       ].join('\n'),
       suggestion: Handlebars.compile('<div class="search-result">' +
-        '<p><strong>{{title}}</strong>' +
-        '{{#ifCond is_draft "yes"}}<span class="draft-infotag infotags">D</span>{{/ifCond}}' +
-        '<span class="edit-controls"><a href="/posts/{{slug}}/edit"><i class="glyphicon glyphicon-pencil"></i></a></span> <br/>' +
-        '<small>{{excerpt}}<small></p> ' +
+        '<div class="search-result-header">' +
+        '<div class="search-result-title">{{title}}' +
+        '{{#ifCond is_draft "yes"}}<span class="draft-infotag infotags">D</span>{{/ifCond}}</div>' +
+        '<span class="edit-controls"><a href="/posts/{{slug}}/edit"><i class="glyphicon glyphicon-pencil"></i></a></span>' +
+        '</div>' +
+        '<div class="tt-metainfo clearboth">{{excerpt}}<div> ' +
         '</div>')
     }
   });
@@ -161,6 +163,7 @@ $(document).ready(function() {
     typeaheadjs: {
       name: 'categories',
       displayKey: 'name',
+      limit: 20,
       itemValue: 'name',
       itemText: 'name',
       freeInput: false,
@@ -170,7 +173,7 @@ $(document).ready(function() {
           'No posts matching the current query were found',
           '</div>'
         ].join('\n'),
-        suggestion: Handlebars.compile('<div class="search-result"><strong>{{name}}</strong><br> <small>{{description}}<small> </div>')
+        suggestion: Handlebars.compile('<div class="mini-search-result search-result"><strong>{{name}}</strong><br> <div class="tt-metainfo">{{description}}<div> </div>')
       },
       source: categories.ttAdapter()
     }
