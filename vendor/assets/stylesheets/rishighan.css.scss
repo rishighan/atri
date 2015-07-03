@@ -502,13 +502,30 @@ $iphone-portrait-max: 959px;
     .categories {
       margin: 10px 0 8px;
     }
-  // Edit and Delete controls
-  .post-controls{
-    margin:10px 0 0 0;
-    color:$lightblack;
-    &:hover{
-      text-decoration: none;
-      color:$rg-red;
+  .controls{
+    display:flex;
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    flex-direction: column;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    -webkit-flex-flow: row nowrap;
+    -webkit-justify-content :flex-start;
+    -webkit-align-content:flex-start;
+
+    .item{
+      -moz-box-flex:  3;
+      -webkit-flex:  4;
+      -ms-flex:  3;
+      -webkit-box-flex: 4 0 0;
+      flex: 4 0 0;
+    }
+    .item-control{
+      -webkit-flex:  1;
+      -webkit-box-flex: 1 0 0;
+      flex: 1 0 0;
     }
   }
 
@@ -550,20 +567,51 @@ $iphone-portrait-max: 959px;
     top: 35px !important;
     width: 100%;
     min-width: 200px;
+
+    // supplementary text
+    .tt-metainfo{
+      line-height: 1.8em;
+      font-size:$subheading2;
+      padding:0 0 8px 0;
+    }
   }
 
   // Search results
   .search-result {
     padding: 0 10px;
 
+    .mini-search-result{
+      min-height: 40px;
+    }
+
+    .search-result-header{
+      display: flex;
+      flex-direction: row;
+      align-content: space-between;
+      justify-content: flex-end;
+    }
+
+    // Bold title
+    .search-result-title{
+      flex:5 0 0;
+      font-weight: bold;
+    }
+
     // draft infotags
     .draft-infotag {
       border: 1px solid $gray;
-      padding: 0 5px;
+      padding: 0 4px 0 4px;
       margin-left: 4px;
       font-weight: bold;
     }
+
+    // edit controls
+    .edit-controls {
+      flex: 1 0 0;
+    }
+
   }
+
   .empty-message {
     padding: 5px;
     font-size: $subheading3;
