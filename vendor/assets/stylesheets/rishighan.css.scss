@@ -502,35 +502,37 @@ $iphone-portrait-max: 959px;
     .categories {
       margin: 10px 0 8px;
     }
-  .controls{
-    display:flex;
-    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex;
-    flex-direction: column;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    -webkit-flex-flow: row nowrap;
-    -webkit-justify-content :flex-start;
-    -webkit-align-content:flex-start;
 
-    .item{
-      -moz-box-flex:  3;
-      -webkit-flex:  4;
-      -ms-flex:  3;
-      -webkit-box-flex: 4 0 0;
-      flex: 4 0 0;
-    }
-    .item-control{
-      -webkit-flex:  1;
-      -webkit-box-flex: 1 0 0;
-      flex: 1 0 0;
+    .controls {
+      display: flex;
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      flex-direction: column;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      -webkit-flex-flow: row nowrap;
+      -webkit-justify-content: flex-start;
+      -webkit-align-content: flex-start;
+
+      .item {
+        -moz-box-flex: 3;
+        -webkit-flex: 4;
+        -ms-flex: 3;
+        -webkit-box-flex: 4 0 0;
+        flex: 4 0 0;
+      }
+
+      .item-control {
+        -webkit-flex: 1;
+        -webkit-box-flex: 1 0 0;
+        flex: 1 0 0;
+      }
     }
   }
-
-  }
-
 
   // Searchkick autocomplete
   // more admin styles
@@ -569,28 +571,28 @@ $iphone-portrait-max: 959px;
     min-width: 200px;
 
     // supplementary text
-    .tt-metainfo{
+    .tt-metainfo {
       line-height: 1.8em;
-      font-size:$subheading2;
-      padding:0 0 8px 0;
+      font-size: $subheading2;
+      padding: 0 0 8px;
     }
   }
 
   // Search results
   .search-result {
     padding: 0 10px;
-
-    .mini-search-result{
+    .mini-search-result {
       min-height: 40px;
     }
-
-    .search-result-header{
-      display:flex;
-      display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-      display: -ms-flexbox;  /* TWEENER - IE 10 */
+    .search-result-header {
+      display: flex;
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
       display: -webkit-flex;
-      -webkit-justify-content :flex-end;
-      -webkit-align-content:space-between;
+      -webkit-justify-content: flex-end;
+      -webkit-align-content: space-between;
       -webkit-flex-direction: row;
       flex-direction: row;
       align-content: space-between;
@@ -598,32 +600,30 @@ $iphone-portrait-max: 959px;
     }
 
     // Bold title
-    .search-result-title{
-      -webkit-flex:  5;
-      -ms-flex:  5;
+    .search-result-title {
+      -webkit-flex: 5;
+      -ms-flex: 5;
       -webkit-box-flex: 5 0 0;
-      flex:5 0 0;
+      flex: 5 0 0;
       font-weight: bold;
     }
 
     // draft infotags
     .draft-infotag {
       border: 1px solid $gray;
-      padding: 0 4px 0 4px;
+      padding: 0 4px;
       margin-left: 4px;
       font-weight: bold;
     }
 
     // edit controls
     .edit-controls {
-      -webkit-flex:  1;
-      -ms-flex:  1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
       -webkit-box-flex: 1 0 0;
       flex: 1 0 0;
     }
-
   }
-
   .empty-message {
     padding: 5px;
     font-size: $subheading3;
@@ -655,7 +655,6 @@ $iphone-portrait-max: 959px;
     border-left: 0 none;
     box-shadow: none;
   }
-
   .bootstrap-tagsinput > .tag {
     font-family: 'Montserrat-regular';
     font-size: 0.9em;
@@ -667,7 +666,6 @@ $iphone-portrait-max: 959px;
     padding: 4px;
     border-radius: 4px;
   }
-
   .caption {
     font-style: italic;
     font-size: $subheading2;
@@ -707,17 +705,50 @@ $iphone-portrait-max: 959px;
   }
   .listing {
     padding: 10px;
+    display: flex;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    flex-direction: column;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    -webkit-flex-flow: row nowrap;
+    -webkit-justify-content: flex-start;
+    -webkit-align-content: flex-start;
     border-bottom: 1px solid $locongray;
-  }
 
-  // Button group
-  .button-group {
-    min-width: 160px;
-    margin: 10px 0 0;
-    form {
-      float: left;
+    // listing item
+    .listing-item{
+      -moz-box-flex: 3;
+      -webkit-flex: 4;
+      -ms-flex: 3;
+      -webkit-box-flex: 4 0 0;
+      flex: 4 0 0;
+    }
+
+    // Button group
+    .button-group {
+      -moz-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      -webkit-box-flex: 1 0 0;
+      flex: 1 0 0;
+
+      .glyphicon{
+        margin:0 10px 0 0;
+
+        &:hover{
+          text-decoration: none;
+          color: $rg-blue;
+        }
+      }
     }
   }
+
+
   .field_with_errors {
     background: none;
     input,

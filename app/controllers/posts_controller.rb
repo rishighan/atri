@@ -23,7 +23,10 @@ class PostsController < ApplicationController
    render json: Post.search(params[:query], autocomplete: true, limit: 10).map do |post|
      {title: post.title, excerpt: post.excerpt, draft: post.is_draft}
    end
+  end
 
+  def allposts
+    @allposts = Post.all
   end
 
   # GET /posts/1

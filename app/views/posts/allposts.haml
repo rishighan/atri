@@ -1,0 +1,9 @@
+%p
+  %h2
+    ="Showing All Posts"
+
+%div
+  %div.eight.columns
+    -@allposts.each do |post|
+      %h3=post.title
+      %span=post.excerpt

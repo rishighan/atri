@@ -13,8 +13,11 @@ end
 
 resources :posts do
   resources :attachments
+
   collection do
     get :autocomplete
+    # all posts listing
+    get 'all' => 'posts#allposts'
   end
 end
 

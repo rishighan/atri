@@ -9,15 +9,13 @@
 
   %div.nine.columns
     -@categories.each do |category|
-      %div.clearfix.listing{class: cycle('even','odd')}
-        %div.pull-left
+      %div.listing{class: cycle('even','odd')}
+        %div.listing-item
           %h4
             =category.title
-          %p.caption
+          %p
             =category.description
-        %div.pull-right.button-group
-          =link_to "Show", category_path(category), class: 'button-default'
-
-
-          =link_to "Edit", edit_category_path(category.id), class: 'button-default'
-          =link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-default'
+        %div.button-group
+          =link_to "", category_path(category), class: 'glyphicon glyphicon-eye-open'
+          =link_to "", edit_category_path(category.id), class: 'glyphicon glyphicon-pencil'
+          =link_to '', category, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'
