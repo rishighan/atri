@@ -5,19 +5,28 @@
     =pluralize(@allposts.count, 'post') + ", "
     =pluralize(@alldrafts.count, 'draft')
 %div
-  %div.nine.columns
-    =paginate @allposts
-    %ul
-      -@allposts.each do |post|
-        %li.listing
-          %div.listing-item
-            %h3=post.title
-            %p=post.excerpt
-            %p
-              -if post.is_draft == 'yes'
-                %span.infotags.draft="Draft"
-              -post.categories.each do |cat|
-                %span.infotags=cat.title
-          %div.button-group
-            =link_to "", edit_post_path(post.id), class: 'glyphicon glyphicon-pencil'
-            =link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'
+  .nine.columns#tab-container.tab-container
+    %ul#tabbed
+      %li
+        =link_to t('all_posts'), "#posts-panel"
+      %li
+        =link_to t('drafts'), "#drafts-panel"
+
+    #posts-panel
+      =paginate @allposts
+      %ul
+        -@allposts.each do |post|
+          %li.listing
+            %div.listing-item
+              %h3=post.title
+              %p=post.excerpt
+              %p
+                -if post.is_draft == 'yes'
+                  %span.infotags.draft="Draft"
+                -post.categories.each do |cat|
+                  %span.infotags=cat.title
+            %div.button-group
+              =link_to "", edit_post_path(post.id), class: 'glyphicon glyphicon-pencil'
+              =link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'
+    #drafts-panel
+      %p="Draftserooonia"

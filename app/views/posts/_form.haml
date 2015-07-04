@@ -10,23 +10,23 @@
 
   /title
   %p
-    =f.label :title
+    =f.label t('title')
     %p=f.text_field(:title, size: "70")
 
   /categories
   %p
-    =f.label :category
+    =f.label t('categories')
     %small="Start typing and you will receive suggestions."
     %br/
     %input{type:"text", name: "category_tags", value:"#{@post.categories.collect(&:title).join(',')}", data_role: 'tagsinput', id:'category_selection', }
 
   /content
   %p
-    =f.label :content
+    =f.label t('content')
     %p=f.text_area(:content, size: "90x18")
 
   /attached images
-  %p=f.label :attachments
+  %p=f.label t('attachments')
   %div#attachments
     =f.fields_for :attachments do |at|
       -if at.object.new_record?
@@ -54,7 +54,7 @@
     %p=render "shared/markdownhelp"
 
     /excerpt
-    %p=f.label :excerpt
+    %p=f.label t('excerpt')
     %p
       =f.text_area(:excerpt, size: "90x8")
 

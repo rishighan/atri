@@ -1,6 +1,6 @@
 // admin section.
 console.log("Rishi Ghan");
-console.log("----------");
+console.log("----+-----");
 
 
 // remove fixed positioning and
@@ -107,6 +107,7 @@ $(document).ready(function() {
   });
 
   // Autocomplete search
+  // for posts
   var posts = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -139,6 +140,7 @@ $(document).ready(function() {
   });
 
   // Category json source config
+  // Autocomplete for categories
   var categories = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -179,7 +181,8 @@ $(document).ready(function() {
     }
   });
 
-
+  // Tabbed interface for All posts page
+  $('#tab-container').easytabs();
 
 });
 

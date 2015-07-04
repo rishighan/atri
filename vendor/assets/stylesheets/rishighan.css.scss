@@ -482,6 +482,12 @@ $iphone-portrait-max: 959px;
     }
   }
 }
+
+// Tabs
+.tab-panel{
+  display: none;
+}
+
 .error_explanation {
   background-color: $error;
   display: block;
