@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   layout "admin"
 
-
   # GET /posts
   # GET /posts.json
   def index
@@ -23,7 +22,11 @@ class PostsController < ApplicationController
    render json: Post.search(params[:query], autocomplete: true, limit: 10).map do |post|
      {title: post.title, excerpt: post.excerpt, draft: post.is_draft}
    end
+  end
 
+  def allposts
+    @allposts = Post.order(:title).page params[:page]
+    @alldrafts = Post.is_draft('yes')
   end
 
   # GET /posts/1
