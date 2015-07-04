@@ -97,6 +97,10 @@ $margin-ten: 10px;
   border-radius: 5px;
   font-size: 0.9em;
 }
+// drafts
+.draft{
+  background: $rg-yellow;
+}
 
 // links
 a {
@@ -704,7 +708,7 @@ $iphone-portrait-max: 959px;
     background: $loconbeige;
   }
   .listing {
-    padding: 10px;
+    padding: 10px 0 0 0px;
     display: flex;
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6, BB7 */

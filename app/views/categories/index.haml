@@ -2,14 +2,14 @@
   %h2="Listing Categories"
 
 %div
-  %div.five.columns
+  %div.six.columns
     =link_to new_category_path do
       %button
         New Category
 
-  %div.nine.columns
+  %div.eight.columns
     -@categories.each do |category|
-      %div.listing{class: cycle('even','odd')}
+      %div.listing
         %div.listing-item
           %h4
             =category.title

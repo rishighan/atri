@@ -1,9 +1,9 @@
 %nav.admin-nav.container
 
   %ul.thirteen.columns
-    %li=link_to "Dashboard", :controller => 'posts'
+    %li=link_to "", posts_url, class:'glyphicon glyphicon-home'
     %li=link_to "New Post", new_post_path
-
+    %li=link_to "All Posts", all_posts_path
     %li=link_to "New Category", new_category_path
     %li=link_to "All Categories", categories_path
     %li

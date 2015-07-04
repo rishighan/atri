@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   layout "admin"
 
-
   # GET /posts
   # GET /posts.json
   def index
@@ -26,7 +25,8 @@ class PostsController < ApplicationController
   end
 
   def allposts
-    @allposts = Post.all
+    @allposts = Post.order(:title).page params[:page]
+    @alldrafts = Post.is_draft('yes')
   end
 
   # GET /posts/1
