@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def allposts
-    @allposts = Post.order(:title).page params[:page]
+    @allposts = Post.is_draft('no').order(:title).page params[:page]
     @alldrafts = Post.is_draft('yes')
   end
 

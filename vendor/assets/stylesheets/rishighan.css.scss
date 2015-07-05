@@ -97,8 +97,9 @@ $margin-ten: 10px;
   border-radius: 5px;
   font-size: 0.9em;
 }
+
 // drafts
-.draft{
+.draft {
   background: $rg-yellow;
 }
 
@@ -482,6 +483,11 @@ $iphone-portrait-max: 959px;
     }
   }
 }
+
+// Tabs
+.tab-panel {
+  display: none;
+}
 .error_explanation {
   background-color: $error;
   display: block;
@@ -506,7 +512,6 @@ $iphone-portrait-max: 959px;
     .categories {
       margin: 10px 0 8px;
     }
-
     .controls {
       display: flex;
       display: -webkit-box;
@@ -521,7 +526,6 @@ $iphone-portrait-max: 959px;
       -webkit-flex-flow: row nowrap;
       -webkit-justify-content: flex-start;
       -webkit-align-content: flex-start;
-
       .item {
         -moz-box-flex: 3;
         -webkit-flex: 4;
@@ -529,7 +533,6 @@ $iphone-portrait-max: 959px;
         -webkit-box-flex: 4 0 0;
         flex: 4 0 0;
       }
-
       .item-control {
         -webkit-flex: 1;
         -webkit-box-flex: 1 0 0;
@@ -636,6 +639,23 @@ $iphone-portrait-max: 959px;
     background: $loconbeige;
   }
 
+  // All posts and drafts page styles
+  #tabbed {
+    border-bottom: 1px solid $gray;
+    font-family: 'Montserrat-regular';
+    li {
+      margin: 0 4px 4px 0;
+      a {
+        padding: 5px 15px 5px 0;
+        border-right: 1px solid $gray;
+        text-decoration: none;
+      }
+    }
+    li:last-child a {
+      border-right: none;
+    }
+  }
+
   // Search button
   .search-button {
     vertical-align: top;
@@ -708,7 +728,7 @@ $iphone-portrait-max: 959px;
     background: $loconbeige;
   }
   .listing {
-    padding: 10px 0 0 0px;
+    padding: 10px 0 0;
     display: flex;
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -725,7 +745,7 @@ $iphone-portrait-max: 959px;
     border-bottom: 1px solid $locongray;
 
     // listing item
-    .listing-item{
+    .listing-item {
       -moz-box-flex: 3;
       -webkit-flex: 4;
       -ms-flex: 3;
@@ -740,19 +760,15 @@ $iphone-portrait-max: 959px;
       -ms-flex: 1;
       -webkit-box-flex: 1 0 0;
       flex: 1 0 0;
-
-      .glyphicon{
-        margin:0 10px 0 0;
-
-        &:hover{
+      .glyphicon {
+        margin: 0 10px 0 0;
+        &:hover {
           text-decoration: none;
           color: $rg-blue;
         }
       }
     }
   }
-
-
   .field_with_errors {
     background: none;
     input,

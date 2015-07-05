@@ -22,9 +22,17 @@
 en:
   hello: "Hello world"
 
+  #form labels
+  title: "Title"
+  content: "Content"
+  attachments: "Attachments"
+  categories: "Categories and Tags"
+  excerpt: "Excerpt"
+
   #buttons
   submit: "Submit"
   search: "Search"
+  delete: "Delete"
   search_posts: "Search Posts"
 
   #admin page
@@ -33,5 +41,8 @@ en:
   drafts: "Drafts"
   all_posts: "All Posts"
 
-  #Edit Post page
-  
+  #New Post page
+  new_post: "New Post"
+
+  #Edit post page
+  edit_post: "Editing Post"
