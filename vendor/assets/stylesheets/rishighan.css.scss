@@ -542,6 +542,12 @@ $iphone-portrait-max: 959px;
     }
   }
 
+  .drafts{
+    .draft-item{
+      margin: 0px 0 15px 0;
+    }
+  }
+
   // Searchkick autocomplete
   // more admin styles
   input#query,
