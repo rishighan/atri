@@ -2,7 +2,7 @@
   %h2
     ="Showing All Posts"
   %h3
-    =pluralize(@allposts.all.count, 'post') + ", "
+    =pluralize(@allposts.count, 'post') + ", "
     =pluralize(@alldrafts.count, 'draft')
 %div
   .nine.columns#tab-container.tab-container
