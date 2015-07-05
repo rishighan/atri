@@ -35,3 +35,6 @@
             %div.listing-item
               %h3=draft.title
               %p=draft.excerpt
+            %div.button-group
+              =link_to "", edit_post_path(draft.id), class: 'glyphicon glyphicon-pencil'
+              =link_to '', draft, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'
