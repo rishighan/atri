@@ -2,12 +2,12 @@
   %h2
     ="Showing All Posts"
   %h3
-    =pluralize(@allposts.count, 'post') + ", "
+    =pluralize(@allposts.all.count, 'post') + ", "
     =pluralize(@alldrafts.count, 'draft')
 %div
   .nine.columns#tab-container.tab-container
     %ul#tabbed
-      %li
+      %li.pull-left
         =link_to t('all_posts'), "#posts-panel"
       %li
         =link_to t('drafts'), "#drafts-panel"
@@ -29,4 +29,9 @@
               =link_to "", edit_post_path(post.id), class: 'glyphicon glyphicon-pencil'
               =link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'
     #drafts-panel
-      %p="Draftserooonia"
+      %ul
+        -@alldrafts.each do |draft|
+          %li.listing
+            %div.listing-item
+              %h3=draft.title
+              %p=draft.excerpt

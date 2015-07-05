@@ -182,7 +182,9 @@ $(document).ready(function() {
   });
 
   // Tabbed interface for All posts page
-  $('#tab-container').easytabs();
+  $('#tab-container').easytabs({
+    updateHash:false
+  });
 
 });
 
