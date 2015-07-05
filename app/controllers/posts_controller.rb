@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def allposts
-    @allposts = Post.is_draft('no').order(:title).page params[:page]
+    @allposts = Post.is_draft('no').all.order(:title).page params[:page]
     @alldrafts = Post.is_draft('yes')
   end
 
@@ -69,10 +69,11 @@ end
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      # updating the posts_categories join table
       # the general idea here is as follows:
-      # take the input set set1 and the existing set set2
+      # take the input set set1 (form input params) and the existing set set2 (from the db)
       # find res1 = set1 - (set1 & set2) and res2 = set2 -(set1 & set2)
-      # insert res1 in the join table and delete res2 from it.
+      # insert res1 in the join table and delete res2 from db.
       category_tags = params[:category_tags].split(',')
       formparams = Post.check_category(category_tags)
       existingtags = @post.categories.map(&:id)

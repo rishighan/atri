@@ -2,7 +2,7 @@
   %h2
     ="Showing All Posts"
   %h3
-    =pluralize(@allposts.all.count, 'post') + ", "
+    =pluralize(@allposts.count, 'post') + ", "
     =pluralize(@alldrafts.count, 'draft')
 %div
   .nine.columns#tab-container.tab-container
@@ -35,3 +35,6 @@
             %div.listing-item
               %h3=draft.title
               %p=draft.excerpt
+            %div.button-group
+              =link_to "", edit_post_path(draft.id), class: 'glyphicon glyphicon-pencil'
+              =link_to '', draft, method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove'

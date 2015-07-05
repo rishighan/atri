@@ -33,7 +33,8 @@
     / Drafts
     %div.four.columns
       %h3=I18n.t 'drafts'
-      %div.drafts
+      %ul.drafts
         -@drafts.each do |draft|
-          %h4.heading= link_to draft.title, edit_post_path(draft.friendly_id)
-          %span=draft.excerpt
+          %li.draft-item
+            %h4.heading= link_to draft.title, edit_post_path(draft.friendly_id)
+            %span=draft.excerpt
