@@ -18,11 +18,11 @@
         -@allposts.each do |post|
           %li.listing
             %div.listing-item
-              %h3=post.title
+              %h4=post.title
               %p=post.excerpt
               %p
                 -if post.is_draft == 'yes'
-                  %span.infotags.draft="Draft"
+                  %span.infotags.draft= t('draft_infotag')
                 -post.categories.each do |cat|
                   %span.infotags=cat.title
             %div.button-group
@@ -33,7 +33,7 @@
         -@alldrafts.each do |draft|
           %li.listing
             %div.listing-item
-              %h3=draft.title
+              %h4=draft.title
               %p=draft.excerpt
             %div.button-group
               =link_to "", edit_post_path(draft.id), class: 'glyphicon glyphicon-pencil'
