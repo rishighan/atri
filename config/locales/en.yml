@@ -41,6 +41,9 @@ en:
   drafts: "Drafts"
   all_posts: "All Posts"
 
+  #infotags
+  draft_infotag: "Draft"
+
   #New Post page
   new_post: "New Post"
 
